@@ -2,16 +2,16 @@
   <h1>Material Login Form</h1>
   <div class=" w3l-login-form">
     <h2>Login Here</h2>
-    <form method="POST" (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
+    <form (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
       <div class="alert alert-danger" *ngIf="error">
-        <strong>Username or password wrong!!!</strong>
+        <strong>Email or password wrong!!!</strong>
       </div>
 
       <div class=" w3l-form-group">
-        <label>Username:</label>
+        <label>Email:</label>
         <div class="group">
           <i class="fas fa-user"></i>
-          <input type="text" class="form-control" placeholder="Username" name="user" ngModel    #username="ngModel"
+          <input type="text" class="form-control" placeholder="Username" name="user" ngModel #username="ngModel"
             required pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"/>
         </div>
         <!-- lỗi không nhập và lỗi submit -->
@@ -30,7 +30,7 @@
         <label>Password:</label>
         <div class="group">
           <i class="fas fa-unlock"></i>
-          <input type="password" class="form-control" placeholder="Password" name="pass" ngModel #password="ngModel"
+          <input type="text" class="form-control" placeholder="Password" name="pass" ngModel #password="ngModel"
             required minlength="5" />
         </div>
         <!-- lỗi không nhập và lỗi submit -->

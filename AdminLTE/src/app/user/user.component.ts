@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { template } from '@angular/core/src/render3';
-import { TokenParams } from '../getToken/tokenParams'; //import Model token
-  import { from } from 'rxjs';
-import { AuthTokenService } from '../services/auth-token.service'; //import Token Service
+import { TokenParams } from './../modules/getToken/TokenParams'; //import Model token
+import { AuthTokenService } from '../services/auth-token-login/auth-token.service'; //import Token Service
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,36 +9,34 @@ import { AuthTokenService } from '../services/auth-token.service'; //import Toke
 })
 export class UserComponent implements OnInit {
   public error: boolean = false;
-  tokenParam : TokenParams;
+  tokenParam: TokenParams;
 
-  constructor(public router: Router,
-               private authService: AuthTokenService) { }
+  constructor(
+    public router: Router,
+    private authService: AuthTokenService
+  ) { }
 
   ngOnInit() {
-    this.checkLogin();
   }
 
   checkLogin() {
-  if (localStorage.getItem('userToken')) {
-  this.router.navigate(['/admin']);
-  }
-  }
-
-  onLogin(user: string,pass: string) {
-
-    // SET token vào LocalStorage
-    this.authService.login(user,pass).subscribe((data : any)=>{
-      localStorage.setItem('userToken',data.token);
-      console.log(data);
-    });
-    if(localStorage.getItem('userToken'))
-    {
-      this.router.navigate(['/admin']); //nếu có tồn tại sẽ đi đến trang Manager
+    if (localStorage.getItem('userToken')) {
+      this.router.navigateByUrl('/admin');//nếu có tồn tại sẽ đi đến trang Manager
     }
-    else{
+    else {
       this.error = true; //ngược lại sẽ chặn truy cập
     }
   }
+
+  onLogin(user: string, pass: string) {
+    // SET token vào LocalStorage
+    this.authService.login(user, pass).subscribe((data: any) => {
+      localStorage.setItem('userToken', data.token);
+      this.checkLogin();
+    });
+  }
+
+
   onSubmit(templateForm) {
     console.log(templateForm); //log thông giá trị form
   }

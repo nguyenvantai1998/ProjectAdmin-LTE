@@ -10,7 +10,7 @@ import { RouterModule } from "@angular/router";
 import { appRoutes } from "./routers.modules";
 
 //service
-import { AuthGuard } from "./services/auth.guard";
+import { AuthGuard } from "./services/auth-token-login/auth-login.guard";
 
 //Form
 import { FormsModule } from '@angular/forms';
