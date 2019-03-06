@@ -31,13 +31,12 @@ export class UserComponent implements OnInit {
     if (username == 'admin' && password == 'admin') {
       localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/admin']);
-    } else if (username == undefined && password == undefined) {
+    } else if (username == null && password == null) {
       this.error = false;
-      console.log(username);
+      console.log(user);
     }
     else {
       this.error = true;
-      console.log(this.error);
     }
   }
   onSubmit(templateForm) {
