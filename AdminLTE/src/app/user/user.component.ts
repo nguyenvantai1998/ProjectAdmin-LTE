@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { template } from '@angular/core/src/render3';
 import { TokenParams } from './../modules/getToken/TokenParams'; //import Model token
 import { AuthTokenService } from '../services/auth-token-login/auth-token.service'; //import Token Service
 @Component({
@@ -18,29 +17,26 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.checkLogin();
   }
 
   checkLogin() {
     if (localStorage.getItem('userToken')) {
-      this.router.navigate(['/admin']);
-    }
-  }
-
-  onLogin(user: string, pass: string) {
-
-    // SET token vào LocalStorage
-    this.authService.login(user, pass).subscribe((data: any) => {
-      localStorage.setItem('userToken', data.token);
-      console.log(data);
-    });
-    if (localStorage.getItem('userToken')) {
-      this.router.navigate(['/admin']); //nếu có tồn tại sẽ đi đến trang Manager
+      this.router.navigateByUrl('/admin');//nếu có tồn tại sẽ đi đến trang Manager
     }
     else {
       this.error = true; //ngược lại sẽ chặn truy cập
     }
   }
+
+  onLogin(user: string, pass: string) {
+    // SET token vào LocalStorage
+    this.authService.login(user, pass).subscribe((data: any) => {
+      localStorage.setItem('userToken', data.token);
+      this.checkLogin();
+    });
+  }
+
+
   onSubmit(templateForm) {
     console.log(templateForm); //log thông giá trị form
   }
