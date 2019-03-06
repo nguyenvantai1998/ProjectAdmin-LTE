@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { template } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-user',
@@ -8,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class UserComponent implements OnInit {
 
-  public error: number = 0;
+  public error: boolean = false;
 
   constructor(public router: Router) { }
 
@@ -30,11 +31,16 @@ export class UserComponent implements OnInit {
     if (username == 'admin' && password == 'admin') {
       localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/admin']);
+    } else if (username == undefined && password == undefined) {
+      this.error = false;
+      console.log(username);
     }
     else {
-      this.error = -1;
+      this.error = true;
       console.log(this.error);
     }
   }
-
+  onSubmit(templateForm) {
+    console.log(templateForm);
+  }
 }

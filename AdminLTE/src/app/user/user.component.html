@@ -2,9 +2,8 @@
   <h1>Material Login Form</h1>
   <div class=" w3l-login-form">
     <h2>Login Here</h2>
-    <form action="#" method="POST">
-      <div class="alert alert-danger" *ngIf="error == -1">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <form method="POST" (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
+      <div class="alert alert-danger" *ngIf="error">
         <strong>Username or password wrong!!!</strong>
       </div>
 
@@ -12,21 +11,55 @@
         <label>Username:</label>
         <div class="group">
           <i class="fas fa-user"></i>
-          <input type="text" class="form-control" placeholder="Username" required="required" #username />
+          <input type="text" class="form-control" placeholder="Username" name="user" required ngModel #username="ngModel" required
+            pattern="[a-zA-Z0-9]*" minlength="5"/>
         </div>
-      </div>
+        <!-- lỗi không nhập và lỗi submit -->
+        <small
+          *ngIf="username.errors?.required && !username.pristine || username.errors?.required && templateForm.submitted || username.errors?.required && username.dirty"
+         >
+          <div class="alert alert-danger">
+            <strong>User is required !</strong>
+          </div>
+           </small>
+           <!-- lỗi pattern và minLength -->
+           <small
+          *ngIf="username.errors?.pattern && username.dirty|| username.errors?.pattern && templateForm.submitted || username.errors?.minLength && username.dirty || username.errors?.minlength && templateForm.submitted"
+         >
+          <div class="alert alert-danger">
+            <strong>Không nhập ký tự đặc biệt và lớn hơn 5 ký tự!</strong>
+          </div>
+           </small>
+      </div> 
       <div class=" w3l-form-group">
         <label>Password:</label>
         <div class="group">
           <i class="fas fa-unlock"></i>
-          <input type="password" class="form-control" placeholder="Password" required="required" #password />
+          <input type="password" class="form-control" placeholder="Password" required="required" name="pass" required ngModel #password="ngModel" required
+         minlength="5"/>
         </div>
+        <!-- lỗi không nhập và lỗi submit -->
+        <small
+          *ngIf="password.errors?.required && !password.pristine || password.errors?.required && templateForm.submitted || password.errors?.required && password.dirty"
+         >
+          <div class="alert alert-danger">
+            <strong>User is required !</strong>
+          </div>
+           </small>
+           <!-- lỗi pattern và minLength -->
+           <small
+          *ngIf="password.errors?.minLength && password.dirty || password.errors?.minlength && templateForm.submitted"
+         >
+          <div class="alert alert-danger">
+            <strong>Password lớn hơn 5 ký tự!</strong>
+          </div>
+           </small>
       </div>
       <div class="forgot">
         <a href="#">Forgot Password?</a>
         <p><input type="checkbox">Remember Me</p>
       </div>
-      <button type="button" (click)="onLogin(username.value, password.value)">Login</button>
+      <button (click)="onLogin(username.value, password.value)">Login</button>
     </form>
     <p class=" w3l-register-p">Don't have an account?<a href="#" class="register"> Register</a></p>
   </div>

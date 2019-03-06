@@ -12,6 +12,9 @@ import { appRoutes } from "./routers.modules";
 //service
 import { AuthGuard } from "./services/auth.guard";
 
+//Form
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { AuthGuard } from "./services/auth.guard";
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [
     AuthGuard
