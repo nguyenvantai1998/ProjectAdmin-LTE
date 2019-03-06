@@ -3,7 +3,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 
 //service
-import { AuthGuard } from "./services/auth.guard";
+import { AuthGuard } from "./services/auth-token-login/auth-login.guard";
 
 export const appRoutes: Routes = [
     {

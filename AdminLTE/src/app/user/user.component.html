@@ -4,32 +4,25 @@
     <h2>Login Here</h2>
     <form (ngSubmit)="onSubmit(templateForm)" #templateForm="ngForm">
       <div class="alert alert-danger" *ngIf="error">
-        <strong>Username or password wrong!!!</strong>
+        <strong>Email or password wrong!!!</strong>
       </div>
 
       <div class=" w3l-form-group">
-        <label>Username:</label>
+        <label>Email:</label>
         <div class="group">
           <i class="fas fa-user"></i>
           <input type="text" class="form-control" placeholder="Username" name="user" ngModel #username="ngModel"
-            required pattern="[a-zA-Z0-9]*" minlength="5" />
+            required pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"/>
         </div>
         <!-- lỗi không nhập và lỗi submit -->
         <small *ngIf="(templateForm.submitted && username.pristine) || (username.touched && username.errors?.required)">
           <div class="alert alert-danger">
-            <strong>Username is required !</strong>
+            <strong>Email is required !</strong>
           </div>
         </small>
-        <!-- lỗi minlength -->
-        <small *ngIf="username.errors?.minlength && username.touched && username.dirty && !username.errors?.pattern">
-          <div class="alert alert-danger">
-            <strong>Minlength username is 5 character!</strong>
-          </div>
-        </small>
-        <!-- lỗi patten -->
         <small *ngIf="username.errors?.pattern && username.dirty ">
           <div class="alert alert-danger">
-            <strong>Username invalid!</strong>
+            <strong>Email invalid!</strong>
           </div>
         </small>
       </div>
@@ -57,7 +50,7 @@
         <a href="#">Forgot Password?</a>
         <p><input type="checkbox">Remember Me</p>
       </div>
-      <button (click)="onLogin(username.value, password.value)">Login</button>
+      <button type="button" (click)="onLogin(username.value, password.value)">Login</button>
     </form>
     <p class=" w3l-register-p">Don't have an account?<a href="#" class="register"> Register</a></p>
   </div>
