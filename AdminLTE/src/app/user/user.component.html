@@ -9,7 +9,7 @@
         <label>Email:</label>
         <div class="group">
           <i class="fas fa-user"></i>
-          <input type="text" class="form-control" placeholder="Email" name="email" ngModel #email="ngModel"
+          <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="login['email']" #email="ngModel"
             required pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" />
         </div>
         <!-- lỗi không nhập và lỗi submit -->
@@ -28,7 +28,7 @@
         <label>Password:</label>
         <div class="group">
           <i class="fas fa-unlock"></i>
-          <input type="text" class="form-control" placeholder="Password" name="pass" ngModel #password="ngModel"
+          <input type="text" class="form-control" placeholder="Password" name="pass" [(ngModel)]="login['password']" #password="ngModel"
             required minlength="5" />
         </div>
         <!-- lỗi không nhập và lỗi submit -->

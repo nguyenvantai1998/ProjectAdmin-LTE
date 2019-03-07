@@ -1,7 +1,7 @@
 // Service Token
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { TokenParams } from './../../modules/getToken/TokenParams';
@@ -11,37 +11,38 @@ import { environment } from "./../../../environments/environment";
 
 
 const url = `${environment.apiPV}/api/v1/admin/login`;
-const header = new HttpHeaders({
-  'Content-Type': 'application/json',
-  'Authorization': 'Bearer '
-});
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthTokenService {
 
-  public urlLogin = url;
-  public header = header;
+  public headers: HttpHeaders;
 
   constructor(
     private http: HttpClient,
-    private _router : Router
-  ) { }
-
-  //Hàm sent thông tin lên server để lấy token
-  login(email: string, password: string): Observable<TokenParams> {
-    var userData = "email=" + email + "&password=" + password + "&grant_type=password";   
-    var headersForTokenAPI = this.header;
-    return <Observable<TokenParams>>this.http.post(this.urlLogin, userData, { headers: headersForTokenAPI })
-    .pipe(map(res => res), catchError(error => this.errorHandler(error)));
-      
+    private _router: Router,
+  ) {
+    this.headers = this.setHeaders();
   }
 
-// httpHeaders():Observable<any>{
+  setHeaders(): HttpHeaders {
+    const header = new HttpHeaders();
+    const token: string = localStorage.getItem('userToken');
+    if (!token) {
+      return header.set('Content-Type', 'application/json');
+    }
+    return header.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
+  }
 
-// }
+  login(body): Observable<TokenParams> {
+    return this.http.post<TokenParams>(url, body, { headers: this.headers })
+      .pipe(map(rer => rer), catchError(error => this.errorHandler(error)));
+  }
 
   private errorHandler(error: HttpErrorResponse): Observable<any> {
+    console.log(error);
     if (error.status >= 500) {
       Swal.fire({
         type: 'error',
@@ -51,16 +52,13 @@ export class AuthTokenService {
       });
     } else if (error.status === 401 && error.statusText === 'UNAUTHORIZED') {
       localStorage.removeItem('userToken');
-    } else if (error.status === 404) {
-      this._router.navigate(['/page-not-found']);
-    } else{
+    } else {
       Swal.fire({
         type: 'error',
         title: 'Oops...',
         text: 'Email or password is wrong!',
       });
     }
-
     return throwError(error);
   }
 }

@@ -1,0 +1,1247 @@
+{
+	"info": {
+		"_postman_id": "97b30097-5c98-4411-94a5-191cc527dd3d",
+		"name": "PhongVu_APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public api",
+			"item": [
+				{
+					"name": "List category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/list?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/details/5c7ac6c4c3100c32f18119bd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"details",
+								"5c7ac6c4c3100c32f18119bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/details/5c7b71de29f5e155101eb420?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"details",
+								"5c7b71de29f5e155101eb420"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "HP",
+									"description": "//title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/list?page=1&limit=10&is_active=1&status=selling",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "is_active",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "selling",
+									"description": "['pending', 'empty', 'selling', 'sales']"
+								},
+								{
+									"key": "search",
+									"value": "HP",
+									"description": "//title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Adward\",\n\t\"email\": \"adward0511@gmail.com\",\n\t\"phone\": \"012345678\",\n\t\"postcode\": \"199999\",\n\t\"address\": \"CT\",\n\t\"card_tok\": \"tok_visa\",\n\t\"description\": \"Hello world\",\n\t\"products\": [\n\t\t{\n\t\t\t\"id\": \"5c7ac5fdc3100c32f18119b6\",\n\t\t\t\"qty\": 2\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5c7ac617c3100c32f18119b7\",\n\t\t\t\"qty\": 3\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/payments/checkout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "List category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/list?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"list"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/details/5c76561eb05f331f0093e73d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"details",
+								"5c76561eb05f331f0093e73d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n\t\"name\": \"MP4\",\n\t\"is_active\": true,\n\t\"sub_category\": [\n\t\t{\n\t\t\t\"name\": \"Ipop\"\n\t\t}\n\t]\n},\n{\n\t\"name\": \"PC\",\n\t\"is_active\": true,\n\t\"sub_category\": [\n\t\t{\n\t\t\t\"name\": \"ThinkCentre\"\n\t\t}\n\t]\n}]"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}Content-Type:application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Mobile\",\n\t\"is_active\": true,\n\t\"sub_category\": [\n\t\t{\n\t\t\t\"name\": \"Oppos\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/update/5c76561eb05f331f0093e73d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"update",
+								"5c76561eb05f331f0093e73d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/details/5c76561eb05f331f0093e73d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"details",
+								"5c76561eb05f331f0093e73d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/details/5c76561eb05f331f0093e73d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"details",
+								"5c76561eb05f331f0093e73d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create sub category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Halo\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/create/5c765380af71864d90636943/sub_category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"create",
+								"5c765380af71864d90636943",
+								"sub_category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update sub category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"What\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/update/5c765380af71864d90636943/sub_category/5c76b9c27ed10b06f86e2a69",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"update",
+								"5c765380af71864d90636943",
+								"sub_category",
+								"5c76b9c27ed10b06f86e2a69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete sub category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"What\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/categories/delete/5c765380af71864d90636943/sub_category/5c76bd4e0ce655156cf669e4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"delete",
+								"5c765380af71864d90636943",
+								"sub_category",
+								"5c76bd4e0ce655156cf669e4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/list?page=1&limit=10&is_active=1&status=selling",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "is_active",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "selling",
+									"description": "['pending', 'empty', 'selling', 'sales']"
+								},
+								{
+									"key": "search",
+									"value": "HP",
+									"description": "//title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/details/5c7b71de29f5e155101eb420?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"details",
+								"5c7b71de29f5e155101eb420"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "HP",
+									"description": "//title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"HP ProBook 455\",\n    \"desciption\": \"ABC\",\n    \"sku\": \"123465\",\n    \"images\": [],\n    \"category\": [\"Laptop\"],\n    \"status\": \"selling\",\n    \"price\": 99.99,\n    \"discount\": 30,\n    \"quantity\": 100,\n    \"is_active\": true,\n    \"specifications\": {\n    \t\"a\": \"123\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/create?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"create"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "selling",
+									"description": "['pending', 'empty', 'selling', 'sales']",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add url image product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"images\": [\"http://res.cloudinary.com/ebooking/image/upload/v1551550177/phongvu/products/Aatrox.png\"]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/5c7ac5fdc3100c32f18119b6/images",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"5c7ac5fdc3100c32f18119b6",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete url image product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"images\": [\"url name\"]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/5c777b09f56f3f4634b20863/images?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"5c777b09f56f3f4634b20863",
+								"images"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "selling",
+									"description": "['pending', 'empty', 'selling', 'sales']",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Thinkpad 560s\",\n    \"desciption\": \"ABC\",\n    \"sku\": \"123465\",\n    \"images\": [],\n    \"category\": [\"Laptop\"],\n    \"status\": \"selling\",\n    \"price\": 99.99,\n    \"discount\": 30,\n    \"quantity\": 100,\n    \"is_active\": true,\n    \"specifications\": {\n    \t\"a\": \"123\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/update/5c7ac5fdc3100c32f18119b6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"update",
+								"5c7ac5fdc3100c32f18119b6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/active/5c777d30f56f3f4634b20864?Content-Type=application/json&Authorization=Bearer {{token_key}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"active",
+								"5c777d30f56f3f4634b20864"
+							],
+							"query": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "['pending', 'empty', 'selling', 'sales']"
+								},
+								{
+									"key": "Authorization",
+									"value": "Bearer {{token_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/deactive/5c777d30f56f3f4634b20864?",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"deactive",
+								"5c777d30f56f3f4634b20864"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "selling",
+									"description": "['pending', 'empty', 'selling', 'sales']",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "list orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/orders/list?page=1&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "-createdAt",
+									"description": "[All field]",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "//buyer",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "success",
+									"description": "['PENDING', 'CANCEL', 'SUCCESS']",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/orders/details/5c7b5f21c6ed203dcc1bd923",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"details",
+								"5c7b5f21c6ed203dcc1bd923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check status order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"status\": \"success\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/orders/check-status/5c7b5f21c6ed203dcc1bd923",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"check-status",
+								"5c7b5f21c6ed203dcc1bd923"
+							]
+						},
+						"description": "['PENDING', 'CANCEL', 'SUCCESS']"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Adward\",\n\t\"email\": \"adward0511@gmail.com\",\n\t\"phone\": \"012345678\",\n\t\"postcode\": \"199999\",\n\t\"address\": \"CT\",\n\t\"card_tok\": \"tok_visa\",\n\t\"description\": \"Hello world\",\n\t\"products\": [\n\t\t{\n\t\t\t\"id\": \"5c7ac5fdc3100c32f18119b6\",\n\t\t\t\"qty\": 2\n\t\t},\n\t\t{\n\t\t\t\"id\": \"5c7ac617c3100c32f18119b7\",\n\t\t\t\"qty\": 3\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/payments/checkout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List buyers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/payments/buyers?page=1&limit=10&sort=-createdAt&search=012345678",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"buyers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "-createdAt"
+								},
+								{
+									"key": "search",
+									"value": "012345678",
+									"description": "//name, email, phone, address"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buyer details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/payments/buyers/5c7b5f21c6ed203dcc1bd922",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"buyers",
+								"5c7b5f21c6ed203dcc1bd922"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8863e36d-847d-43d9-867f-d2f57822d658",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"pm.environment.set(\"token_key\", data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"super_admin@gmail.com\",\n\t\"password\": \"admin@123\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/upload/image",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"upload",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cd4e2a77-6550-48c9-9e0e-ac7393bb28c7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2604d0f7-990c-4b54-81ef-33d501311c1f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9765e284-0f57-4b92-9f05-f6887c848dc3",
+			"key": "url",
+			"value": "http://localhost:3456",
+			"type": "string"
+		},
+		{
+			"id": "e2660821-780b-4d51-99af-c355c3bea960",
+			"key": "token_key",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImVtYWlsIjoic3VwZXJfYWRtaW5AZ21haWwuY29tIiwicm9sZSI6MH0sImlhdCI6MTU1MTU5MzIxNywiZXhwIjoxNTUxNjc5NjE3fQ.4Yat6bsOGvKBXW6KvSdLxbups-OSYlHar27cEFbxlqE",
+			"type": "string"
+		},
+		{
+			"id": "edbbe867-9ef3-41b6-b984-849b79146bfb",
+			"key": "url",
+			"value": "http://139.162.28.184:3456",
+			"type": "string"
+		}
+	]
+}
