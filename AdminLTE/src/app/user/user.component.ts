@@ -9,7 +9,7 @@ import { AuthTokenService } from '../services/auth-token-login/auth-token.servic
 })
 export class UserComponent implements OnInit {
   public error: boolean = false;
-  tokenParam: TokenParams;
+  public tokenParam: TokenParams;
 
   constructor(
     public router: Router,
@@ -19,25 +19,17 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkLogin() {
-    if (localStorage.getItem('userToken')) {
-      this.router.navigateByUrl('/admin');//nếu có tồn tại sẽ đi đến trang Manager
+  onSubmit(email: string, pass: string) {
+    if (email != '' && pass != '') {
+      this.authService.login(email, pass).subscribe(data => {
+        localStorage.setItem('userToken', data.token);
+        if (localStorage.getItem('userToken')) {
+          this.router.navigate(['admin']);//nếu có tồn tại sẽ đi đến trang Manager 
+        }
+      }, error => {
+        this.error = true;
+        console.log(error);
+      });
     }
-    else {
-      this.error = true; //ngược lại sẽ chặn truy cập
-    }
-  }
-
-  onLogin(user: string, pass: string) {
-    // SET token vào LocalStorage
-    this.authService.login(user, pass).subscribe((data: any) => {
-      localStorage.setItem('userToken', data.token);
-      this.checkLogin();
-    });
-  }
-
-
-  onSubmit(templateForm) {
-    console.log(templateForm); //log thông giá trị form
   }
 }
