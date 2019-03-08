@@ -13,7 +13,8 @@ export class AddProductComponent implements OnInit , OnDestroy{
 
   public product: Products;
   public subscription: Subscription;
-
+  today= new Date();
+  jstoday = '';
   constructor(
     private _productService: ProductService,
     private _routerService: Router
@@ -21,6 +22,7 @@ export class AddProductComponent implements OnInit , OnDestroy{
 
   ngOnInit() {
     this.product = new Products();
+    this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
 
   onAddProduct(){
