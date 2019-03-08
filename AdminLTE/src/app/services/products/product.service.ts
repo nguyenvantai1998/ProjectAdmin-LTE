@@ -40,12 +40,12 @@ export class ProductService {
   }
 
   //delete product
-  deleteProductService(_id: number): Observable<Products>{
+  deleteProductService(_id: string): Observable<Products>{
     return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${_id}`, {headers: this.headers});
   }
 
   //edit product of id
-  getIdProduct(_id: number):Observable<Products>{
+  getIdProduct(_id: string):Observable<Products>{
     return <Observable<Products>> this.httpClient.get(`${urlEdit}/${_id}`, {headers: this.headers});
   }
 

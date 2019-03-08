@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from 'src/app/modules/product.model';
 import { Subscription } from 'rxjs';
 import { ProductService } from 'src/app/services/products/product.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Products } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-edit-product',

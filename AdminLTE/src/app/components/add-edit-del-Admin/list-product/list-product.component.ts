@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from 'src/app/modules/product.model';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/products/product.service';
+import { Products } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-list-product',
@@ -15,7 +15,6 @@ export class ListProductComponent implements OnInit {
   public subscription: Subscription;
 
   constructor(
-    private _routerService: Router,
     private _productService: ProductService
   ) { }
 
@@ -29,13 +28,13 @@ export class ListProductComponent implements OnInit {
     })
   }
 
-  onDeletePhone(_id: number) {
+  onDeletePhone(_id: string) {
     this.subscription = this._productService.deleteProductService(_id).subscribe(data => {
       this.updateAfterDelete(_id);
     });
   }
 
-  updateAfterDelete(id: number) {
+  updateAfterDelete(id: string) {
     for (let i = 0; i < this.product.length; i++) {
       if (this.product[i]._id == id) {
         this.product.splice(i, 1);
