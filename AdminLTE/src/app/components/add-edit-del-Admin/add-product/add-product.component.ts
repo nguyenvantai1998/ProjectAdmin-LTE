@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Products } from 'src/app/modules/product.model';
 import { Subscription } from 'rxjs';
 import { ProductService } from 'src/app/services/products/product.service';
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
+import { Products } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-add-product',
