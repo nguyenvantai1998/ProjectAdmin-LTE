@@ -237,11 +237,16 @@
       <div class="col-md-2 rowTwo-left">
         <p>Xem tất cả</p>
       </div>
+
       <div class="col-md-10 rowTwo-right">
         <div class="responsive rowTwoProduct-responsive">
-          <div class="rowProduct-box">
+
+          <div 
+            class="rowProduct-box"
+            *ngFor="let item of showProduct.docs"
+          >
             <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
+            <p class="nameProduct">{{item.title}}</p>
             <p class="price">99.999.000đ</p>
             <p class="priceOnline">99.999.000đ</p>
             <p class="start">
@@ -260,173 +265,6 @@
             </div>
           </div>
 
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
-          
-          <div class="rowProduct-box">
-            <img src="./assets/theme/images/product1.jpg" class="img-responsive" alt="Image">
-            <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-            <p class="price">99.999.000đ</p>
-            <p class="priceOnline">99.999.000đ</p>
-            <p class="start">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </p>
-            <p class="gifts">
-              <i class="fas fa-gifts"></i>
-            </p>
-            <div class="meter">
-              <i class="fas fa-carrot"></i>
-              <span>Còn lại: 2</span>
-            </div>
-          </div>
         </div>
       </div>
     </div><!-- /row two -->

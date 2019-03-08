@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 //service
 import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { AuthTokenService } from './services/auth-token-login/auth-token.service';
+import { ProductService } from './services/products/product.service';
 //component
 import { HeaderComponent } from './components/header/header.component'
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FooterComponent } from './components/footer/footer.component'
   ],
   providers: [
     AuthGuard,
-    AuthTokenService
+    AuthTokenService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

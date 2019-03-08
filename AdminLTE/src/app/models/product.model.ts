@@ -1,5 +1,5 @@
 export class Products{
-    public _id: number;
+    public _id: string;
     public desciption: string;
     public sku: number;
     public images: string;
