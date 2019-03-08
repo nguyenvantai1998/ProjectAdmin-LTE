@@ -10,7 +10,10 @@ import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { AuthTokenService } from './services/auth-token-login/auth-token.service';
 //component
 import { HeaderComponent } from './components/header/header.component'
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { AddProductComponent } from './components/add-edit-del-Admin/add-product/add-product.component';
+import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
+import { ListProductComponent } from './components/add-edit-del-Admin/list-product/list-product.component'
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { FooterComponent } from './components/footer/footer.component'
     AppComponent,
     routingModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AddProductComponent,
+    EditProductComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,

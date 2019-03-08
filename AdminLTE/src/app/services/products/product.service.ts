@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Products } from 'src/app/modules/product.model';
+import { Products } from 'src/app/models/product.model';
 import { environment } from '@environments/environment.prod';
 
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?`;
