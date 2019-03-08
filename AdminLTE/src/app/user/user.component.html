@@ -1,25 +1,32 @@
-<body>
-  <h1>Material Login Form</h1>
+<div id="bg-login">
   <div class=" w3l-login-form">
     <h2>Login Here</h2>
-    <form (ngSubmit)="onSubmit(email.value, password.value)" #templateForm="ngForm">
-
-
+    <form 
+      (ngSubmit)="onSubmit(email.value, password.value)" 
+      #templateForm="ngForm"
+    >
       <div class=" w3l-form-group">
         <label>Email:</label>
         <div class="group">
           <i class="fas fa-user"></i>
-          <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="login['email']" #email="ngModel"
-            required pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" />
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Email" 
+            name="txtEmail" 
+            [(ngModel)]="login['email']" 
+            #email="ngModel"
+            required pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" 
+          />
         </div>
         <!-- lỗi không nhập và lỗi submit -->
         <small *ngIf="(templateForm.submitted && email.pristine) || (email.touched && email.errors?.required)">
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" style="background:red !important;">
             <strong>Email is required !</strong>
           </div>
         </small>
         <small *ngIf="email.errors?.pattern && email.dirty ">
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" style="background:red !important;">
             <strong>Email invalid!</strong>
           </div>
         </small>
@@ -28,18 +35,25 @@
         <label>Password:</label>
         <div class="group">
           <i class="fas fa-unlock"></i>
-          <input type="text" class="form-control" placeholder="Password" name="pass" [(ngModel)]="login['password']" #password="ngModel"
-            required minlength="5" />
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Password" 
+            name="txtPassword" 
+            [(ngModel)]="login['password']" 
+            #password="ngModel"
+            required minlength="5" 
+          />
         </div>
         <!-- lỗi không nhập và lỗi submit -->
         <small *ngIf="(templateForm.submitted && password.pristine) || (password.touched && password.errors?.required)">
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" style="background:red !important;">
             <strong>Password is required !</strong>
           </div>
         </small>
         <!-- lỗi minlength -->
         <small *ngIf="password.errors?.minlength && password.touched && password.dirty">
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" style="background:red !important;">
             <strong>Minlength password is 5 character!</strong>
           </div>
         </small>
@@ -52,4 +66,4 @@
     </form>
     <p class=" w3l-register-p">Don't have an account?<a href="#" class="register"> Register</a></p>
   </div>
-</body>
+</div>

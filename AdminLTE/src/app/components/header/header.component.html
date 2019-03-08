@@ -1,3 +1,108 @@
-<p>
-  header works!
-</p>
+<!-- header -->
+<div id="header" class="header-headerOne">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- header top -->
+      <div class="headerTop">
+        <div class="container">
+          <div class="col-md-2">
+            <img src="./assets/theme/images/big-lunar-new-year-logo.png" class="img-responsive" alt="Image">
+          </div>
+          <div class="col-md-10">
+            <div class="col-md-4 headerTop-left">
+              <input type="search" name="txtSearch" class="form-control" placeholder="Nhập tên sản phẩm, mã sản phẩm, từ khóa cần tìm...">
+            </div>
+            <div class="col-md-8 headerTop-right">
+              <div class="col-md-3">
+                <div class="headerTopRight-item">
+                  <span>
+                    <i class="fas fa-percent"></i>
+                  </span>
+                  <span>
+                    <p>Chương trình</p>
+                    <p>khuyến mãi</p>
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="headerTopRight-item" data-toggle="modal" href='#modal-id'>
+                  <span>
+                    <i class="fas fa-user-circle"></i>
+                  </span>
+                  <span>
+                    <p>Đăng nhập</p>
+                    <p>Đăng ký</p>
+                  </span>
+                </div>
+
+                <div class="modal fade" id="modal-id">
+                  <div class="modal-dialog">
+                    <div class="modal-content" style="background: rgba(0, 0, 0, 0.4117647058823529);">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:greenyellow">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <app-user></app-user>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="col-md-3">
+                <div class="headerTopRight-item">
+                  <span>
+                    <i class="fas fa-store"></i>
+                  </span>
+                  <span>
+                    <p>Kiểm tra</p>
+                    <p>đơn hàng</p>
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="headerTopRight-item">
+                  <span class="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- headerBottom -->
+      <div class="headerBottom">
+        <div class="container">
+          <div class="col-md-8 pull-right">
+            <div class="col-md">
+              <i class="fas fa-angle-down"></i>
+              <span>Sản phẩm vừa xem</span>
+            </div>
+            <div class="col-md">
+              <i class="fas fa-hospital"></i>
+              <span>Hệ thống Showroom</span>
+            </div>
+            <div class="col-md">
+              <i class="fas fa-phone-volume"></i>
+              <span>1900 1835</span>
+            </div>
+            <div class="col-md">
+              <i class="fab fa-whmcs"></i>
+              <span>Kiểm tra bảo hành</span>
+            </div>
+            <div class="col-md">
+              <i class="fas fa-bell"></i>
+              <span>Thông báo</span>
+            </div>
+            <div class="col-md">
+              <i class="fas fa-desktop"></i>
+              <span>Xây dựng cấu hình</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /header -->

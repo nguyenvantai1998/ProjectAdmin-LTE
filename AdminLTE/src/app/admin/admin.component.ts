@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
   logOut() {
     if (localStorage.getItem('userToken')) {
       localStorage.removeItem('userToken');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/index']);
     }
   }
 

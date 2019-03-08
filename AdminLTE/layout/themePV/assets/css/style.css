@@ -1,0 +1,462 @@
+/* ---------------------------------------Fonts-------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i');
+/* --------------------------------------------------------------------------------------------- */
+
+/* ---------------------------- header --------------------------- */
+.headerTop{
+	max-width:100%;
+	min-height:100%;
+	background:#C40316;
+	padding: 1.5% 0;
+}
+.headerTop img{
+	position:absolute;
+	top:-2.8em;
+	max-width:150px;
+	max-height:150px;
+}
+.headerTop .container{
+	min-width:80%;
+}
+.headerTop-left input{
+	background: #fff;
+    border: 0;
+    border-radius: 2px;
+    font-size: 12px;
+    height: 40px;
+    padding: 5px 40px 5px 15px;
+    width: 100%;
+}
+.headerTopRight-item{
+	display:flex;
+	font-family: 'Roboto', sans-serif;
+	color:white;
+	font-size:13px;
+}
+.headerTopRight-item span:nth-child(1){
+	flex:1;
+	font-size:2em;
+}
+.headerTopRight-item span:nth-child(2){
+	flex:2;
+}
+.headerTopRight-item .cart{
+	font-size:3em;
+	color:white;
+}
+
+.headerBottom{
+	background:#F1F0F1;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.25);
+	padding:0.7% 0;
+}
+.headerBottom .col-md-8{
+	font-size:12px;
+	font-family: Roboto,sans-serif;
+    line-height: 1.5;
+    display: flex;
+}
+.headerBottom .col-md-8 .col-md{
+	margin-left:1.2em;
+	font-weight:600;
+	letter-spacing:0.3px;
+	cursor: pointer;
+}
+/* end header */
+
+/* bannerNav */
+#bannerNav{
+	margin-top:0.3em;
+}
+#bannerNav .container{
+	min-width:85%;
+}
+.bannerNav-left{
+	background:white;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+.navPrimaryOne{
+	list-style-type: none;
+}
+.navPrimaryOne li{
+	line-height:2.4em;
+	cursor: pointer;
+}
+.bannerNav-center{
+	padding:0 5px;
+}
+.bannerSlider-button{
+	display:flex;
+	background:white;
+}
+.bannerSlider-button a{
+	flex:1;
+	font-size:12px;
+	font-weight:600;
+	cursor: pointer;
+	text-align:center;
+	padding:2%;
+	background:none;
+	border:none;
+	text-decoration:none;
+	color:black;
+	display: block;
+	-webkit-transition: all 0.2s;
+	   -moz-transition: all 0.2s;
+	    -ms-transition: all 0.2s;
+	     -o-transition: all 0.2s;
+	        transition: all 0.2s;
+}
+.bannerSlider-button a:focus{
+	outline:none;
+	background:#EAEAEA;
+	border-bottom: 2px solid #D42333;
+}
+.bannerNav-right{
+	padding:0;
+	display:flex;
+	flex-direction: column;
+}
+.bannerNav-right div{
+	flex:1;
+}
+/* end bannerNav */
+
+/* ------------------------------- main------------------------------- */
+#main{
+	margin-top:1em;
+}
+#main .container{
+	min-width:85%;
+}
+/* row One */
+.rowOne{
+	padding:0.5% 0;
+	background:#FFE4E4
+}
+.rowOne marquee{
+	max-width:95%;
+}
+.rowOne a{
+	margin-right:15em;
+	color:black;
+	text-decoration:none;
+	cursor: pointer;
+}
+/* row two */
+.rowTwo{
+	margin-top: 1em;
+	background:white;
+	display:flex;
+}
+.rowTwo-left{
+	flex:1;
+}
+.rowTwo-right{
+	flex:4;
+}
+.rowTwo-left p{
+	position:absolute;
+	bottom:1em;
+	right:1em;
+	letter-spacing:1.2px;
+	text-transform: uppercase;
+	color:white;
+	cursor: pointer;
+	display: block;
+}
+.rowTwo .rowTwo-left{
+	background-image: url("./../images/san_tv_gia_me_ly (1).png"); 
+	background-size: 100% 100%;
+	max-width:100%;
+	min-height:440px;
+}
+.rowTwo-right .rowProduct-box{
+	padding:0 0.2%;
+}
+.rowTwo-right .slick-prev,
+.rowTwo-right .slick-next{
+	z-index: 1;
+	display:none !important;
+	-webkit-transition: all 1s;
+	   -moz-transition: all 1s;
+	    -ms-transition: all 1s;
+	     -o-transition: all 1s;
+	        transition: all 1s;
+}
+.rowTwo-right:hover .slick-prev,
+.rowTwo-right:hover .slick-next{
+	display: block !important;
+}
+
+/* product */
+.rowProduct-box .nameProduct{
+	color: #333;
+    margin-top: 10px;
+    word-break: break-word;
+    font-family: Roboto,sans-serif;
+    font-size:14px;
+}
+.rowProduct-box .price, 
+.rowProduct-box .priceOnline{
+	font-weight:600;
+	color: #333;
+	font-size:16px;
+}
+.rowProduct-box .priceOnline{
+	font-size:13px;
+	color:red;
+}
+.rowTowProduct-box .price::after,
+.rowTowProduct-box .priceOnline::after{
+	content: ' (Giá bán lẻ)';
+	font-weight:500;
+	font-size:12px;
+	font-style:italic;
+}
+.rowProduct-box .priceOnline::after{
+	content: ' (Giá tốt Online)';
+}
+.rowProduct-box .start i{
+	color:#ffc120;
+}
+.rowProduct-box .gifts{
+	color:red;
+}
+.rowProduct-box .meter{
+	background-image: linear-gradient(-90deg, red, yellow);
+	border-radius:20px;
+	font-size:12px;
+	padding:2px 3%;
+}
+.rowProduct-box .meter i{
+	border: 1px solid white;
+	padding: 2px;
+	border-radius:50%;
+	background:white;
+	color:red;
+}
+.rowProduct-box .meter span{
+	text-transform: uppercase;
+	margin-left:0.5em;
+	color:white;
+}
+/* end product */
+
+
+/* row three */
+.rowThree{
+	margin-top:1em;
+	background:#C40316;
+	display: flex;
+	text-align:center;
+}
+.rowThree i{
+	color:white;
+	font-size:2em;
+	margin: 0.3em 0;
+}
+.rowThree span{
+	color:white;
+	text-transform: uppercase;
+	font-weight:800;
+	font-size:1.1em;
+}
+.rowThree h3{
+	color:#FE9595;
+	font-weight:700;
+	font-size:1.5em;
+	margin-top:5px;
+}
+.rowThree p{
+	color:#FE9595;
+	font-size:0.8em;
+}
+.rowThree-active{
+	background: #DA2423;
+	color:white;
+}
+.rowThree-active h3,
+.rowThree-active p{
+	color:white;
+}
+/* row four */
+.rowFour{
+	background: white;
+	padding-bottom:1em;
+}
+.rowFour .rowProduct-box{
+	padding:0 0.2%;
+}
+.rowFour .slick-next{
+	right:5px !important;
+}
+.rowFour .slick-prev{
+	left:0px !important;
+}
+.rowFour .slick-prev,
+.rowFour .slick-next{
+	z-index: 1;
+	display:none !important;
+	-webkit-transition: all 1s;
+	   -moz-transition: all 1s;
+	    -ms-transition: all 1s;
+	     -o-transition: all 1s;
+	        transition: all 1s;
+}
+.rowFour:hover .slick-prev,
+.rowFour:hover .slick-next{
+	display: block !important;
+}
+/* row title */
+.rowTitle{
+	padding:1em 0;
+	text-align:center;
+}
+.rowTitle h2{
+	font-size:2em;
+	color:#D10A00;
+	text-transform:uppercase;
+}
+.rowTitle h2::after{
+	content:' Tại phong vũ';
+	text-transform: uppercase;
+	color:black;
+}
+.rowTitle p{
+	color:#767676;
+}
+/* row five */
+.rowFive{
+	display:flex;
+}
+.rowFive .rowProduct-box{
+	flex:1;
+	padding:0 0.5% 1%;
+	background: white;
+}
+.rowFive .rowProductBox-active{
+	border:4px solid #3242B2;
+	overflow: hidden;
+}
+.rowFive .rowProductBox-active::after{
+	content:'Siêu khuyến mãi';
+	background:#3242B2;
+	position: relative;
+	padding:5em 3em 1em;
+	font-size:12px;
+	text-transform: uppercase;
+	color:white;
+	transform: rotate(45deg);
+	float:right;
+	margin-top:-35em;
+	margin-right:-6em;
+}
+/* row six */
+.rowSix{
+	display:flex;
+	margin-top:0.3em;
+}
+.rowSix-left{
+	flex:1;
+	background: #FFF;
+	padding: 1.5em 0 6em;
+}
+.rowSix-left h3{
+	text-align:center;
+	text-transform: uppercase;
+	font-size:1.2em;
+}
+.rowSix-left .rowSix-nav{
+	list-style-type: none;
+	margin-top:2em;
+	width:80%;
+	margin:0 auto;
+	margin-top:2em;
+	margin-bottom:2em;
+}
+.rowSix-left li{
+	line-height:1.9em;
+	font-weight:600;
+	font-size:14px;
+	cursor: pointer;
+}
+.rowSix-left .liActive{
+	color:red;
+}
+.rowSix-left a{
+	text-decoration: none;
+	margin-left:1.8em;
+}
+.rowSix-right{
+	flex:4;
+	margin-left:0.5em;
+	display: flex;
+}
+.rowSix-right .rowProduct-box{
+	flex:1;
+	padding:0 0.8% 1%;
+	background: white;
+}
+/* row banner */
+.rowBanner{
+	display:flex;
+	margin-top:1.5em;
+}
+.rowBanner div {
+	cursor: pointer;
+	margin-right:1em;
+}
+/* row title 2 */
+.rowTitle2{
+	margin-top:1.5em;
+	display: flex;
+}
+.rowTitle2 div:nth-child(1){
+	flex:8;
+}
+.rowTitle2 div:nth-child(2){
+	flex:1;
+}
+.rowTitle2 h3{
+	font-size:2em;
+	color:#3D4781;
+}
+.rowTitle2 h3::after{
+	content:' Đừng để lỡ những sản phẩm công nghệ mới nhất mỗi ngày';
+	color:#666666;
+	font-size:13px;
+	font-weight:600;
+}
+.rowTitle2 a{
+	text-decoration:none;
+	margin-left:1em;
+}
+/* row seven */
+.rowSeven .rowProduct-box{
+	padding:0 0.2% 1%;
+	background: #FFF;
+}
+.rowSeven .slick-prev{
+	left:0;
+}
+.rowSeven .slick-next{
+	right:8px;
+}
+.rowSeven .slick-prev,
+.rowSeven .slick-next{
+	z-index: 1;
+	display:none !important;
+	-webkit-transition: all 1s;
+	   -moz-transition: all 1s;
+	    -ms-transition: all 1s;
+	     -o-transition: all 1s;
+	        transition: all 1s;
+}
+.rowSeven:hover .slick-prev,
+.rowSeven:hover .slick-next{
+	display: block !important;
+}
+
+/* --------------------------------- end main ------------------------------ */
