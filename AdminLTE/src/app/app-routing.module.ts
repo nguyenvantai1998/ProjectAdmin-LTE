@@ -4,6 +4,9 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { IndexComponent } from './components/index/index.component';
+import { ListProductComponent } from './components/add-edit-del-Admin/list-product/list-product.component';
+import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
+import { ContentAdminComponent } from './components/content-admin/content-admin.component';
 
 const routes: Routes = [
   {
@@ -22,7 +25,21 @@ const routes: Routes = [
   {
       path: 'admin',
       component: AdminComponent,
-      canActivate: [AuthGuard]
+      canActivate: [AuthGuard],
+      children:[
+        { 
+          path: '', 
+          component: ContentAdminComponent 
+        },
+        { 
+          path: 'list',
+          component: ListProductComponent
+        },
+        { 
+          path: 'edit/:id',
+          component: EditProductComponent
+        }
+      ]
   }
 ];
 
@@ -34,5 +51,8 @@ export class AppRoutingModule { }
 export const routingModule = [
   IndexComponent,
   UserComponent,
-  AdminComponent
+  AdminComponent,
+  ListProductComponent,
+  EditProductComponent,
+  ContentAdminComponent
 ]
