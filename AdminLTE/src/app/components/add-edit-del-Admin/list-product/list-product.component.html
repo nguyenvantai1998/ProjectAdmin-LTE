@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" (click)="onAddProduct()">Add Product</button>
+<button type="button" class="btn btn-primary" [routerLink]="['/admin/add']">Add Product</button>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -26,7 +26,7 @@
       <td>{{ item.is_active }}</td>
       <td>{{ item.discount }}</td>
       <td>
-        <button type="button" class="btn btn-warning" (click)="onEditProduct(item._id)">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="onEditProduct(item._id)" [routerLink]="['/admin','edit',item._id]">Edit</button>
         <button type="button" class="btn btn-danger" (click)="onDelProduct(item._id)">Del</button>
       </td>
     </tr>
