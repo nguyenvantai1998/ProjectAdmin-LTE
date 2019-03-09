@@ -26,10 +26,10 @@ export class AddProductComponent implements OnInit , OnDestroy{
     this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
 
-  onAddProduct() {
-    this.subscription = this._productService.addProductService(this.product).subscribe(data => {
-      if (data && data['id']) {
-         this._routerService.navigate(['admin/list']);
+  onAddProduct(){
+    this.subscription = this._productService.addProductService(this.product).subscribe(data =>{
+      if(data && data['_id']){
+        this._routerService.navigate(['admin']);
       }
     })
   }

@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fix and Format css all theme */
+
+/* --------------------------------------  Theme --------------------------------------- */
+.list-one a,
+.list-two a,
+.list-there a{
+    color:gray;
+    text-decoration: none;
+    font-size:12px;
+}
+.con-bot-one{
+    display: flex;
+}
+.con-bot-one .icon-email{
+    display: block;
+}
+.con-bot-one img{
+    width:50px;
+    height:50px;
+    margin-top:1em;
+}
+.con-bot-one .form-control{
+    border:1px solid gray;
+}
+.con-bot-one .form-control:focus{
+    outline:none;
+    box-shadow: none;
+}
+.con-bot-one button{
+    margin-top:1.5em;
+    border:1px solid #D10000;
+    background:#D10000;
+    border-radius:0;
+    text-transform: uppercase;
+    color:white;
+    outline: none;
+}
+.con-bot-one button:focus{
+    outline: none;
+    box-shadow: none;
+    border:1px solid #D10000;
+    background:#D10000;
+    border-radius:0;
+    text-transform: uppercase;
+    color:white;
+}
+
+/*-------------------------------------------  Login  ----------------------------------------- */
+.w3l-login-form h2{
+    color:white;
+    font-weight: 600;
+    font-size:3em;
+}
+
+
+/* ------------------------------------------ admin ---------------------------------- */
+.text-dark{
+    padding:0;
+    text-align:left;
+}
+.breadcrumb-item a{
+    text-decoration:none;
+    color:#B0C9E6 !important;
+}

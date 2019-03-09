@@ -24,29 +24,15 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="headerTopRight-item" data-toggle="modal" href='#modal-id'>
+                <div class="headerTopRight-item" id="loginAD">
                   <span>
                     <i class="fas fa-user-circle"></i>
                   </span>
                   <span>
                     <p>Đăng nhập</p>
-                    <p>Đăng ký</p>
+                    <p>Admin</p>
                   </span>
                 </div>
-
-                <div class="modal fade" id="modal-id">
-                  <div class="modal-dialog">
-                    <div class="modal-content" style="background: rgba(0, 0, 0, 0.4117647058823529);">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:greenyellow">&times;</button>
-                      </div>
-                      <div class="modal-body">
-                        <app-user></app-user>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
               </div>
               <div class="col-md-3">
                 <div class="headerTopRight-item">
@@ -70,32 +56,31 @@
           </div>
         </div>
       </div>
-
       <!-- headerBottom -->
       <div class="headerBottom">
         <div class="container">
           <div class="col-md-8 pull-right">
-            <div class="col-md">
-              <i class="fas fa-angle-down"></i>
+            <div>
+              <i class="fas fa-angle-down"></i>  
               <span>Sản phẩm vừa xem</span>
             </div>
-            <div class="col-md">
-              <i class="fas fa-hospital"></i>
+            <div>
+              <i class="fas fa-hospital"></i> 
               <span>Hệ thống Showroom</span>
             </div>
-            <div class="col-md">
-              <i class="fas fa-phone-volume"></i>
+            <div>
+              <i class="fas fa-phone-volume"></i> 
               <span>1900 1835</span>
             </div>
-            <div class="col-md">
+            <div>
               <i class="fab fa-whmcs"></i>
               <span>Kiểm tra bảo hành</span>
             </div>
-            <div class="col-md">
+            <div>
               <i class="fas fa-bell"></i>
               <span>Thông báo</span>
             </div>
-            <div class="col-md">
+            <div>
               <i class="fas fa-desktop"></i>
               <span>Xây dựng cấu hình</span>
             </div>
@@ -104,3 +89,17 @@
       </div>
   </div>
 </div><!-- /header -->
+
+<!-- formLogin admin -->
+<div class="FormLoginAD">
+  <div class="container">
+    <div class="FormLoginAD-box">
+      <button 
+        type="button" 
+        class="btn btn-default pull-right"
+        id="btnCloseLogin"
+      >X</button>
+      <app-user></app-user>
+    </div>
+  </div>
+</div>

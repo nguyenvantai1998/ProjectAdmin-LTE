@@ -3,7 +3,6 @@
 /* --------------------------------------------------------------------------------------------- */
 body{
 	background: #F1F0F1 !important;
-	/* background: black !important; */
 }
 /* ---------------------------- header --------------------------- */
 #header > .container-fluid{
@@ -51,23 +50,21 @@ body{
 	font-size:3em;
 	color:white;
 }
-
 .headerBottom{
 	background:#F1F0F1;
 	box-shadow: 0 2px 1px -1px rgba(0,0,0,.25);
 	padding:0.7% 0;
 }
 .headerBottom .col-md-8{
-	font-size:12px !important;
+	font-size:12px;
 	font-family: Roboto,sans-serif;
     line-height: 1.5;
     display: flex;
 }
-.headerBottom .col-md-8 .col-md{
-	flex:1 !important;
-	margin-left:1.2em;
+.headerBottom .col-md-8 > div{
+	margin-right:1em;
 	font-weight:600;
-	letter-spacing:0.3px;
+	letter-spacing:0.4px;
 	cursor: pointer;
 }
 /* end header */
@@ -130,6 +127,45 @@ body{
 	flex:1;
 }
 /* end bannerNav */
+
+/*----------------------------- formLogin admin ---------------------*/
+.FormLoginAD{
+	background-color:rgba(0,0,0,0.5);
+	width:100%;
+	height:100%;
+	position: fixed;
+	z-index:1000;
+	top:0;
+	display: none;
+}
+#btnCloseLogin{
+	width: 10%;
+	height:10%;
+}
+.FormLoginAD-box{
+	background: #c40316;
+	max-width:60%;
+	max-height:auto;
+	padding-bottom:4em;
+	margin:0 auto;
+	transform: translateY(15%);
+}
+.showErrorLogin{
+	height:1.5em;
+}
+.showErrorLogin .label-info{
+	background:black;
+	color: white;
+}
+.btn-LoginAD{
+	background: black;
+	color:white;
+}
+.btn-LoginAD:focus{
+	outline: none;
+	box-shadow: none;
+}
+/*----------------------------- end formLogin admin ---------------------*/
 
 /* ------------------------------- main------------------------------- */
 #main{
@@ -486,14 +522,12 @@ body{
 	float: left;
 	margin-bottom: 15px;
 }
-
 .con-full-fill{
 	width : 85%;
 	height: 100%;
 	margin-left: 98px;
 	float: left;
 }
-
 .con-top{
 	width: 20%;
 	height: 100%;
@@ -507,7 +541,6 @@ body{
 	color: gray;
 	font-size: 12px;
 }
-
 .con-mid{
 	width: 21.5%;
 	height: 100%;
@@ -521,7 +554,6 @@ body{
 	color: gray;
 	font-size: 12px;
 }
-
 .con-jung{
 	width: 19%;
 	height: 100%;
@@ -535,7 +567,6 @@ body{
 	color: gray;
 	font-size: 12px;
 }
-
 .con-bot{
 	width: 39.5%;
 	height: 100%;
@@ -550,35 +581,20 @@ body{
 	margin-top:8px; 
 	float: left;
 }
-input{
-	color:gray;
-	width : 270px;
-	height: 38px;
-}
-.w{
-	background-color: red;
-	width: 90px;
-	height: 38px;
-	border-radius: 0px 5px 5px 0px;
-	color: aliceblue;
-}
+
 .con-bot-one > span{
 	font-size: 14px;
 	font-weight: bold;
 }
-
-/* ------------------------------------ */
 .con-list{
 	width: 100%;
 	height: 270px;
 	margin: auto;
-	/* border: 1px solid black; */
 }
 
 .list-one{
 	width: 15%;
 	height: 100%;
-	/* border: 1px solid red; */
 	float: left;
 	margin-left: 100px;
 }
@@ -594,19 +610,6 @@ input{
 	line-height: 1.5;
 
 }
-ul{
-	padding: 0;
-	margin: 0;
-}
-/* span:hover{
-	color: red;
-} */
-a{
-	text-decoration: none;
-	/* display: block; */
-	font-size: 13;
-	color: gray;
-}
 li > a:hover{
 	color: red;
 }
@@ -614,7 +617,6 @@ li > a:hover{
 .list-two{
 	width: 20%;
 	height: 100%;
-	/* border: 1px solid blue; */
 	float: left;
 	margin-left: 0px;
 }
@@ -628,15 +630,9 @@ li > a:hover{
 	padding-bottom: 5px;
 	font-size: 13px;
 }
-ul{
-	padding: 0;
-	margin: 0;
-}
-
 .list-there{
 	width: 16%;
 	height: 100%;
-	/* border: 1px solid violet; */
 	float: left;
 	margin-left: 0px;
 }
@@ -650,15 +646,9 @@ ul{
 	padding-bottom: 5px;
 	font-size: 13px;
 }
-ul{
-	padding: 0;
-	margin: 0;
-}
-
 .list-four{
 	width: 17%;
 	height: 100%;
-	/* border: 1px solid gold; */
 	float: left;
 	margin-left: 0px;
 }
@@ -676,7 +666,6 @@ a > img{
 .list-five{
 	width: 16%;
 	height: 100%;
-	/* border: 1px solid blue; */
 	float: left;
 	margin-left: 0px;
 	padding: 0px;
@@ -689,31 +678,22 @@ p > img{
 h4{
 	padding-bottom: 8px;
 }
-/* -------------------------------------------- */
-
 .con-cell{
 	width: 100%;
 	height: 240px;
 	margin: auto;
-	/* border: 1px solid black; */
 }
 
 .con-cell-left{
 	width: 20%;
 	height: 100px;
-	/* border: 1px solid red;  */
 	float: left;
 	margin-left: 100px;
 	text-align: center;
 }
-/* span{
-	font-size: 15px;
-} */
-
 .con-cell-left-one{
 	width: 25%;
 	height: 100px;
-	/* border: 1px solid blue;  */
 	float: left;
 }
 .img-left-one > img{
@@ -731,7 +711,6 @@ h4{
 .con-cell-left-two{
 	width: 25%;
 	height: 100%;
-	/* border: 1px solid blue;  */
 	float: left;
 }
 .img-left-two > img{
@@ -745,21 +724,17 @@ h4{
 .con-cell-left-there{
 	width: 25%;
 	height: 100%;
-	/* border: 1px solid blue;  */
 	float: left;
 }
 .con-cell-left-four{
 	width: 25%;
 	height: 100%;
-	/* border: 1px solid blue;  */
 	float: left;
 }
-
 .con-cell-right{
 	margin-left: 30px;
 	width: 55%;
 	height: 100px;
-	/* border: 1px solid blue;  */
 	float: left;
 }
 .h4i{
@@ -770,11 +745,6 @@ h4{
 	width : 800px;
 	height: 55px;
 }
-/* ------------------------------------------------ */
-
-
-
-
 .con-end{
 	width: 100%;
 	height: 320px;
@@ -789,9 +759,6 @@ h4{
 	color: rgba(0,0,0,.87);
 	padding-top : 15px;
 }
-
-
-/* ------------------------------------------------ */
 .con-off{
 	width :100%;
 	height: 120px;

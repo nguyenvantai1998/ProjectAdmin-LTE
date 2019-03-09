@@ -1,17 +1,17 @@
 export class Products{
-    public _id: string; //đổ
+    public _id: string;
     public desciption: string;
     public sku: number;
     public images: string;
-    public price: number;//đổ 
-    public quantity: number;//đổ
-    public is_active:boolean;//đổ
-    public category: string;//đổ
+    public price: number;
+    public quantity: number;
+    public is_active:boolean;
+    public category: string;
     public specifications: string;
     public a: number;
     public title: string;
-    public status: string;//đổ
-    public discount: number;//đổ
+    public status: string;
+    public discount: number;
     public createdAt: string;
     public updatedAt: string
     public __v: number;

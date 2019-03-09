@@ -7,8 +7,8 @@ import { environment } from '@environments/environment.prod';
 // url
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?`;
 const urlAdd = `${environment.apiPV}/api/v1/products/create?`;
-const urlEdit = `${environment.apiPV}/api/v1/products/update`;
-const urlEditShow = `${environment.apiPV}/api/v1/products/details`;
+const urlEdit = `${environment.apiPV}/api/v1/products/update/`;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,13 +40,13 @@ export class ProductService {
   }
 
   //delete product
-  deleteProductService(id: string): Observable<Products>{
-    return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${id}`, {headers: this.headers});
+  deleteProductService(_id: string): Observable<Products>{
+    return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${_id}`, {headers: this.headers});
   }
 
   //edit product of id
-  getIdProduct(id: string):Observable<Products>{
-    return <Observable<Products>> this.httpClient.get(`${urlEditShow}/${id}`, {headers: this.headers});
+  getIdProduct(_id: string):Observable<Products>{
+    return <Observable<Products>> this.httpClient.get(`${urlEdit}/${_id}`, {headers: this.headers});
   }
 
   //edit product

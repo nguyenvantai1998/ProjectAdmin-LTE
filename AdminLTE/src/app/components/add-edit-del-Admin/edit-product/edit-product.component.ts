@@ -16,9 +16,9 @@ export class EditProductComponent implements OnInit {
   public subscriptionParams: Subscription;
 
   constructor(
-    private productService: ProductService,
-    private activatedRouteService: ActivatedRoute,
-    private routerService: Router
+    private _productService: ProductService,
+    private _activatedRouteService: ActivatedRoute,
+    private _routerService: Router
   ) { }
 
   ngOnInit() {
@@ -27,18 +27,17 @@ export class EditProductComponent implements OnInit {
   }
 
   loadProducts() {
-    this.subscriptionParams = this.activatedRouteService.params.subscribe((data: Params) => {
+    this.subscriptionParams = this._activatedRouteService.params.subscribe((data: Params) => {
       let id = data['id'];
-      this.subscription = this.productService.getIdProduct(id).subscribe((productClient: Products) => {
-        this.product = productClient;
-        console.log(this.product);
+      this.subscription = this._productService.getIdProduct(id).subscribe((product: Products) => {
+        this.product = product;
       })
     })
   }
 
-  onEdit() {
-    this.subscription = this.productService.editProductService(this.product).subscribe(data => {
-      this.routerService.navigate(['admin/list']);
+  onEditPhone() {
+    this.subscription = this._productService.editProductService(this.product).subscribe(data => {
+      this._routerService.navigate(['admin']);
     })
   } 
 

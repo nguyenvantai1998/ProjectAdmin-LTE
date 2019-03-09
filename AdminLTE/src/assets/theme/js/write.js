@@ -1,10 +1,4 @@
 $(document).ready(function(){
-  $('.multiple-items').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  });
-
   $('.responsive').slick({
     dots: true,
     infinite: false,
@@ -35,9 +29,6 @@ $(document).ready(function(){
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
     ]
   });
 
@@ -76,5 +67,14 @@ $(document).ready(function(){
     // instead of a settings object
     ]
   });
+
+  //event Login
+  $('#loginAD').click(function(){
+    $('.FormLoginAD').show(1000);
+  });
+  $('#btnCloseLogin').click(function(){
+    $('.FormLoginAD').hide();
+  })
+
 })
 

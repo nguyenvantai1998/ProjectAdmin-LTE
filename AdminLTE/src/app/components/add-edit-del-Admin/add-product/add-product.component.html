@@ -1,61 +1,80 @@
 <div class="main">
-  <!-- <img src="images/signup-bg.jpg" alt=""> -->
-  <div class="container-fluid">
-    <div class="signup-content">
-      <form method="POST" id="signup-form" class="signup-form">
-        <h2 class="form-title">ADD PRODUCT</h2>
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group">
-              <input type="text" class="form-input" name="txt_id" placeholder="id" [(ngModel)]="product.id" />
+    <!-- <img src="images/signup-bg.jpg" alt=""> -->
+    <div class="container-fluid">
+      <div class="signup-content">
+        <form method="POST" id="signup-form" class="signup-form">
+          <h2 class="form-title">ADD PRODUCT</h2>
+  <div class="row">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="form-group">
+              <input type="text" class="form-input" name="" placeholder="id" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="txtImages" placeholder="images" [(ngModel)]="product.images" />
+              <input type="text" class="form-input" name="" placeholder="desciption" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="txtTitle" placeholder="title" [(ngModel)]="product.title" />
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group">
-              <input type="text" class="form-input" name="txtPrice" placeholder="price" [(ngModel)]="product.price" />
+              <input type="text" class="form-input" name="" placeholder="sku" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="txtQuantity" placeholder="quantity" [(ngModel)]="product.quantity" />
+              <input type="text" class="form-input" name="" placeholder="images" />
             </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="txtIs_active" placeholder="is_active" [(ngModel)]="product.is_active" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="txtCategory" placeholder="category" [(ngModel)]="product.category" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group">
-              <input type="text" class="form-input" name="txtStatus" placeholder="status" [(ngModel)]="product.status" />
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group">
-              <input type="number" class="form-input" name="txtDiscount" placeholder="discount" [(ngModel)]="product.discount" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="day" placeholder="createdAt" [(ngModel)]="jstoday">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="form-group">
-              <button class="form-submit btn-block" (click)="onAddProduct()">ADD</button>
-            </div>
-          </div>
-        </div>
-
-      </form>
     </div>
-  </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="form-group">
+            <input type="text" class="form-input" name="" placeholder="price" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" name="" placeholder="quantity" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" name="" placeholder="is_active" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" name="" placeholder="category" />
+          </div>
+    </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                      <input type="text" class="form-input" name="" placeholder="specifications" />
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-input" name="" placeholder="a" />
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-input" name="" placeholder="title" />
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-input" name="" placeholder="status" />
+                    </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <input type="number" class="form-input" name="" placeholder="discount" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-input" name="day" placeholder="createdAt" [(ngModel)]="jstoday">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-input" name="" placeholder="__v" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-input" name="" placeholder="id" />
+                  </div>
+            </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <button class="form-submit btn-block">ADD</button>
+                          </div>
+                    </div>
+                </div>
+
+        </form>
+      </div>
+    </div>
 
 </div>

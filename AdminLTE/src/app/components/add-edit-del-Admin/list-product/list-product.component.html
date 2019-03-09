@@ -1,34 +1,3 @@
-<button type="button" class="btn btn-primary" [routerLink]="['/admin/add']">Add Product</button>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th>Status</th>
-      <th>Active</th>
-      <th>Discount</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of product.docs">
-      <td>{{ item._id }}</td>
-      <td>{{ item.images }}</td>
-      <td>{{ item.title }}</td>
-      <td>{{ item.quantity }}</td>
-      <td>{{ item.price }}</td>
-      <td>{{ item.category }}</td>
-      <td>{{ item.status }}</td>
-      <td>{{ item.is_active }}</td>
-      <td>{{ item.discount }}</td>
-      <td>
-        <button type="button" class="btn btn-warning" (click)="onEditProduct(item._id)" [routerLink]="['/admin','edit',item._id]">Edit</button>
-        <button type="button" class="btn btn-danger" (click)="onDelProduct(item._id)">Del</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<p>
+  list-product works!
+</p>
