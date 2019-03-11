@@ -1,80 +1,91 @@
 <div class="main">
-    <!-- <img src="images/signup-bg.jpg" alt=""> -->
-    <div class="container-fluid">
-      <div class="signup-content">
-        <form method="POST" id="signup-form" class="signup-form">
-          <h2 class="form-title">ADD PRODUCT</h2>
-  <div class="row">
-    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group">
-              <input type="text" class="form-input" name="" placeholder="id" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="" placeholder="desciption" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="" placeholder="sku" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-input" name="" placeholder="images" />
-            </div>
-    </div>
-    <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-          <div class="form-group">
-            <input type="text" class="form-input" name="" placeholder="price" />
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-input" name="" placeholder="quantity" />
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-input" name="" placeholder="is_active" />
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-input" name="" placeholder="category" />
-          </div>
-    </div>
-        </div>
+  <!-- <img src="images/signup-bg.jpg" alt=""> -->
+  <div class="container-fluid">
+    <div class="signup-content">
+      <form id="signup-form" class="signup-form" #frmAddProduct="ngForm" (ngSubmit)="onSubmit(frmAddProduct)">
+        <h2 class="form-title">ADD PRODUCT</h2>
         <div class="row">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div class="form-group">
-                      <input type="text" class="form-input" name="" placeholder="specifications" />
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-input" name="" placeholder="a" />
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-input" name="" placeholder="title" />
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-input" name="" placeholder="status" />
-                    </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="">Title</label>
+              <input type="text" class="form-input" name="txtTitle" [(ngModel)]="product.title" #title="ngModel"
+                required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Title is required!!
+              </span>
             </div>
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                  <div class="form-group">
-                    <input type="number" class="form-input" name="" placeholder="discount" />
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-input" name="day" placeholder="createdAt" [(ngModel)]="jstoday">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-input" name="" placeholder="__v" />
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-input" name="" placeholder="id" />
-                  </div>
+            <div class="form-group">
+              <label for="">Images</label>
+              <input type="text" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
+                required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Image is required!!
+              </span>
             </div>
-                </div>
-                <div class="row">
-                    
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="form-group">
-                            <button class="form-submit btn-block">ADD</button>
-                          </div>
-                    </div>
-                </div>
-
-        </form>
-      </div>
+            <div class="form-group">
+              <label for="">Status</label>
+              <input type="text" class="form-input" name="txtStatus" [(ngModel)]="product.status" #status="ngModel"
+                required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Status is required!!
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="">Category</label>
+              <input type="text" class="form-input" name="txtCategory" [(ngModel)]="product.category"
+                #category="ngModel" required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Category is required!!
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="">Price</label>
+              <input type="text" class="form-input" name="txtPrice" [(ngModel)]="product.price" #price="ngModel"
+                required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Price is required!!
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="">Quantity</label>
+              <input type="text" class="form-input" name="txtQuantity" [(ngModel)]="product.quantity"
+                #quantity="ngModel" required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
+                Quantity is required!!
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="">Discount</label>
+              <input type="number" class="form-input" name="txtDiscount" [(ngModel)]="product.discount"
+                #discount="ngModel" />
+            </div>
+            <div class="form-group">
+              <label for="">Active</label>
+              <select id="my-input" class="custom-select" name="txtCategory">
+                <option value="true" selected>Canactive</option>
+                <option value="false">Deactive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">CreatedAt</label>
+              <input type="text" class="form-input" name="day" disabled [(ngModel)]="jstoday">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+              <button type="submit" class="form-submit btn-block">ADD</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
-
+  </div>
 </div>

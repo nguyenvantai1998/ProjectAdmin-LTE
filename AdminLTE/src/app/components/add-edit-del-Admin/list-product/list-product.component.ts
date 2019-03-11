@@ -11,7 +11,7 @@ import { Products } from 'src/app/models/product.model';
 })
 export class ListProductComponent implements OnInit {
 
-  public product: Products[] = [];
+  public product : Products = {};
   public subscription: Subscription;
 
   constructor(
@@ -28,20 +28,20 @@ export class ListProductComponent implements OnInit {
     })
   }
 
-  onDeletePhone(_id: string) {
-    this.subscription = this._productService.deleteProductService(_id).subscribe(data => {
-      this.updateAfterDelete(_id);
-    });
-  }
-
-  updateAfterDelete(id: string) {
-    for (let i = 0; i < this.product.length; i++) {
-      if (this.product[i]._id == id) {
-        this.product.splice(i, 1);
-        break;
-      }
-    }
-  }
+  // onDeletePhone(_id: string) {
+  //   this.subscription = this._productService.deleteProductService(_id).subscribe(data => {
+  //     this.updateAfterDelete(_id);
+  //   });
+  // }
+  //
+  // updateAfterDelete(id: string) {
+  //   for (let i = 0; i < this.product.length; i++) {
+  //     if (this.product[i]._id == id) {
+  //       this.product.splice(i, 1);
+  //       break;
+  //     }
+  //   }
+  // }
 
   ngOnDestroy(): void {
     if (this.subscription) {

@@ -7,6 +7,7 @@ import { IndexComponent } from './components/index/index.component';
 import { ListProductComponent } from './components/add-edit-del-Admin/list-product/list-product.component';
 import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
 import { ContentAdminComponent } from './components/content-admin/content-admin.component';
+import { AddProductComponent } from './components/add-edit-del-Admin/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
           component: ContentAdminComponent 
         },
         { 
+          path: 'add',
+          component: AddProductComponent
+        },
+        { 
           path: 'list',
           component: ListProductComponent
         },
@@ -54,5 +59,6 @@ export const routingModule = [
   AdminComponent,
   ListProductComponent,
   EditProductComponent,
-  ContentAdminComponent
+  ContentAdminComponent,
+  AddProductComponent
 ]

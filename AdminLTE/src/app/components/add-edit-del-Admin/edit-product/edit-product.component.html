@@ -1,3 +1,71 @@
-<p>
-  edit-product works!
-</p>
+<div class="main">
+  <!-- <img src="images/signup-bg.jpg" alt=""> -->
+  <div class="container-fluid">
+    <div class="signup-content">
+      <form id="signup-form" class="signup-form" #frmAddProduct="ngForm" (ngSubmit)="onSubmit(frmAddProduct)">
+        <h2 class="form-title">Edit Product</h2>
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="">ID</label>
+              <input type="text" class="form-input" name="txtTitle" [(ngModel)]="product.id" #id="ngModel" disabled />
+            </div>
+            <div class="form-group">
+              <label for="">Title</label>
+              <input type="text" class="form-input" name="txtTitle" [(ngModel)]="product.title" #title="ngModel"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="">Images</label>
+              <input type="text" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="">Status</label>
+              <input type="text" class="form-input" name="txtStatus" [(ngModel)]="product.status" #status="ngModel"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="">Category</label>
+              <input type="text" class="form-input" name="txtCategory" [(ngModel)]="product.category"
+                #category="ngModel" required />
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="">Price</label>
+              <input type="text" class="form-input" name="txtPrice" [(ngModel)]="product.price" #price="ngModel"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="">Quantity</label>
+              <input type="text" class="form-input" name="txtQuantity" [(ngModel)]="product.quantity"
+                #quantity="ngModel" required />
+            </div>
+            <div class="form-group">
+              <label for="">Discount</label>
+              <input type="number" class="form-input" name="txtDiscount" [(ngModel)]="product.discount"
+                #discount="ngModel" />
+            </div>
+            <div class="form-group">
+              <label for="">Active</label>
+              <select id="my-input" class="custom-select" name="txtCategory">
+                <option value="true" selected>Canactive</option>
+                <option value="false">Deactive</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">UpdatedAt</label>
+              <input type="text" class="form-input" name="day" disabled [(ngModel)]="jstoday">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+              <button type="submit" class="form-submit btn-block" (click)="onEditProduct()">Edit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

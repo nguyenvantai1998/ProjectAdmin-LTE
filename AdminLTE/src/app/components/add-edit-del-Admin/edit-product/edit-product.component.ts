@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { ProductService } from 'src/app/services/products/product.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Products } from 'src/app/models/product.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-product',
@@ -22,7 +23,6 @@ export class EditProductComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.product = new Products;
     this.loadProducts();
   }
 
@@ -31,15 +31,31 @@ export class EditProductComponent implements OnInit {
       let id = data['id'];
       this.subscription = this._productService.getIdProduct(id).subscribe((product: Products) => {
         this.product = product;
+        console.log(this.product);
+        console.log(this.product['_id']);
       })
     })
   }
 
-  onEditPhone() {
+  onEditProduct() {
     this.subscription = this._productService.editProductService(this.product).subscribe(data => {
-      this._routerService.navigate(['admin']);
+      this._routerService.navigate(['/admin/list']);
     })
-  } 
+  }
+
+  onSubmit(frmAddProduct) {
+    if (frmAddProduct.valid) {
+      this.onEditProduct();
+    }
+    else {
+      Swal.fire({
+        type: 'error',
+        title: "Can't add product",
+        text: 'The fields required cannot be empty!!'
+      })
+
+    }
+  }
 
   ngOnDestroy() {
     if (this.subscription) {

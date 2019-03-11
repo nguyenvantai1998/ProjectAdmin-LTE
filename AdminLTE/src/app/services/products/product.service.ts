@@ -6,8 +6,9 @@ import { environment } from '@environments/environment.prod';
 
 // url
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?`;
-const urlAdd = `${environment.apiPV}/api/v1/products/create?`;
-const urlEdit = `${environment.apiPV}/api/v1/products/update/`;
+const urlAdd = `${environment.apiPV}/api/v1/products/create`;
+const urlDetail = `${environment.apiPV}/api/v1/products/details`;
+const urlEdit = `${environment.apiPV}/api/v1/products/update`;
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class ProductService {
 
   public headers: HttpHeaders;
 
-  constructor( private httpClient: HttpClient ) { 
-      this.headers = this.setHeaders(); 
+  constructor(private httpClient: HttpClient) {
+    this.headers = this.setHeaders();
   }
 
   setHeaders(): HttpHeaders {
@@ -30,28 +31,28 @@ export class ProductService {
   }
 
   //all product
-  getAllProduct(): Observable<Products[]> {
-    return <Observable<Products[]>> this.httpClient.get(urlgetAll);
+  getAllProduct(): Observable<Products> {
+    return <Observable<Products>>this.httpClient.get(urlgetAll);
+  }
+
+  //get one product by id
+  getIdProduct(_id: string): Observable<Products> {
+    return <Observable<Products>>this.httpClient.get(`${urlDetail}/${_id}`, { headers: this.headers });
   }
 
   //add product
-  addProductService(product: Products): Observable<Products>{
-    return <Observable<Products>> this.httpClient.post(urlAdd,product,{headers: this.headers});
+  addProductService(product: Products): Observable<Products[]> {
+    return <Observable<Products[]>>this.httpClient.post(urlAdd, product, { headers: this.headers });
+  }
+  
+  //edit product
+  editProductService(product: Products): Observable<Products[]> {
+    return <Observable<Products[]>>this.httpClient.put(`${urlEdit}/${product['_id']}`, product, { headers: this.headers });
   }
 
   //delete product
-  deleteProductService(_id: string): Observable<Products>{
-    return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${_id}`, {headers: this.headers});
-  }
+  // deleteProductService(_id: string): Observable<Products>{
+  //   return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${_id}`, {headers: this.headers});
+  // }
 
-  //edit product of id
-  getIdProduct(_id: string):Observable<Products>{
-    return <Observable<Products>> this.httpClient.get(`${urlEdit}/${_id}`, {headers: this.headers});
-  }
-
-  //edit product
-  editProductService(product: Products): Observable<Products>{
-    return <Observable<Products>> this.httpClient.put(`${urlEdit}/${product._id}`,product,{headers: this.headers});
-  }
-  
 }
