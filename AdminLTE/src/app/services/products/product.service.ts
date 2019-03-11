@@ -6,9 +6,12 @@ import { environment } from '@environments/environment.prod';
 
 // url
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?`;
+const urlgetAllDeactive = `${environment.apiPV}/api/v1/products/list?is_active=0`;
 const urlAdd = `${environment.apiPV}/api/v1/products/create`;
 const urlDetail = `${environment.apiPV}/api/v1/products/details`;
 const urlEdit = `${environment.apiPV}/api/v1/products/update`;
+const urlDeactive = `${environment.apiPV}/api/v1/products/deactive`;
+const urlActive = `${environment.apiPV}/api/v1/products/active`;
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +37,10 @@ export class ProductService {
   getAllProduct(): Observable<Products> {
     return <Observable<Products>>this.httpClient.get(urlgetAll);
   }
+  //all product
+  getAllProductDeactive(): Observable<Products> {
+    return <Observable<Products>>this.httpClient.get(urlgetAllDeactive);
+  }
 
   //get one product by id
   getIdProduct(_id: string): Observable<Products> {
@@ -44,15 +51,19 @@ export class ProductService {
   addProductService(product: Products): Observable<Products[]> {
     return <Observable<Products[]>>this.httpClient.post(urlAdd, product, { headers: this.headers });
   }
-  
+
   //edit product
   editProductService(product: Products): Observable<Products[]> {
     return <Observable<Products[]>>this.httpClient.put(`${urlEdit}/${product['_id']}`, product, { headers: this.headers });
   }
 
-  //delete product
-  // deleteProductService(_id: string): Observable<Products>{
-  //   return <Observable<Products>> this.httpClient.delete(`${urlEdit}/${_id}`, {headers: this.headers});
-  // }
+  //deactive
+  deactiveProductService(product: Products): Observable<Products> {
+    return <Observable<Products>>this.httpClient.put(`${urlDeactive}/${product['_id']}`, product, { headers: this.headers });
+  }
 
+  //active
+  activeProductService(product: Products): Observable<Products> {
+    return <Observable<Products>>this.httpClient.put(`${urlActive}/${product['_id']}`, product, { headers: this.headers });
+  }
 }

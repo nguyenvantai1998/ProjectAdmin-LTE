@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from 'src/app/services/products/product.service';
 import { Products } from 'src/app/models/product.model';
+
 
 @Component({
   selector: 'app-list-product',
@@ -11,15 +12,20 @@ import { Products } from 'src/app/models/product.model';
 })
 export class ListProductComponent implements OnInit {
 
-  public product : Products = {};
+  public product: Products = {};
+  public productDeactive: Products = {};
   public subscription: Subscription;
+  public subscriptionParams: Subscription;
+
 
   constructor(
-    private _productService: ProductService
+    private _productService: ProductService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
     this.loadProduct();
+    this.loadProductDeactive();
   }
 
   loadProduct() {
@@ -28,24 +34,38 @@ export class ListProductComponent implements OnInit {
     })
   }
 
-  // onDeletePhone(_id: string) {
-  //   this.subscription = this._productService.deleteProductService(_id).subscribe(data => {
-  //     this.updateAfterDelete(_id);
-  //   });
-  // }
-  //
-  // updateAfterDelete(id: string) {
-  //   for (let i = 0; i < this.product.length; i++) {
-  //     if (this.product[i]._id == id) {
-  //       this.product.splice(i, 1);
-  //       break;
-  //     }
-  //   }
-  // }
+  loadProductDeactive() {
+    this.subscription = this._productService.getAllProductDeactive().subscribe(data => {
+      this.productDeactive = data;
+    })
+  }
+
+  onDeactive(id:string) {
+    this.subscriptionParams = this._productService.getIdProduct(id).subscribe((product: Products) => {
+      this.product = product;
+      this.subscription = this._productService.deactiveProductService(this.product).subscribe(data => {
+        this.loadProduct();
+        this.loadProductDeactive();
+      })
+    })
+  }
+
+  onActive(id:string) {
+    this.subscriptionParams = this._productService.getIdProduct(id).subscribe((product: Products) => {
+      this.product = product;
+      this.subscription = this._productService.activeProductService(this.product).subscribe(data => {
+        this.loadProduct();
+        this.loadProductDeactive();
+      })
+    })
+  }
 
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
+    }
+    if (this.subscriptionParams) {
+      this.subscriptionParams.unsubscribe();
     }
   }
 

@@ -26,6 +26,10 @@ export class AddProductComponent implements OnInit, OnDestroy {
     this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
 
+  upload(event) {
+    this.product['images'] = (event.target.files[0].name);
+  }
+
   onAddProduct() {
     this.subscription = this._productService.addProductService(this.product).subscribe(data => {
       if (data && data['_id']) {

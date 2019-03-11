@@ -17,20 +17,11 @@
             </div>
             <div class="form-group">
               <label for="">Images</label>
-              <input type="text" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
-                required />
+              <input type="file" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
+                required (change)="upload($event)" accept=".jpg, .jpeg, .png" />
               <span class="label label-danger"
                 *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
                 Image is required!!
-              </span>
-            </div>
-            <div class="form-group">
-              <label for="">Status</label>
-              <input type="text" class="form-input" name="txtStatus" [(ngModel)]="product.status" #status="ngModel"
-                required />
-              <span class="label label-danger"
-                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
-                Status is required!!
               </span>
             </div>
             <div class="form-group">
@@ -40,6 +31,20 @@
               <span class="label label-danger"
                 *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
                 Category is required!!
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="">Status</label>
+              <select id="my-input" class="custom-select" name="txtStatus" [(ngModel)]="product.status"
+                #status="ngModel">
+                <option value="Empty" selected>Empty</option>
+                <option value="Pending">Pending</option>
+                <option value="Sales">Sales</option>
+                <option value="Selling">Selling</option>
+              </select>
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && status.pristine) || (status.touched && status.error?.required)">
+                Status is required!!
               </span>
             </div>
           </div>
@@ -66,13 +71,6 @@
               <label for="">Discount</label>
               <input type="number" class="form-input" name="txtDiscount" [(ngModel)]="product.discount"
                 #discount="ngModel" />
-            </div>
-            <div class="form-group">
-              <label for="">Active</label>
-              <select id="my-input" class="custom-select" name="txtCategory">
-                <option value="true" selected>Canactive</option>
-                <option value="false">Deactive</option>
-              </select>
             </div>
             <div class="form-group">
               <label for="">CreatedAt</label>

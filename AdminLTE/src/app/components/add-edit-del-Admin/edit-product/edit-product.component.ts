@@ -15,12 +15,18 @@ export class EditProductComponent implements OnInit {
   public product: Products;
   public subscription: Subscription;
   public subscriptionParams: Subscription;
+  public nameImages: string;
 
   constructor(
     private _productService: ProductService,
     private _activatedRouteService: ActivatedRoute,
     private _routerService: Router
   ) { }
+
+
+  upload(event) {
+    this.product['images'] = (event.target.files[0].name);
+  }
 
   ngOnInit() {
     this.loadProducts();
@@ -31,8 +37,6 @@ export class EditProductComponent implements OnInit {
       let id = data['id'];
       this.subscription = this._productService.getIdProduct(id).subscribe((product: Products) => {
         this.product = product;
-        console.log(this.product);
-        console.log(this.product['_id']);
       })
     })
   }
@@ -51,7 +55,7 @@ export class EditProductComponent implements OnInit {
       Swal.fire({
         type: 'error',
         title: "Can't add product",
-        text: 'The fields required cannot be empty!!'
+        text: 'The fields required cannot be empty!!',
       })
 
     }
