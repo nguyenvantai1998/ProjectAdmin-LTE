@@ -3,7 +3,7 @@
     class="rowProduct-box" 
     *ngFor="let item of showProduct"
   >
-    <img src="./../../../assets/theme/images/product/{{item.images}}" class="img-responsive" alt="Image">
+    <img src="{{item.images}}" class="img-responsive" alt="Image">
     <p class="nameProduct">{{item.title}}</p>
     <p class="price">{{item.price}}đ</p>
     <p class="priceOnline">99.999.000đ</p>
@@ -19,7 +19,7 @@
     </p>
     <div class="meter">
       <i class="fas fa-carrot"></i>
-      <span>Còn lại: 2</span>
+      <span>Còn lại: {{item.quantity < 2 ? 'Sắp hết' : item.quantity }}</span>
     </div>
   </div>
 </div>

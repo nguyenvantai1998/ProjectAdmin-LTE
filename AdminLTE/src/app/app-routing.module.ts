@@ -8,6 +8,7 @@ import { ListProductComponent } from './components/add-edit-del-Admin/list-produ
 import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
 import { AddProductComponent } from './components/add-edit-del-Admin/add-product/add-product.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ListProductDeactiveComponent } from './components/add-edit-del-Admin/list-product-deactive/list-product-deactive.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
         { 
           path: '', 
           component: ListProductComponent 
+        },
+        {
+          path: 'deactive',
+          component: ListProductDeactiveComponent
         },
         { 
           path: 'add',
@@ -59,6 +64,7 @@ export const routingModule = [
   UserComponent,
   AdminComponent,
   ListProductComponent,
+  ListProductDeactiveComponent,
   EditProductComponent,
   AddProductComponent,
   Page404Component

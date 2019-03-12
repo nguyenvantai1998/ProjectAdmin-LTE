@@ -13,7 +13,6 @@ import { Products } from 'src/app/models/product.model';
 export class ListProductComponent implements OnInit {
 
   public product: Products = {};
-  public productDeactive: Products = {};
   public subscription: Subscription;
   public subscriptionParams: Subscription;
 
@@ -25,7 +24,6 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit() {
     this.loadProduct();
-    this.loadProductDeactive();
   }
 
   loadProduct() {
@@ -34,28 +32,11 @@ export class ListProductComponent implements OnInit {
     })
   }
 
-  loadProductDeactive() {
-    this.subscription = this._productService.getAllProductDeactive().subscribe(data => {
-      this.productDeactive = data;
-    })
-  }
-
   onDeactive(id:string) {
     this.subscriptionParams = this._productService.getIdProduct(id).subscribe((product: Products) => {
       this.product = product;
       this.subscription = this._productService.deactiveProductService(this.product).subscribe(data => {
         this.loadProduct();
-        this.loadProductDeactive();
-      })
-    })
-  }
-
-  onActive(id:string) {
-    this.subscriptionParams = this._productService.getIdProduct(id).subscribe((product: Products) => {
-      this.product = product;
-      this.subscription = this._productService.activeProductService(this.product).subscribe(data => {
-        this.loadProduct();
-        this.loadProductDeactive();
       })
     })
   }
@@ -63,9 +44,6 @@ export class ListProductComponent implements OnInit {
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
-    }
-    if (this.subscriptionParams) {
-      this.subscriptionParams.unsubscribe();
     }
   }
 

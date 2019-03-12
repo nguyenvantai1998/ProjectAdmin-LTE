@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+//Module
 import { AppRoutingModule, routingModule } from './app-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 //Form
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,27 +22,30 @@ import { ListProductTwoComponent } from './components/main/list-product-two/list
 import { ListProductThreeComponent } from './components/main/list-product-three/list-product-three.component';
 import { ListProductFourComponent } from './components/main/list-product-four/list-product-four.component';
 import { ListProductFiveComponent } from './components/main/list-product-five/list-product-five.component';
+import { BannerSliderComponent } from './components/main/banner-slider/banner-slider.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingModule,
+    ProductFortunePipe,
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
     ListProductOneComponent,
-    ProductFortunePipe,
     ListProductTwoComponent,
     ListProductThreeComponent,
     ListProductFourComponent,
-    ListProductFiveComponent
+    ListProductFiveComponent,
+    BannerSliderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthGuard,

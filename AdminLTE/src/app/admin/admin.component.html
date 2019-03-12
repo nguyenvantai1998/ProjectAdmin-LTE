@@ -46,7 +46,7 @@
             <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview menu-open">
-                  <a href="#" class="nav-link active">
+                  <a href="" class="nav-link active">
                     <i class="nav-icon fa fa-dashboard"></i>
                     <p>
                       Dashboard
@@ -55,11 +55,17 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item" >
-                      <a routerLink="list" class="nav-link active">
+                      <a routerLink="/admin" class="nav-link active">
                         <i class="fa fa-circle-o nav-icon"></i>
                         <p>List Product</p>
                       </a>
                     </li>
+                    <li class="nav-item" >
+                        <a routerLink="/admin/deactive" class="nav-link active">
+                          <i class="fa fa-circle-o nav-icon"></i>
+                          <p>List Deactive Product</p>
+                        </a>
+                      </li>
                   </ul>
                 </li>
               </ul>

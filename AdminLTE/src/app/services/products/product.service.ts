@@ -5,7 +5,7 @@ import { Products } from 'src/app/models/product.model';
 import { environment } from '@environments/environment.prod';
 
 // url
-const urlgetAll = `${environment.apiPV}/api/v1/products/list?is_active=1&limit=100`;
+const urlgetAll = `${environment.apiPV}/api/v1/products/list?is_active=1&limit=1000`;
 const urlgetAllDeactive = `${environment.apiPV}/api/v1/products/list?is_active=0&limit=100`;
 const urlAdd = `${environment.apiPV}/api/v1/products/create`;
 const urlDetail = `${environment.apiPV}/api/v1/products/details`;
@@ -37,7 +37,7 @@ export class ProductService {
   getAllProduct(): Observable<any> {
     return <Observable<any>>this.httpClient.get(urlgetAll);
   }
-  //all product
+  //all product deactive
   getAllProductDeactive(): Observable<Products> {
     return <Observable<Products>>this.httpClient.get(urlgetAllDeactive);
   }
