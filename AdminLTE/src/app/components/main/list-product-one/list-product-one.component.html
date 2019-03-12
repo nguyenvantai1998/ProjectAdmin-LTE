@@ -1,0 +1,25 @@
+<div class="responsive rowTwoProduct-responsive">        
+  <div 
+    class="rowProduct-box" 
+    *ngFor="let item of showProduct"
+  >
+    <img src="./../../../assets/theme/images/product/{{item.images}}" class="img-responsive" alt="Image">
+    <p class="nameProduct">{{item.title}}</p>
+    <p class="price">{{item.price}}đ</p>
+    <p class="priceOnline">99.999.000đ</p>
+    <p class="start">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </p>
+    <p class="gifts">
+      <i class="fas fa-gifts"></i>
+    </p>
+    <div class="meter">
+      <i class="fas fa-carrot"></i>
+      <span>Còn lại: 2</span>
+    </div>
+  </div>
+</div>

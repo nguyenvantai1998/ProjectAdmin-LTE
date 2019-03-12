@@ -1,0 +1,37 @@
+<div class="rowSix">
+    <div class="rowSix-left">
+      <h3>Bạn đang tìm tv nào?</h3>
+      <ul class="rowSix-nav">
+          <li class="liActive">Tất cả</li>
+          <li>Màn hình cong</li>
+          <li>UHD 4K TV</li>
+          <li>QLED/OLED TV</li>
+          <li>Smart TV</li>
+          <li>Internet TV</li>
+          <li>LCD/LED TV</li>
+      </ul>
+      <a href="">Xem tất cả ></a>
+    </div>
+
+    <div class="rowSix-right">
+      <div 
+        class="rowProduct-box"
+        *ngFor="let item of showProduct | slice:0:4"
+      >
+        <img src="./../../../../assets/theme/images/product/{{item.images}}" class="img-responsive" alt="Image">
+        <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
+        <p class="price">99.999.000đ</p>
+        <p class="priceOnline">99.999.000đ</p>
+        <p class="start">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </p>
+        <p class="gifts">
+          <i class="fas fa-gifts"></i>
+        </p>
+      </div>
+    </div>
+  </div>

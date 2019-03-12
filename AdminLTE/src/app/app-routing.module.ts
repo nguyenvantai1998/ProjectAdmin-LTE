@@ -6,8 +6,8 @@ import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { IndexComponent } from './components/index/index.component';
 import { ListProductComponent } from './components/add-edit-del-Admin/list-product/list-product.component';
 import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
-import { ContentAdminComponent } from './components/content-admin/content-admin.component';
 import { AddProductComponent } from './components/add-edit-del-Admin/add-product/add-product.component';
+import { Page404Component } from './components/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -30,22 +30,23 @@ const routes: Routes = [
       children:[
         { 
           path: '', 
-          component: ContentAdminComponent 
+          component: ListProductComponent 
         },
         { 
           path: 'add',
           component: AddProductComponent
         },
         { 
-          path: 'list',
-          component: ListProductComponent
-        },
-        { 
           path: 'edit/:id',
           component: EditProductComponent
         }
       ]
-  }
+  },
+  { 
+    path: '404', 
+    component: Page404Component
+  },
+  { path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
@@ -59,6 +60,6 @@ export const routingModule = [
   AdminComponent,
   ListProductComponent,
   EditProductComponent,
-  ContentAdminComponent,
-  AddProductComponent
+  AddProductComponent,
+  Page404Component
 ]

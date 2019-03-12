@@ -43,7 +43,7 @@ export class EditProductComponent implements OnInit {
 
   onEditProduct() {
     this.subscription = this._productService.editProductService(this.product).subscribe(data => {
-      this._routerService.navigate(['/admin/list']);
+      this._routerService.navigate(['/admin']);
     })
   }
 

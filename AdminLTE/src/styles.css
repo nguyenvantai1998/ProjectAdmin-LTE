@@ -1,5 +1,12 @@
 /* Fix and Format css all theme */
 
+/* ---------------------------- Reponsive ----------------------------------------- */
+@media screen and (max-width: 2000px) {
+    .rowTwo-right .rowProduct-box{
+        width: 256px !important;
+    }
+}
+
 /* --------------------------------------  Theme --------------------------------------- */
 .list-one a,
 .list-two a,
@@ -61,4 +68,8 @@
 .breadcrumb-item a{
     text-decoration:none;
     color:#B0C9E6 !important;
+}
+.small-box{
+    cursor: pointer;
+    outline: none;
 }

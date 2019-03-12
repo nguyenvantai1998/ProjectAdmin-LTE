@@ -34,8 +34,8 @@ export class ProductService {
   }
 
   //all product
-  getAllProduct(): Observable<Products> {
-    return <Observable<Products>>this.httpClient.get(urlgetAll);
+  getAllProduct(): Observable<any> {
+    return <Observable<any>>this.httpClient.get(urlgetAll);
   }
   //all product
   getAllProductDeactive(): Observable<Products> {
