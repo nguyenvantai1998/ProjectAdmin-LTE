@@ -13,10 +13,12 @@ import Swal from 'sweetalert2';
 })
 export class AddProductComponent implements OnInit, OnDestroy {
 
+  public image: any;
   public product: Products = {};
   public subscription: Subscription;
   today = new Date();
   jstoday = '';
+
   constructor(
     private _productService: ProductService,
     private _routerService: Router
@@ -26,14 +28,29 @@ export class AddProductComponent implements OnInit, OnDestroy {
     this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
 
-  upload(event) {
-    this.product['images'] = (event.target.files[0].name);
+  // handleFileInput(file: FileList) {
+  //   this.fileToUpload = file.item(0);
+  //   var reader = new FileReader();
+  //   reader.onload = (event: any) => {
+  //     this.imageUrl = event.target.result;
+  //     this.product['images'] = this.imageUrl;
+  //   }
+  //   reader.readAsDataURL(this.fileToUpload);
+  // }
+  handleFileInput(event) {
+    const oFReader = new FileReader();
+    const image = event.target.files[0];
+    oFReader.readAsDataURL(image);
+    oFReader.onload = (oFREvent) => {
+      this.product['images'] = oFREvent.target['result'];
+    };
+    this.image = image;
   }
 
   onAddProduct() {
     this.subscription = this._productService.addProductService(this.product).subscribe(data => {
       if (data && data['_id']) {
-        this._routerService.navigate(['/admin/list']);
+        this._routerService.navigate(['/admin']);
       }
     })
   }

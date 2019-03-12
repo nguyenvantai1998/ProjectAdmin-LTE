@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Products } from 'src/app/models/product.model';
 import Swal from 'sweetalert2';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-edit-product',
@@ -12,10 +13,12 @@ import Swal from 'sweetalert2';
 })
 export class EditProductComponent implements OnInit {
 
+  public image : any;
   public product: Products;
   public subscription: Subscription;
   public subscriptionParams: Subscription;
-  public nameImages: string;
+  today = new Date();
+  jstoday = '';
 
   constructor(
     private _productService: ProductService,
@@ -24,12 +27,30 @@ export class EditProductComponent implements OnInit {
   ) { }
 
 
-  upload(event) {
-    this.product['images'] = (event.target.files[0].name);
-  }
-
   ngOnInit() {
     this.loadProducts();
+    this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
+  }
+
+  // handleFileInput(event) {
+  //   this.fileToUpload = event.target.files[0];
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(this.fileToUpload);
+  //   reader.onload = (event: any) => {
+  //     this.imageUrl = event.target.result;
+  //     this.product['images'] = this.imageUrl;
+  //     console.log(this.imageUrl)
+  //   }
+  // }
+
+  handleFileInput(event) {
+    const oFReader = new FileReader();
+    const image = event.target.files[0];
+    oFReader.readAsDataURL(image);
+    oFReader.onload = (oFREvent) => {
+      this.product['images'] = oFREvent.target['result'];
+    };
+    this.image = image;
   }
 
   loadProducts() {

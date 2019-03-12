@@ -18,8 +18,9 @@
             </div>
             <div class="form-group">
               <label for="">Images</label>
-              <input type="file" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
-                required (change)="upload($event)" accept=".jpg, .jpeg, .png" />
+              <img [src]="product.images" name="txtImages" [(ngModel)]="product.images" #images="ngModel">
+              <input type="file" class="form-input"  accept="png, jpg, jpge"
+                (change)="handleFileInput($event.target.files)">
               <span class="label label-danger"
                 *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
                 Image is required!!
@@ -27,8 +28,15 @@
             </div>
             <div class="form-group">
               <label for="">Category</label>
-              <input type="text" class="form-input" name="txtCategory" [(ngModel)]="product.category"
-                #category="ngModel" required />
+              <select id="my-input" class="custom-select" name="txtCategory" [(ngModel)]="product.category"
+                #category="ngModel">
+                <option value="Screen" selected>Screen</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Hard Disk">Hard Disk</option>
+                <option value="Mainboard">Mainboard</option>
+                <option value="Laptop">Laptop</option>
+              </select>
               <span class="label label-danger"
                 *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
                 Category is required!!

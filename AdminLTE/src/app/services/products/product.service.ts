@@ -5,8 +5,8 @@ import { Products } from 'src/app/models/product.model';
 import { environment } from '@environments/environment.prod';
 
 // url
-const urlgetAll = `${environment.apiPV}/api/v1/products/list?`;
-const urlgetAllDeactive = `${environment.apiPV}/api/v1/products/list?is_active=0`;
+const urlgetAll = `${environment.apiPV}/api/v1/products/list?is_active=1&limit=100`;
+const urlgetAllDeactive = `${environment.apiPV}/api/v1/products/list?is_active=0&limit=100`;
 const urlAdd = `${environment.apiPV}/api/v1/products/create`;
 const urlDetail = `${environment.apiPV}/api/v1/products/details`;
 const urlEdit = `${environment.apiPV}/api/v1/products/update`;

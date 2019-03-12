@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container-fluid">
     <button type="button" class="btn btn-info col-md-2 pull-right" routerLink="/admin">
-    <i class="fas fa-undo-alt"></i>
+      <i class="fas fa-undo-alt"></i>
       Back admin
     </button>
     <div class="signup-content">
@@ -19,11 +19,6 @@
                 required />
             </div>
             <div class="form-group">
-              <label>Images</label>
-              <input type="file" class="form-input" name="txtImages" [(ngModel)]="product.images" #images="ngModel"
-                required (change)="upload($event)" accept=".jpg, .jpeg, .png" />
-            </div>
-            <div class="form-group">
               <label>Status</label>
               <select id="my-input" class="custom-select" name="txtStatus" [(ngModel)]="product.status"
                 #status="ngModel">
@@ -35,8 +30,21 @@
             </div>
             <div class="form-group">
               <label>Category</label>
-              <input type="text" class="form-input" name="txtCategory" [(ngModel)]="product.category"
-                #category="ngModel" required />
+              <select id="my-input" class="custom-select" name="txtCategory" [(ngModel)]="product.category"
+                #category="ngModel">
+                <option value="Screen" selected>Screen</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Hard Disk">Hard Disk</option>
+                <option value="Mainboard">Mainboard</option>
+                <option value="Laptop">Laptop</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Images</label>
+              <img [src]="product.images">
+              <input type="file" class="form-input" accept="/*"
+                (change)="handleFileInput($event)">
             </div>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6">
