@@ -259,9 +259,7 @@ body{
 	display: block;
 }
 .rowTwo .rowTwo-left{ 
-	background-size: 100% 100%;
-	max-width:100%;
-	min-height:440px;
+	background-size: cover;
 }
 .rowTwo-right .rowProduct-box{
 	padding:0 0.2%;

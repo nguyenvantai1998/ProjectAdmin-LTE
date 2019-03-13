@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/products/product.service';
 
+declare var $;
+
 @Component({
   selector: 'app-list-product-one',
   templateUrl: './list-product-one.component.html',
@@ -12,7 +14,7 @@ export class ListProductOneComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.showListProduct();
   }
 

@@ -1,22 +1,21 @@
 <div class="rowFive">
     <!-- rowProductBox-active -->
-  <div 
-    class="rowProduct-box"
-    *ngFor="let item of showProduct | slice:0:5"
-  >
-    <img src="{{item.images}}" class="img-responsive" alt="Image">
-    <p class="nameProduct">{{item.title}}</p>
-    <p class="price">{{item.price}}đ</p>
-    <p class="priceOnline">99.999.000đ</p>
-    <p class="start">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
-    </p>
-    <p class="gifts">
-      <i class="fas fa-gifts"></i>
-    </p>
+<div *ngFor="let item of showProduct | slice:0:5">
+    <div class="rowProduct-box">
+      <img src="{{item.images}}" class="img-responsive" alt="Image">
+      <p class="nameProduct">{{item.title}}</p>
+      <p class="price">{{item.price}}đ</p>
+      <p class="priceOnline">99.999.000đ</p>
+      <p class="start">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </p>
+      <p class="gifts">
+        <i class="fas fa-gifts"></i>
+      </p>
+    </div>
   </div>
 </div>
