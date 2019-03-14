@@ -4,11 +4,13 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { IndexComponent } from './components/index/index.component';
-import { ListProductComponent } from './components/add-edit-del-Admin/list-product/list-product.component';
-import { EditProductComponent } from './components/add-edit-del-Admin/edit-product/edit-product.component';
-import { AddProductComponent } from './components/add-edit-del-Admin/add-product/add-product.component';
+import { ListProductComponent } from './components/admin/list-product/list-product.component';
+import { EditProductComponent } from './components/admin/edit-product/edit-product.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { ListProductDeactiveComponent } from './components/admin/list-product-deactive/list-product-deactive.component';
 import { Page404Component } from './components/page404/page404.component';
-import { ListProductDeactiveComponent } from './components/add-edit-del-Admin/list-product-deactive/list-product-deactive.component';
+import { DetailComponent } from './components/product/detail/detail.component';
+import { CartComponent } from './components/product/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -47,11 +49,26 @@ const routes: Routes = [
         }
       ]
   },
+  {
+    path: 'detail',
+    component: DetailComponent
+  },
+  {
+    path: 'detail/:id',
+    component: DetailComponent
+  },
+  { 
+    path: 'cart',
+    component: CartComponent
+  },
   { 
     path: '404', 
     component: Page404Component
   },
-  { path: '**', redirectTo: '/404'}
+  { 
+    path: '**', 
+    redirectTo: '/404'
+  }
 ];
 
 @NgModule({
@@ -61,6 +78,8 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routingModule = [
   IndexComponent,
+  DetailComponent,
+  CartComponent,
   UserComponent,
   AdminComponent,
   ListProductComponent,

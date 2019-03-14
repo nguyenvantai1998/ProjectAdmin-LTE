@@ -261,8 +261,12 @@ body{
 .rowTwo .rowTwo-left{ 
 	background-size: cover;
 }
+.rowTwo-right img{
+	max-height:180px;
+	min-height:180px;
+}
 .rowTwo-right .rowProduct-box{
-	padding:0 0.2%;
+	padding:0 0.5%;
 }
 .rowTwo-right .slick-prev,
 .rowTwo-right .slick-next{
@@ -278,61 +282,6 @@ body{
 .rowTwo-right:hover .slick-next{
 	display: block !important;
 }
-
-/* product */
-.rowProduct-box .nameProduct{
-	color: #333;
-    margin-top: 10px;
-    word-break: break-word;
-    font-family: Roboto,sans-serif;
-    font-size:14px;
-}
-.rowProduct-box .price, 
-.rowProduct-box .priceOnline{
-	font-weight:600;
-	color: #333;
-	font-size:16px;
-}
-.rowProduct-box .priceOnline{
-	font-size:13px;
-	color:red;
-}
-.rowTowProduct-box .price::after,
-.rowTowProduct-box .priceOnline::after{
-	content: ' (Giá bán lẻ)';
-	font-weight:500;
-	font-size:12px;
-	font-style:italic;
-}
-.rowProduct-box .priceOnline::after{
-	content: ' (Giá tốt Online)';
-}
-.rowProduct-box .start i{
-	color:#ffc120;
-}
-.rowProduct-box .gifts{
-	color:red;
-}
-.rowProduct-box .meter{
-	background-image: linear-gradient(-90deg, red, yellow);
-	border-radius:20px;
-	font-size:12px;
-	padding:2px 3%;
-}
-.rowProduct-box .meter i{
-	border: 1px solid white;
-	padding: 2px;
-	border-radius:50%;
-	background:white;
-	color:red;
-}
-.rowProduct-box .meter span{
-	text-transform: uppercase;
-	margin-left:0.5em;
-	color:white;
-}
-/* end product */
-
 
 /* row three */
 .rowThree{
@@ -374,6 +323,10 @@ body{
 .rowFour{
 	background: white;
 	padding-bottom:1em;
+}
+.rowFour img{
+	max-height:230px;
+	min-height:230px;
 }
 .rowFour .rowProduct-box{
 	padding:0 0.2%;
@@ -420,9 +373,14 @@ body{
 .rowFive{
 	display:flex;
 }
+.rowFive > div{
+	flex: 1;
+}
+.rowFive img{
+	max-height:230px;
+	min-height:230px;
+}
 .rowFive .rowProduct-box{
-	flex:1;
-	/* width:300px; */
 	padding:0 0.5% 1%;
 	background: white;
 }
@@ -447,6 +405,10 @@ body{
 .rowSix{
 	display:flex;
 	margin-top:0.3em;
+}
+.rowSix img{
+	max-height:230px;
+	min-height:230px;
 }
 .rowSix-left{
 	flex:1;
@@ -524,6 +486,10 @@ body{
 	margin-left:1em;
 }
 /* row seven */
+.rowSeven img{
+	max-height:230px;
+	min-height:230px;
+}
 .rowSeven .rowProduct-box{
 	padding:0 0.2% 1%;
 	background: #FFF;
@@ -838,3 +804,58 @@ h4{
 	line-height: 1;
 }
 /* -------------------------------------- end footer ---------------------------- */
+
+/* --------------------------------------- product ------------------------------ */
+.rowProduct-box .nameProduct{
+	color: #333;
+    margin-top: 10px;
+    word-break: break-word;
+    font-family: Roboto,sans-serif;
+    font-size:14px;
+}
+.rowProduct-box .price, 
+.rowProduct-box .priceOnline{
+	font-weight:600;
+	color: #333;
+	font-size:16px;
+}
+.rowProduct-box .priceOnline{
+	font-size:13px;
+	color:red;
+}
+.rowTowProduct-box .price::after,
+.rowTowProduct-box .priceOnline::after{
+	content: ' (Giá bán lẻ)';
+	font-weight:500;
+	font-size:12px;
+	font-style:italic;
+}
+.rowProduct-box .priceOnline::after{
+	content: ' (Giá tốt Online)';
+}
+.rowProduct-box .start i{
+	color:#ffc120;
+}
+.rowProduct-box .gifts{
+	color:red;
+}
+.rowProduct-box .meter{
+	background-image: linear-gradient(-90deg, red, yellow);
+	border-radius:10px;
+	padding:1px 1%;
+}
+.rowProduct-box .meter i{
+	border: 1px solid white;
+	/* padding: 2px; */
+	border-radius:50%;
+	background:white;
+	color:red;
+	font-size:12px;
+}
+.rowProduct-box .meter span{
+	text-transform: uppercase;
+	margin-left:0.5em;
+	color:white;
+	font-size:10px;
+}
+/* --------------------------------------- product ------------------------------ */

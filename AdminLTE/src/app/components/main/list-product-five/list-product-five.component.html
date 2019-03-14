@@ -2,6 +2,7 @@
     <div 
       class="rowProduct-box"
       *ngFor="let item of showProduct"
+      [routerLink]="['/detail', item.id]"
     >
       <img src="{{item.images}}" class="img-responsive" alt="Image">
       <p class="nameProduct">{{item.title}}</p>

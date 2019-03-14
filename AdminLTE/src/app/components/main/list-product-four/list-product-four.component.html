@@ -17,6 +17,7 @@
       <div 
         class="rowProduct-box"
         *ngFor="let item of showProduct | slice:0:4"
+        [routerLink]="['/detail', item.id]"
       >
         <img src="{{item.images}}" class="img-responsive" alt="Image">
         <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>

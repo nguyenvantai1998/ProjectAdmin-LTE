@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Products } from 'src/app/models/product.model';
 import { environment } from '@environments/environment.prod';
+import { ProductCart } from 'src/app/models/productCart.model';
 
 // url
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?is_active=1&limit=1000`;
@@ -37,6 +38,17 @@ export class ProductService {
   getAllProduct(): Observable<any> {
     return <Observable<any>>this.httpClient.get(urlgetAll);
   }
+
+  //get detail one product by id
+  getIdProductDetail(id: string): Observable<Products> {
+    return <Observable<Products>>this.httpClient.get(`${urlDetail}/${id}`);
+  }
+
+  //get cart index by id of product detail 
+  findProductCart(id: string): Observable<ProductCart>{
+    return <Observable<ProductCart>> this.httpClient.get(`${urlDetail}/${id}`);
+  }
+
   //all product deactive
   getAllProductDeactive(): Observable<Products> {
     return <Observable<Products>>this.httpClient.get(urlgetAllDeactive);
