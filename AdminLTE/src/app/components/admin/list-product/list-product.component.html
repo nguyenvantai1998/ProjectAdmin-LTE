@@ -46,7 +46,7 @@
   <!-- ./col -->
   <div class="col-lg-3 col-6">
     <!-- small box -->
-    <div class="small-box bg-danger"  [routerLink]="['/admin/add']">
+    <div class="small-box bg-danger" [routerLink]="['/admin/add']">
       <div class="inner">
         <h3>...</h3>
 
@@ -63,7 +63,7 @@
 <!-- /.row -->
 
 <!-- list product -->
-<table class="table table-hover">
+<table class="table table-hover text-center">
   <thead>
     <tr>
       <th>ID</th>
@@ -75,6 +75,7 @@
       <th>Active</th>
       <th>Category</th>
       <th>Discount</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -90,9 +91,7 @@
       <td>{{ item.discount }}</td>
       <td>
         <button type="button" class="btn btn-warning" [routerLink]="['/admin/edit',item.id]">Edit</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-danger" (click)="onDeactive(item.id)" >Deactive</button>
+        <button type="button" class="btn btn-danger" (click)="onDeactive(item.id)">Deactive</button>
       </td>
     </tr>
   </tbody>

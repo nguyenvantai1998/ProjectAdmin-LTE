@@ -1,3 +1,26 @@
+<h2>LIST PRODUCT DEACTIVE</h2>
+<div *ngIf="productView.length>0">
+<button type="button" class="btn btn-success" (click)="onActive(productView)">Active</button>
+<table class="table table-primary">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productView">
+        <td>{{ item._id }}</td>
+        <td>{{ item.title }}</td>
+        <td><button type="button" class="close" aria-label="Close" (click)="removeById(item._id)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -10,6 +33,7 @@
       <th>Active</th>
       <th>Category</th>
       <th>Discount</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +48,7 @@
         <td>{{ item.category }}</td>
         <td>{{ item.discount }}</td>
         <td>
-          <button type="button" class="btn btn-success" (click)="onActive(item.id)">Avtive</button>
+          <button type="button" class="btn btn-success" (click)="chooseActive(item.id)" [disabled]="showhiden(item.id, productView)"><div class="glyphicon glyphicon-ok"></div></button>
         </td>
     </tr>
   </tbody>

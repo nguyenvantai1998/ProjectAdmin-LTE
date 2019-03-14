@@ -18,7 +18,6 @@ export class ListProductFourComponent implements OnInit {
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      console.log(data.docs)
       this.showProduct = data.docs;
     })
   }

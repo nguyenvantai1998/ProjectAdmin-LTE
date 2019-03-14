@@ -21,12 +21,11 @@ export class ListProductOneComponent implements OnInit {
 
     setTimeout(() => {
       this.showSlider();
-    }, 1000);
+    }, 2000);
   }
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      console.log(data.docs)
       this.showProduct = data.docs;
     })
   }

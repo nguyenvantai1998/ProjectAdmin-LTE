@@ -1,34 +1,87 @@
+<div class="container">
+  <button type="button" class="btn btn-info btn-sm col-md-3" data-toggle="modal" data-target="#myModal">
+    Check cart <span>{{total}}</span>
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Photo</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Sub Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td align="center">
+                <a (click)="remove(item.productCart.id)">X</a>
+              </td>
+              <td>{{item.productCart._id}}</td>
+              <td>{{item.productCart.title}}</td>
+              <td>
+                <img src="{{item.productCart.images}}" width="50">
+              </td>
+              <td>{{item.productCart.price}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.productCart.price * item.quantity}}</td>
+            </tr>
+            <tr>
+              <td colspan="6" align="right">Total</td>
+              <td>{{total}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <br><br><br>
+
 <div class="container">
   <div class="panel panel-danger" *ngIf="showProduct">
-      <div class="panel-heading">
-        <h3 class="panel-title">Product Detail</h3>
+    <div class="panel-heading">
+      <h3 class="panel-title">Product Detail</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-6">
+
+        <img src="{{showProduct.images}}" class="img-responsive" alt="Image">
+
       </div>
-      <div class="panel-body">
-        <div class="col-md-6">
-   
-          <img src="{{showProduct.images}}" class="img-responsive" alt="Image">
-          
-         </div>
-         <div class="col-md-4">
-           <h3>Name Product: {{showProduct.title}}</h3>
-           <p>Quantity: {{showProduct.quantity}}</p>
-           <p>Discount: {{showProduct.discount}}</p>
-           <p>CreateAt: {{showProduct.createdAt}}</p>
-           <p>UpdateAt: {{showProduct.updatedAt}}</p>
-           <p>Price: {{showProduct.price}}</p>
-           <p>Price: {{showProduct.category}}</p>
-           <br>
-           <button 
-              type="button" 
-              class="btn btn-danger"
-              [routerLink]="['/cart', { id:showProduct._id }]"
-           >Add to cart</button>
-           <button type="button" class="btn btn-info" routerLink="/index">Back Home</button>
-         </div>
+      <div class="col-md-4">
+        <h3>Name Product: {{showProduct.title}}</h3>
+        <p>Quantity: {{showProduct.quantity}}</p>
+        <p>Discount: {{showProduct.discount}}</p>
+        <p>CreateAt: {{showProduct.createdAt}}</p>
+        <p>UpdateAt: {{showProduct.updatedAt}}</p>
+        <p>Price: {{showProduct.price}}</p>
+        <p>Price: {{showProduct.category}}</p>
+        <br>
+        <button type="button" class="btn btn-danger" (click)="addToCart(showProduct._id)">Add to cart</button>
+        <button type="button" class="btn btn-info" routerLink="/index">Back Home</button>
       </div>
+    </div>
   </div>
-  
+
 </div>
 
 <!-- [routerLink]="['/cart', { id:product.id }]" -->
