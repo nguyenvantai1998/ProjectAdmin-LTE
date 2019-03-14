@@ -22,7 +22,7 @@
            <button 
               type="button" 
               class="btn btn-danger"
-              [routerLink]="['/cart', { id:showProduct._id }]"
+              (click)="addToCart(showProduct._id)"
            >Add to cart</button>
            <button type="button" class="btn btn-info" routerLink="/index">Back Home</button>
          </div>

@@ -15,7 +15,8 @@ export class ListProductDeactiveComponent implements OnInit, OnDestroy {
   public subscription: Subscription;
   public subscriptionParams: Subscription;
   public productDeactive: Products= {};
-
+  public productView: Products[] =[];
+  productsTrail: any;
   constructor(
     private productService: ProductService,
     private router: Router
@@ -30,14 +31,50 @@ export class ListProductDeactiveComponent implements OnInit, OnDestroy {
       this.productDeactive = data;
     })
   }
+ //remove item 
+  removeById(_id: string){
+    
+    const remove = this.productView.findIndex((e: Products) =>
+      e['_id'] === _id
+    );
+    this.productView.splice(remove,1);
+    console.log(_id);
+   }
 
-  onActive(id:string) {
+  //choose product active
+  chooseActive(id:string) {
     this.subscriptionParams = this.productService.getIdProduct(id).subscribe((product: Products) => {
       this.product = product;
-      this.subscription = this.productService.activeProductService(this.product).subscribe(data => {
-        this.router.navigate(['/admin']);
-      })
+      this.productView.push(product);
+      this.showhiden(id, this.productView);
+      // localStorage.setItem('Cart',JSON.stringify(this.productView));
+
     })
+  }
+
+  showhiden(id: String , productView){
+    for(var i = 0 ; i < productView.length;i++)
+    {
+      if(productView[i]._id == id)
+      {
+           return true;
+      } else {
+        return false;
+      }
+    };
+  }
+
+  //Active product
+  onActive(productView) {
+    for(var i =0 ; i<this.productView.length;i++)
+    {
+    this.subscriptionParams = this.productService.getIdProduct(productView[i]._id).subscribe((product: Products) => {
+      this.product = product;
+      this.subscription = this.productService.activeProductService(this.product).subscribe(data => {
+      });
+    })
+  }
+  this.router.navigate(['/admin']);
   }
 
   ngOnDestroy(){
