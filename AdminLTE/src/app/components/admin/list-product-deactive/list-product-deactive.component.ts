@@ -52,16 +52,14 @@ export class ListProductDeactiveComponent implements OnInit, OnDestroy {
     })
   }
 
-  showhiden(id: String , productView){
-    for(var i = 0 ; i < productView.length;i++)
-    {
-      if(productView[i]._id == id)
-      {
-           return true;
-      } else {
-        return false;
+  showhiden(id: string, productView) {
+    var isDisable;
+    for (var i = 0; i < productView.length; i++) {
+      if (productView[i]._id == id) {
+        isDisable = true;
       }
     };
+    return isDisable;
   }
 
   //Active product
