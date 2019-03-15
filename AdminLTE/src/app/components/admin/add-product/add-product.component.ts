@@ -27,16 +27,7 @@ export class AddProductComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
-
-  // handleFileInput(file: FileList) {
-  //   this.fileToUpload = file.item(0);
-  //   var reader = new FileReader();
-  //   reader.onload = (event: any) => {
-  //     this.imageUrl = event.target.result;
-  //     this.product['images'] = this.imageUrl;
-  //   }
-  //   reader.readAsDataURL(this.fileToUpload);
-  // }
+  
   handleFileInput(event) {
     const oFReader = new FileReader();
     const image = event.target.files[0];

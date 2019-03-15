@@ -1,0 +1,99 @@
+<div class="main">
+  <div class="container-fluid">
+    <div class="row">
+    <button type="button" class="btn btn-info col-md-2 pull-right mb-5" routerLink="/admin/order">
+      <i class="fas fa-undo-alt"></i>
+      Back
+    </button>
+    </div>
+    <div class="row">
+      <h2 [class]="DetailOrder.status==comp?'text-success':'text-danger'"><span class="glyphicon glyphicon-exclamation-sign"></span> Status: {{DetailOrder.status}}</h2>
+    <!-- start bill -->
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="https://phongvu.vn/landing/wp-content/uploads/2018/01/Logo-01.png" style="width:100px; max-width:100px;">
+                            </td>
+                            
+                            <td>
+                                ID #: {{DetailOrder._id}}<br>
+                                Created: {{DetailOrder.createdAt|date}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                {{DetailOrder.buyer.name}}<br>
+                                {{DetailOrder.buyer.phone}}<br>
+                                {{DetailOrder.buyer.address}}
+                            </td>
+                            
+                            <td>
+                                PostCode:
+                                {{DetailOrder.buyer.postcode}}<br>
+                                {{DetailOrder.buyer.email}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td colspan="2">
+                    Description
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Note:
+                </td>
+                
+                <td>
+                    {{DetailOrder.description}}
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
+                
+                <td>
+                    Price
+                </td>
+            </tr>
+            
+            <tr class="item " *ngFor="let items of DetailOrder.products">
+                <td>
+                    {{items.title}} -- sku: {{items.sku}} -- Quality: {{items.quantity}}
+                </td>
+                
+                <td>
+                    {{items.price}}
+                </td>
+            </tr>
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                   Total: {{DetailOrder.total_amount|currency}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+      <!-- end bill -->
+    </div>

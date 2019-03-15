@@ -60,8 +60,26 @@
   <!-- ./col -->
 </div>
 <!-- /.row -->
-
-
+<div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+    <div class="card-header">CHECK STATUS </div>
+    <div class="card-body">
+        <form #checkForm="ngForm" (ngSubmit)="onCheck(checkForm)">
+            <div class="form-row">
+                <div class="col-12">
+                    <label>Check ID</label>
+                  </div>
+              <div class="col-7">
+                <input type="text" class="form-control bg-light" placeholder="Type Id..." name="IDPayment" ngModel #IDPay="ngModel" required>
+              </div>
+              <div class="col">
+                  <button class="btn btn-success"><div class="glyphicon glyphicon-ok"></div></button>
+              </div>
+            </div>
+          </form>
+    </div>
+  </div>
+  
+    <br/>
 <div class="row">
   <div class="col-md">
     <!-- list product -->
@@ -81,7 +99,7 @@
       <tbody>
         <tr *ngFor="let item of listOrder.docs">
           <td>{{item._id}}</td>
-          <td>{{item.status}}</td>
+          <td [class]="item.status==comp?'text-success':'text-danger'">{{item.status}}</td>
           <td>{{item.description}}</td>
           <td>
             <p>{{item.buyer.name}}</p>
@@ -91,7 +109,9 @@
             <p *ngFor="let items of item.products"> {{items}}</p>
           </td>
           <td>{{item.total_amount|currency}}</td>
-          <td><button type="button" class="btn btn-success"><div class="glyphicon glyphicon-ok"></div></button></td>
+          <td>
+            <!-- <button type="button" class="btn btn-success" (click)="onCheck(item._id) "><div class="glyphicon glyphicon-ok"></div></button><br/> -->
+            <button type="button" class="btn btn-primary" [routerLink]="['/admin/order/view/',item.id]"><div class="glyphicon glyphicon-search"></div></button></td>
         </tr>
       </tbody>
     </table><!-- list product -->

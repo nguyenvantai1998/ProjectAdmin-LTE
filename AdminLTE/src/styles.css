@@ -66,3 +66,7 @@
     cursor: pointer;
     outline: none;
 }
+/* Footer */
+.main-footer{
+    margin-top:10px;
+}

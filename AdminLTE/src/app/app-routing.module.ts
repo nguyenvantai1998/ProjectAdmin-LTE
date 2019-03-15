@@ -15,6 +15,7 @@ import { ListCategoryComponent } from './components/admin/list-category/list-cat
 import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
 import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
 import { ListOrderComponent } from './components/admin/list-order/list-order.component';
+import { DetailOrderComponent } from './components/admin/detail-order/detail-order.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
           path: 'order',
           component: ListOrderComponent
         },
+        { 
+          path: 'order/view/:id',
+          component: DetailOrderComponent
+        },
       ]
   },
   {
@@ -107,5 +112,6 @@ export const routingModule = [
   EditProductComponent,
   AddProductComponent,
   Page404Component,
-  ListOrderComponent
+  ListOrderComponent,
+  DetailOrderComponent
 ]
