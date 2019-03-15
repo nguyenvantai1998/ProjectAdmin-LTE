@@ -73,6 +73,7 @@ export class ListCategoryComponent implements OnInit, OnDestroy {
     
     this.subscription = this.categoryService.getIdCategoryDetail(id).subscribe((data) => {
       this.categoryLoadEdit = data;
+      console.log(data);
     })
   }
 

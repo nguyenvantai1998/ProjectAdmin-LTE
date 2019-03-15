@@ -42,8 +42,8 @@ export class CategoryService {
   }
 
   //add category
-  addCategoryService(category: Category): Observable<Category[]> {
-    return <Observable<Category[]>>this.httpClient.post(urlAddCaterogy, category, { headers: this.headers });
+  addCategoryService(category: Category): Observable<Category> {
+    return <Observable<Category>>this.httpClient.post(urlAddCaterogy, category, { headers: this.headers });
   }
 
   //edit category

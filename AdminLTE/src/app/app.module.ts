@@ -26,6 +26,7 @@ import { BannerSliderComponent } from './components/main/banner-slider/banner-sl
 import { ListCategoryComponent } from './components/admin/list-category/list-category.component';
 import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
 import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
+import { ListOrderComponent } from './components/admin/list-order/list-order.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { EditCategoryComponent } from './components/admin/edit-category/edit-cat
     BannerSliderComponent,
     ListCategoryComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    ListOrderComponent
   ],
   imports: [
     BrowserModule,
