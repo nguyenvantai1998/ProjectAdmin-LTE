@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="container-fluid">
+    <button type="button" class="btn btn-info col-md-2 pull-right" routerLink="/admin"><i class="fas fa-undo-alt"></i>
+      Back admin</button>
+    <div class="signup-content">
+      <form id="signup-form" class="signup-form" #frmAddCategory="ngForm" (ngSubmit)="onSubmit(frmAddCategory)">
+        <h2 class="form-title">ADD PRODUCT</h2>
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="">Name Category</label>
+              <input type="text" class="form-input" name="txtName" [(ngModel)]="category.name" #name="ngModel"
+                required />
+              <span class="label label-danger"
+                *ngIf="(frmAddProduct.submitted && name.pristine) || (name.touched && name.error?.required)">
+                Name category is required!!
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="">CreatedAt</label>
+              <input type="text" class="form-input" name="day" disabled [(ngModel)]="jstoday">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+              <button type="submit" class="form-submit btn-block">ADD</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

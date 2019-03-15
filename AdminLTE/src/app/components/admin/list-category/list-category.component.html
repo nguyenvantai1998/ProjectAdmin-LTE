@@ -1,0 +1,158 @@
+<!-- Small boxes (Stat box) -->
+<div class="row">
+  <div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box bg-info" routerLink="/index">
+      <div class="inner">
+        <h3>...</h3>
+        <p>Home</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-home"></i>
+      </div>
+      <a href="" class="small-box-footer"><i class="fas fa-undo-alt"></i> Back home</a>
+    </div>
+  </div>
+  <!-- ./col -->
+  <div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box bg-success">
+      <div class="inner">
+        <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+        <p>Bounce Rate</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-stats-bars"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+  <!-- ./col -->
+  <div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box bg-warning">
+      <div class="inner">
+        <h3>44</h3>
+
+        <p>User Registrations</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-person-add"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+  <!-- ./col -->
+  <div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box bg-danger" (click)="loadCategoryAdd()">
+      <div class="inner">
+        <h3>...</h3>
+        <p>Add Category</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-plus"></i>
+      </div>
+      <a class="small-box-footer">Add now... <i class="fas fa-plus"></i></a>
+    </div>
+  </div>
+  <!-- ./col -->
+</div>
+<!-- /.row -->
+
+
+<div class="row">
+  <div class="col-md">
+    <!-- list product -->
+    <h2 class="form-title">List Category</h2>
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Active</th>
+          <th>Sub_Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of category">
+          <td>{{ item._id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.is_active }}</td>
+          <td>{{ item.sub_category.length }}</td>
+          <td>
+            <button type="button" class="btn btn-warning" (click)="loadCategoryEdit(item._id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="onDeactive(item.id)">Deactive</button>
+          </td>
+        </tr>
+      </tbody>
+    </table><!-- list product -->
+  </div>
+  <!-- add -->
+  <div class="col-md" *ngIf="isShowAdd">
+    <div class="main">
+      <div class="container-fluid">
+        <div class="signup-content">
+          <form id="signup-form" class="signup-form" #frmAddCategory="ngForm" (ngSubmit)="onSubmitAdd(frmAddCategory)">
+            <h2 class="form-title">Add Category</h2>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label for="">Name Category</label>
+                  <input type="text" class="form-control" name="txtName" [(ngModel)]="categoryAdd.name" #name="ngModel"
+                    required />
+                  <span class="label label-danger"
+                    *ngIf="(frmAddCategory.submitted && name.pristine) || (name.touched && name.error?.required)">
+                    Name is required!!
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label for="">CreatedAt</label>
+                  <input type="text" class="form-control" name="day" disabled [(ngModel)]="jstoday">
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <button type="submit" class="form-submit btn-block">Add</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- edit -->
+  <div class="col-md" *ngIf="isShowEdit">
+    <div class="main">
+      <div class="container-fluid">
+        <div class="signup-content">
+          <form id="signup-form" class="signup-form" #frmEditCategory="ngForm"
+            (ngSubmit)="onSubmitEdit(frmEditCategory)">
+            <h2 class="form-title">Edit Category</h2>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label for="">Name Category</label>
+                  <input type="text" class="form-control" name="txtName" [(ngModel)]="categoryLoadEdit.name"
+                    #name="ngModel" required />
+                </div>
+                <div class="form-group">
+                  <label for="">UpdatedAt</label>
+                  <input type="text" class="form-control" name="day" disabled [(ngModel)]="jstoday">
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                  <button type="submit" class="form-submit btn-block">Edit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,9 @@ import { ListProductDeactiveComponent } from './components/admin/list-product-de
 import { Page404Component } from './components/page404/page404.component';
 import { DetailComponent } from './components/product/detail/detail.component';
 import { CartComponent } from './components/product/cart/cart.component';
+import { ListCategoryComponent } from './components/admin/list-category/list-category.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
 
 const routes: Routes = [
   {
@@ -46,7 +49,19 @@ const routes: Routes = [
         { 
           path: 'edit/:id',
           component: EditProductComponent
-        }
+        },
+        {
+          path:'category',
+          component: ListCategoryComponent
+        },
+        { 
+          path: 'category/add',
+          component: AddCategoryComponent
+        },
+        { 
+          path: 'category/edit/:id',
+          component: EditCategoryComponent
+        },
       ]
   },
   {

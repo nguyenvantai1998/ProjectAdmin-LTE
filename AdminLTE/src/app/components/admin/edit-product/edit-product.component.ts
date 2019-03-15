@@ -32,17 +32,6 @@ export class EditProductComponent implements OnInit {
     this.jstoday = formatDate(this.today, 'yyyy-MM-ddThh:mm:ss', 'en-VI', '+0700');
   }
 
-  // handleFileInput(event) {
-  //   this.fileToUpload = event.target.files[0];
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(this.fileToUpload);
-  //   reader.onload = (event: any) => {
-  //     this.imageUrl = event.target.result;
-  //     this.product['images'] = this.imageUrl;
-  //     console.log(this.imageUrl)
-  //   }
-  // }
-
   handleFileInput(event) {
     const oFReader = new FileReader();
     const image = event.target.files[0];
@@ -68,8 +57,8 @@ export class EditProductComponent implements OnInit {
     })
   }
 
-  onSubmit(frmAddProduct) {
-    if (frmAddProduct.valid) {
+  onSubmit(frmEditProduct) {
+    if (frmEditProduct.valid) {
       this.onEditProduct();
     }
     else {

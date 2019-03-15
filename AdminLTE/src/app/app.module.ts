@@ -23,6 +23,9 @@ import { ListProductThreeComponent } from './components/main/list-product-three/
 import { ListProductFourComponent } from './components/main/list-product-four/list-product-four.component';
 import { ListProductFiveComponent } from './components/main/list-product-five/list-product-five.component';
 import { BannerSliderComponent } from './components/main/banner-slider/banner-slider.component';
+import { ListCategoryComponent } from './components/admin/list-category/list-category.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { BannerSliderComponent } from './components/main/banner-slider/banner-sl
     ListProductThreeComponent,
     ListProductFourComponent,
     ListProductFiveComponent,
-    BannerSliderComponent
+    BannerSliderComponent,
+    ListCategoryComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,

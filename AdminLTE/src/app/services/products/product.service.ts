@@ -44,11 +44,6 @@ export class ProductService {
     return <Observable<Products>>this.httpClient.get(`${urlDetail}/${id}`);
   }
 
-  //get cart index by id of product detail 
-  findProductCart(id: string): Observable<ProductCart>{
-    return <Observable<ProductCart>> this.httpClient.get(`${urlDetail}/${id}`);
-  }
-
   //all product deactive
   getAllProductDeactive(): Observable<Products> {
     return <Observable<Products>>this.httpClient.get(urlgetAllDeactive);
