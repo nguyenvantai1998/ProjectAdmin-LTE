@@ -60,30 +60,10 @@
   <!-- ./col -->
 </div>
 <!-- /.row -->
-<div class="card text-white bg-primary mb-3" style="max-width: 100%;">
-    <div class="card-header">CHECK STATUS </div>
-    <div class="card-body">
-        <form #checkForm="ngForm" (ngSubmit)="onCheck(checkForm)">
-            <div class="form-row">
-                <div class="col-12">
-                    <label>Check ID</label>
-                  </div>
-              <div class="col-7">
-                <input type="text" class="form-control bg-light" placeholder="Type Id..." name="IDPayment" ngModel #IDPay="ngModel" required>
-              </div>
-              <div class="col">
-                  <button class="btn btn-success"><div class="glyphicon glyphicon-ok"></div></button>
-              </div>
-            </div>
-          </form>
-    </div>
-  </div>
-  
-    <br/>
+
 <div class="row">
   <div class="col-md">
-    <!-- list product -->
-    <h2 class="form-title">List Order</h2>
+    <!-- list Order -->
     <table class="table table-hover text-center">
       <thead>
         <tr>
@@ -99,7 +79,8 @@
       <tbody>
         <tr *ngFor="let item of listOrder.docs">
           <td>{{item._id}}</td>
-          <td [class]="item.status==comp?'text-success':'text-danger'">{{item.status}}</td>
+          <td><button type="button" class="btn btn-success" (click)="onCheckComplete(item._id)" [disabled]="onSuccess(item.status)">SUCCESS</button>
+              <button type="button" class="btn btn-danger" (click)="onCheckPending(item._id)"[disabled]="!onSuccess(item.status)">PENDING</button></td>
           <td>{{item.description}}</td>
           <td>
             <p>{{item.buyer.name}}</p>

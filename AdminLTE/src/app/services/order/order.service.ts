@@ -8,14 +8,15 @@ import Swal from 'sweetalert2';
 // url
 const urlgetListOrder = `${environment.apiPV}/api/v1/orders/list?limit=100`;
 const urlDetailOrder = `${environment.apiPV}/api/v1/orders/details`;
-const urlCheckOrder = `${environment.apiPV}/api/v1/orders/check-status`;
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
   public headers: HttpHeaders;
+  public headers2: HttpHeaders;
   constructor(private httpClient: HttpClient) { 
     this.headers = this.setHeaders();
+    this.headers2 = this.setHeaders2();
   }
   setHeaders(): HttpHeaders {
     const header = new HttpHeaders();
@@ -24,6 +25,14 @@ export class OrderService {
       return header.set('Content-Type', 'application/json');
     }
     return header.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
+  }
+  setHeaders2(): HttpHeaders {
+    const header2 = new HttpHeaders();
+    const token: string = localStorage.getItem('userToken');
+    if (!token) {
+      return header2.set('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    return header2.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
   }
 
   //all product
@@ -35,28 +44,14 @@ export class OrderService {
     return <Observable<Order>>this.httpClient.get(`${urlDetailOrder}/${id}`,{ headers: this.headers });
   }
 
-  checkOrder(order: Order): Observable<Order> {
-    return <Observable<Order>>this.httpClient.post(`${urlCheckOrder}/${order['_id']}`,order, { headers: this.headers })
-    .pipe(map(rer => rer), catchError(error => this.errorHandler(error)));
-  }
-  private errorHandler(error: HttpErrorResponse): Observable<any> {
-    console.log(error);
-    if (error.status >= 500) {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: '500 Internal Server Error, please try agian later!',
-        footer: '<a href>Why do I have this issue?</a>'
-      });
-    } else if (error.status === 401 && error.statusText === 'UNAUTHORIZED') {
-      localStorage.removeItem('userToken');
-    } else {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Email or password is wrong!',
-      });
-    }
-    return throwError(error);
+  checkOrder(body, id: string): Observable<any> {
+    const urlCheckOrder = `${environment.apiPV}/api/v1/orders/check-status/${id}`;
+    // console.log(order['status']);
+    return this.httpClient.post<any>(urlCheckOrder,body, { headers: this.headers2 })
+    .pipe(
+      map(data=>data),
+      catchError(error => error)
+
+    );
   }
 }

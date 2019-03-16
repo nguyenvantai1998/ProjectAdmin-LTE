@@ -14,6 +14,9 @@ export class ListOrderComponent implements OnInit, OnDestroy {
   public subscription: Subscription;
   public subscriptionParams: Subscription;
   comp = "SUCCESS";
+  orderComplete = {"status": "success"}
+  orderWait = {"status": "pending"}
+  ;
   constructor(
     private orderService: OrderService,
     private router: Router
@@ -26,24 +29,34 @@ export class ListOrderComponent implements OnInit, OnDestroy {
       this.listOrder = data;
     })
   }
-
-  onCheck(checkForm) {
-    if (checkForm.valid) {
-      this.subscriptionParams = this.orderService.getIdOrderDetail(checkForm.controls.IDPayment.value).subscribe((order: Order) => {
-        this.listOrder = order;
-        console.log(this.listOrder)
-        this.subscription = this.orderService.checkOrder(this.listOrder).subscribe(data => {
-          console.log(data);
-          this.loadOrderList();
-        })
-      })
-    } else {
-      Swal.fire({
-        type: 'error',
-        title: "ID Empty !",
-      })
-
+ 
+  onSuccess(stt: string){
+    if(stt=="SUCCESS"){
+      return true;
+    }else {
+     return false;
     }
+  }
+
+  onCheckComplete(id: string) {
+    console.log(id);
+    console.log(this.listOrder);
+    this.orderService.checkOrder(this.orderComplete,id).subscribe(data=>{
+      console.log(data);
+      this.loadOrderList();
+    },error=>{
+      console.log(error);
+    })
+  }
+  onCheckPending(id: string) {
+    console.log(id);
+    console.log(this.listOrder);
+    this.orderService.checkOrder(this.orderWait,id).subscribe(data=>{
+      console.log(data);
+      this.loadOrderList();
+    },error=>{
+      console.log(error);
+    })
   }
   ngOnDestroy() {
     if (this.subscription) {
