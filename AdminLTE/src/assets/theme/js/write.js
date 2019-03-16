@@ -21,6 +21,9 @@ $(document).ready(function () {
     }
   }
 
+  $('#showNavList').click(function(){
+    alert('sss')
+  })
 
 })
 

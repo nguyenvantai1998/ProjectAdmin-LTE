@@ -1,87 +1,159 @@
-<div class="container">
-  <button type="button" class="btn btn-info btn-sm col-md-3" data-toggle="modal" data-target="#myModal">
-    Check cart <span>{{total}}</span>
-  </button>
-</div>
+<!-- headerDetail -->
+<div id="headerDetail">
+    <app-header></app-header>
+</div><!-- /headerDetail -->
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Option</th>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Photo</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Sub Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of items">
-              <td align="center">
-                <a (click)="remove(item.productCart.id)">X</a>
-              </td>
-              <td>{{item.productCart._id}}</td>
-              <td>{{item.productCart.title}}</td>
-              <td>
-                <img src="{{item.productCart.images}}" width="50">
-              </td>
-              <td>{{item.productCart.price}}</td>
-              <td>{{item.quantity}}</td>
-              <td>{{item.productCart.price * item.quantity}}</td>
-            </tr>
-            <tr>
-              <td colspan="6" align="right">Total</td>
-              <td>{{total}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+<!-- main -->
+<div id="main">
+  <div class="container">
+    <div class="rowTitleLink-detail">
+      <a routerLink="/index">Trang chủ</a> / <a>chi tiết sản phẩm</a>
     </div>
-  </div>
-</div>
-
-
-<br><br><br>
-
-<div class="container">
-  <div class="panel panel-danger" *ngIf="showProduct">
-    <div class="panel-heading">
-      <h3 class="panel-title">Product Detail</h3>
-    </div>
-    <div class="panel-body">
-      <div class="col-md-6">
-
+    
+    <!-- row product detail -->
+    <div class="container-fluid rowProductDetail" *ngIf="showProduct">
+      <div class="col-md-4 rowProductDetail-left">
         <img src="{{showProduct.images}}" class="img-responsive" alt="Image">
 
+        <div class="descriptionDetailProduct">
+          <h3>Mô tả</h3>
+          <h4>Tên sản phẩm: {{showProduct.title}}</h4>
+          <p>
+            - Kích thước: 49" 
+            - Độ phân giải: 1920 x 1080 ( Full HD ) 
+            - Hệ điều hành: Android 
+            - Kết nối mạng: LAN; WiFi 
+            - Cổng xuất hình: 4 x HDMI
+          </p>	
+        </div>
       </div>
-      <div class="col-md-4">
-        <h3>Name Product: {{showProduct.title}}</h3>
-        <p>Quantity: {{showProduct.quantity}}</p>
-        <p>Discount: {{showProduct.discount}}</p>
-        <p>CreateAt: {{showProduct.createdAt}}</p>
-        <p>UpdateAt: {{showProduct.updatedAt}}</p>
-        <p>Price: {{showProduct.price}}</p>
-        <p>Price: {{showProduct.category}}</p>
-        <br>
-        <button type="button" class="btn btn-danger" (click)="addToCart(showProduct._id)">Add to cart</button>
-        <button type="button" class="btn btn-info" routerLink="/index">Back Home</button>
+      
+      <div class="col-md-8 rowProductDetail-right">
+        <div class="rowDetail-1">
+          <h2>{{showProduct.title}}</h2>
+          <p>SKU: {{showProduct.sku}}</p>
+          <div class="evaluate">
+            <span>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </span>
+            <span>5</span>
+            <span>
+              <button type="button" class="btn btn-default">Xem đánh giá</button>
+            </span>
+          </div>
+        </div>
+
+        <div class="container-fluid rowDetail-2">
+          <div class="col-md-4">
+            <div class="flash-sale">
+              <div>
+                <i class="fas fa-fire"></i>
+              </div>
+              <div>{{showProduct.status}}</div>
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <div class="meter">
+              <i class="fas fa-carrot"></i>
+              <span>Còn lại: {{showProduct.quantity}}</span>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            Thời gian còn lại: {{showProduct.updatedAt - showProduct.createdAt}} ngày
+          </div>
+        </div>
+
+        <div class="rowDetail-3">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="col-md-3">Giá bán lẻ</td>
+                <td><a href="">{{showProduct.price}}đ</a></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">Giá Flash Sale</td>
+                <td><a href="">13.590.000đ</a></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">Giá tốt Online</td>
+                <td><a href="">13.090.000đ</a></td>
+              </tr>
+              <tr>
+                <td>Khuyến mãi</td>
+                <td>
+                  <span>-5%</span>
+                </td>
+                <td>
+                  Giảm thêm 10% tối đa 200K khi nhập mã VNPAY10 hoặc 5% tối đa 500K khi nhập mã VNPAYQR5 <a href="">Xem chi tiết tại đây</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Vận chuyển</td>
+                <td>
+                  <span><i class="fas fa-shipping-fast"></i></span>
+                </td>
+                <td>
+                  Miễn phí vận chuyển(với đơn hàng trên 500.000đ)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rowDetail-4">
+          <button type="button" class="btn btn-danger btn-muaNgay">Mua ngay</button>
+          <button 
+            type="button" 
+            class="btn btn-default btn-addToCart" 
+            (click)="addToCart(showProduct._id)"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            Thêm vào giỏ hàng
+          </button>
+          <button type="button" class="btn btn-default pull-right btn-chatNgay">
+            <i class="far fa-comment-dots"></i>
+            Chat ngay
+          </button>
+        </div>
+
+        <div class="rowDetail-5">
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active col-md-4">
+                <a href="#khuyenmai" aria-controls="home" role="tab" data-toggle="tab">Khuyến mãi hấp dẫn</a>
+              </li>
+              <li role="presentation" class="col-md-4">
+                <a href="#thuonghieu" aria-controls="tab" role="tab" data-toggle="tab">Thương hiệu</a>
+              </li>
+              <li role="presentation" class="col-md-4">
+                <a href="#danhgia" aria-controls="tab" role="tab" data-toggle="tab">Đánh giá & Bình luận</a>
+              </li>
+            </ul>
+          
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="khuyenmai">
+                <h5>Quà tặng kèm khi mua sản phẩm:</h5>
+                <p>Khung mâm nghiêng từ 37" - 65" M65N</p>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="thuonghieu">
+                <h5>Giới thiệu về Sony</h5>
+                <p>Sony được thành lập từ những năm 1946 tại Nhật Bản. Sony là một trong những thương hiệu toàn cầu nổi tiếng nhất về điện tử tiêu dùng nhờ vào những sáng tạo đột phá mang tính cách mạng và chất lượng sản phẩm. Các sản phẩm của Sony nổi bật như: Tivi, laptop ,tai nghe, loa,.. kết hợp giữa chất lượng sản phẩm-công nghệ hàng đầu, kiểu dáng thiết kế độc đáo luôn chiếm trọn lòng tin của người dùng. Xem các sản phẩm khác của Sony</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </div><!-- /row product detail -->
   </div>
+</div><!-- /main -->
 
-</div>
 
-<!-- [routerLink]="['/cart', { id:product.id }]" -->
+<app-footer></app-footer>

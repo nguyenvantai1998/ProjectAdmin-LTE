@@ -1,3 +1,64 @@
-<p>
-  cart works!
-</p>
+<app-header></app-header>
+
+<!-- main -->
+<div id="main">
+  <div class="container">
+    <div class="rowTitleLink-detail">
+      <a routerLink="/index">Trang chủ</a> / <a>Chi tiết sản phẩm </a> / <a>Check cart</a>
+    </div>
+
+
+    <!-- check add to cart -->
+    <div class="checkAddToCart" *ngIf="checkCartNull; else showCheckNull">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td align="center">
+              <button 
+                type="button" 
+                class="btn btn-danger"
+                (click)="remove(item.productCart.id)"
+              >X
+              </button>
+              
+            </td>
+            <td>{{ item.productCart._id }}</td>
+            <td>{{ item.productCart.title }}</td>
+            <td>
+              <img src="{{ item.productCart.images }}" width="50">
+            </td>
+            <td>{{ item.productCart.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.productCart.price * item.quantity | currency:' ':'symbol':'2.3-6' }}</td>
+          </tr>
+          <tr>
+            <td colspan="6" align="right">Total</td>
+            <td>{{total | currency:' ':'symbol':'2.3-6' }} Đồng</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #showCheckNull>
+      Bạn chưa thêm sản phẩm nào vào cart
+
+      <button type="button" class="btn btn-default" routerLink="/index">Back to home</button>
+
+    </ng-template>
+    <!-- /check add to cart -->
+
+  </div>
+</div><!-- /main -->
+
+<app-footer></app-footer>

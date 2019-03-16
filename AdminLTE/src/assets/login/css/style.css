@@ -5,7 +5,7 @@
     background-size: cover;
     font-family: 'Raleway', sans-serif;
 }
-h1 {
+#bg-login h1 {
     margin: 0;
     color: #ffffff;
     text-align: center;
@@ -15,7 +15,7 @@ h1 {
     padding: 50px 0;
 }
 
-h2 {
+#bg-login h2 {
     margin: 0;
     color: #fc3955;
     font-size: 25px;
@@ -25,14 +25,14 @@ h2 {
     padding-bottom: 30px;
 }
 
-p.w3l-register-p {
+#bg-login p.w3l-register-p {
     color: #eee;
     font-size: 13px;
     text-align: center;
     margin-top: 2em;
 }
 
-.w3l-login-form {
+#bg-login .w3l-login-form {
     /* background: rgba(0, 0, 0, 0.4117647058823529); */
     max-width: 500px;
     margin: 0 auto;
@@ -41,23 +41,23 @@ p.w3l-register-p {
     box-sizing: border-box;
 }
 
-.group {
+#bg-login .group {
     display: flex;
     padding: 15px 5px;
     background-color: #ffffff;
 }
 
-.group i {
+#bg-login .group i {
     color: #fc3955;
     font-size: 20px;
     padding: 0 10px;
 }
 
-.w3l-form-group {
+#bg-login .w3l-form-group {
     margin: 20px 0;
 }
 
-.w3l-form-group label {
+#bg-login .w3l-form-group label {
     display: block;
     text-transform: uppercase;
     font-size: 13px;
@@ -67,8 +67,8 @@ p.w3l-register-p {
     font-style: italic;
 }
 
-input[type="text"],
-input[type="password"] {
+#bg-login input[type="text"],
+#bg-login input[type="password"] {
     width: 100%;
     border: none;
     box-sizing: border-box;
@@ -76,12 +76,12 @@ input[type="password"] {
     color: #000;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+#bg-login input[type="text"]:focus,
+#bg-login input[type="password"]:focus {
     outline: none;
 }
 
-button {
+#bg-login button {
     background: #fc3955;
     color: #ffffff;
     font-size: 13px;
@@ -94,51 +94,51 @@ button {
     border-radius: 6px;
 }
 
-button:hover {
+#bg-login button:hover {
     background-color: #00BCD4;
     transition-duration: 5s;
 }
 
-.forgot {
+#bg-login .forgot {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-a {
+#bg-login a {
     color: #eee;
     font-size: 14px;
     text-decoration: none;
 }
 
-.forgot p {
+#bg-login.forgot p {
     color: #ffffff;
     text-align: center;
     margin: 0px;
 	font-size: 13px;
 }
 
-.register {
+#bg-login .register {
     color: #00BCD4;
     text-decoration: none;
 }
 
 /*--footer--*/
 
-p.copyright-agileinfo {
+#bg-login p.copyright-agileinfo {
     font-size: 15px;
     letter-spacing: 2px;
     color: #fff;
     font-weight: 300;
 }
 
-footer p a {
+#bg-login footer p a {
     display: inline-block;
     color: #fff;
     text-decoration: underline;
 }
 
-footer p a:hover {
+#bg-login footer p a:hover {
     color: #fff;
     text-decoration: none;
     -webkit-transition: 0.5s all;
@@ -148,7 +148,7 @@ footer p a:hover {
     transition: 0.5s all;
 }
 
-footer {
+#bg-login footer {
     padding: 4em 0;
     text-align: center;
 }
@@ -157,31 +157,31 @@ footer {
 /*-- /responsive design --*/
 
 @media(max-width:768px) {
-    h1 {
+    #bg-login h1 {
         font-size: 47px;
     }
 }
 
 @media(max-width:667px) {
-    h1 {
+    #bg-login h1 {
         font-size: 45px;
     }
 }
 
 @media(max-width:640px) {
-    p.copyright-agileinfo {
+    #bg-login p.copyright-agileinfo {
         letter-spacing: 1px;
     }
-    h1 {
+    #bg-login h1 {
         font-size: 43px;
     }
 }
 
 @media(max-width:568px) {
-    h1 {
+    #bg-login h1 {
         font-size: 40px;
     }
-    p.copyright-agileinfo {
+    #bg-login p.copyright-agileinfo {
         font-size: 14px;
     }
 }
@@ -190,34 +190,34 @@ footer {
     .w3l-login-form {
     margin: 0 3vw;
 }
-    h1 {
+    #bg-login h1 {
         font-size: 38px;
     }
-    p.copyright-agileinfo {
+    #bg-login p.copyright-agileinfo {
         line-height: 1.8em;
     }
 }
 
 @media(max-width:414px) {
-    h1 {
+    #bg-login h1 {
         font-size: 34px;
     }
 }
 
 @media(max-width:384px) {
-    h1 {
+    #bg-login h1 {
         font-size: 30px;
     }
 }
 
 @media(max-width:320px) {
-    h1 {
+    #bg-login h1 {
         font-size: 25px;
     }
-    .forgot p {
+    #bg-login .forgot p {
         text-align: left;
     }
-    .forgot {
+    #bg-login .forgot {
         display: block;
     }
 }

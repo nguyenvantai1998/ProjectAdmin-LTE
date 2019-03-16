@@ -5,19 +5,18 @@ import { Products } from 'src/app/models/product.model';
 import { Subscription } from 'rxjs';
 import { ItemCart } from 'src/app/models/itemCart.model';
 
+declare var $;
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit, OnDestroy {
-
   public subScriptionParam: Subscription;
   public subScription: Subscription;
   public showProduct: {};
-  public productView: Products[] = [];
   private items: ItemCart[] = [];
-  private total: number = 0;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -53,7 +52,6 @@ export class DetailComponent implements OnInit, OnDestroy {
         let cart = [];
         cart.push(JSON.stringify(item));
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log(localStorage.getItem('cart'));
       } else {
         let cart: any = JSON.parse(localStorage.getItem('cart'));
         let index: number = -1;
@@ -74,40 +72,9 @@ export class DetailComponent implements OnInit, OnDestroy {
           localStorage.setItem("cart", JSON.stringify(cart));
         }
       }
-      this.loadCart();
-    } else {
-      this.loadCart();
+      // console.log(item)
     }
-  }
-
-  loadCart(): void {
-    this.total = 0;
-    this.items = [];
-    let cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart);
-    for (var i = 0; i < cart.length; i++) {
-      let item = JSON.parse(cart[i]);
-      console.log(item)
-      this.items.push({
-        productCart: item.productCart,
-        quantity: item.quantity
-      });
-      this.total += item.productCart.price * item.quantity;
-    }
-  }
-
-  remove(id: string): void {
-    let cart: any = JSON.parse(localStorage.getItem('cart'));
-    let index: number = -1;
-    for (var i = 0; i < cart.length; i++) {
-      let item: ItemCart = JSON.parse(cart[i]);
-      if (item.productCart.id == id) {
-        cart.splice(i, 1);
-        break;
-      }
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    this.loadCart();
+    $(window)[0].$(location).get(0).reload();
   }
 
 
