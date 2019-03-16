@@ -1,3 +1,32 @@
-<p>
-  edit-category works!
-</p>
+<div class="col-md">
+  <div class="main">
+    <div class="container-fluid">
+      <div class="signup-content">
+        <form id="signup-form" class="signup-form" [formGroup]="frmEditCategory" (ngSubmit)="onSubmitEdit()">
+          <h2 class="form-title">Edit Category</h2>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="">Name Category</label>
+                <input type="text" class="form-control" formControlName="namecategory" [(ngModel)]="category.name" />
+              </div>
+              <div class="form-group">
+                  <label>SubCategory</label>
+                  <tag-input [(ngModel)]="category.sub_category" formControlName="subcategory" [identifyBy]="'name'"
+                    [displayBy]="'name'" [editable]='true'>
+                    <tag-input-dropdown>
+                    </tag-input-dropdown>
+                  </tag-input>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <button type="submit" class="form-submit btn-block">Edit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

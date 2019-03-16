@@ -16,6 +16,7 @@ import { AddCategoryComponent } from './components/admin/add-category/add-catego
 import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
 import { ListOrderComponent } from './components/admin/list-order/list-order.component';
 import { DetailOrderComponent } from './components/admin/detail-order/detail-order.component';
+import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,10 @@ const routes: Routes = [
           path: 'order/view/:id',
           component: DetailOrderComponent
         },
+        { 
+          path: 'upload', 
+          component: UploadImageComponent
+        },
       ]
   },
   {
@@ -94,6 +99,7 @@ const routes: Routes = [
     path: '**', 
     redirectTo: '/404'
   }
+  
 ];
 
 @NgModule({
@@ -113,5 +119,6 @@ export const routingModule = [
   AddProductComponent,
   Page404Component,
   ListOrderComponent,
-  DetailOrderComponent
+  DetailOrderComponent,
+  UploadImageComponent
 ]

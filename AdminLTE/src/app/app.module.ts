@@ -4,8 +4,10 @@ import { AppComponent } from './app.component';
 //Module
 import { AppRoutingModule, routingModule } from './app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Form
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 //service
 import { AuthGuard } from './services/auth-token-login/auth-login.guard';
@@ -28,6 +30,7 @@ import { AddCategoryComponent } from './components/admin/add-category/add-catego
 import { EditCategoryComponent } from './components/admin/edit-category/edit-category.component';
 import { ListOrderComponent } from './components/admin/list-order/list-order.component';
 import { DetailOrderComponent } from './components/admin/detail-order/detail-order.component';
+import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
 
 
 @NgModule({
@@ -48,14 +51,18 @@ import { DetailOrderComponent } from './components/admin/detail-order/detail-ord
     AddCategoryComponent,
     EditCategoryComponent,
     ListOrderComponent,
-    DetailOrderComponent
+    DetailOrderComponent,
+    UploadImageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,
