@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Order } from 'src/app/models/order.model';
 import { environment } from '@environments/environment.prod';
 import { map, catchError } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { Order } from 'src/app/models/order.model';
 // url
 const urlgetListOrder = `${environment.apiPV}/api/v1/orders/list?limit=100`;
 const urlDetailOrder = `${environment.apiPV}/api/v1/orders/details`;
@@ -40,7 +40,7 @@ export class OrderService {
     return <Observable<Order>>this.httpClient.get(urlgetListOrder, { headers: this.headers });
   }
 
-  getIdOrderDetail(id: Order): Observable<Order> {
+  getIdOrderDetail(id: string): Observable<Order> {
     return <Observable<Order>>this.httpClient.get(`${urlDetailOrder}/${id}`,{ headers: this.headers });
   }
 
@@ -51,7 +51,6 @@ export class OrderService {
     .pipe(
       map(data=>data),
       catchError(error => error)
-
     );
   }
 }

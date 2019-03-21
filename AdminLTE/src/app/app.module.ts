@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './services/auth-token-login/auth-login.guard';
 import { AuthTokenService } from './services/auth-token-login/auth-token.service';
 import { ProductService } from './services/products/product.service';
+import { CheckoutService } from './services/checkout/checkout.service';
 //pipes
 import { ProductFortunePipe } from './pipes/product-fortune.pipe';
 //component
@@ -31,6 +32,9 @@ import { EditCategoryComponent } from './components/admin/edit-category/edit-cat
 import { ListOrderComponent } from './components/admin/list-order/list-order.component';
 import { DetailOrderComponent } from './components/admin/detail-order/detail-order.component';
 import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
+import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.component';
+import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
+
 
 
 @NgModule({
@@ -53,6 +57,8 @@ import { UploadImageComponent } from './components/admin/upload-image/upload-ima
     ListOrderComponent,
     DetailOrderComponent,
     UploadImageComponent,
+    ListBuyerComponent,
+    BuyerDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,12 +68,14 @@ import { UploadImageComponent } from './components/admin/upload-image/upload-ima
     NgxPaginationModule,
     ReactiveFormsModule,
     TagInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
   providers: [
     AuthGuard,
     AuthTokenService,
-    ProductService
+    ProductService,
+    CheckoutService
   ],
   bootstrap: [AppComponent]
 })

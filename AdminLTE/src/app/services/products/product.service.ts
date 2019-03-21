@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Products } from 'src/app/models/product.model';
 import { environment } from '@environments/environment.prod';
-import { ProductCart } from 'src/app/models/productCart.model';
+import { map, catchError } from 'rxjs/operators';
 
 // url
 const urlgetAll = `${environment.apiPV}/api/v1/products/list?is_active=1&limit=1000`;
@@ -20,9 +20,10 @@ const urlActive = `${environment.apiPV}/api/v1/products/active`;
 export class ProductService {
 
   public headers: HttpHeaders;
-
+  public headers2: HttpHeaders;
   constructor(private httpClient: HttpClient) {
     this.headers = this.setHeaders();
+    this.headers2 = this.setHeaders2();
   }
 
   setHeaders(): HttpHeaders {
@@ -33,7 +34,14 @@ export class ProductService {
     }
     return header.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
   }
-
+setHeaders2(): HttpHeaders {
+    const header2 = new HttpHeaders();
+    const token: string = localStorage.getItem('userToken');
+    if (!token) {
+      return header2.set('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    return header2.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
+  }
   //all product
   getAllProduct(): Observable<any> {
     return <Observable<any>>this.httpClient.get(urlgetAll);
@@ -73,4 +81,16 @@ export class ProductService {
   activeProductService(product: Products): Observable<Products> {
     return <Observable<Products>>this.httpClient.put(`${urlActive}/${product['_id']}`, product, { headers: this.headers });
   }
+
+ //upload 
+ Upload(body): Observable<any> {
+  const urlUpload = `${environment.apiPV}/api/v1/upload/image`;
+  // console.log(order['status']);
+  return this.httpClient.post<any>(urlUpload,body, { headers: this.headers })
+  .pipe(
+    map(data=>data),
+    catchError(error => error)
+
+  );
+} 
 }

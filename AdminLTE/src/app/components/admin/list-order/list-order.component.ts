@@ -39,20 +39,15 @@ export class ListOrderComponent implements OnInit, OnDestroy {
   }
 
   onCheckComplete(id: string) {
-    console.log(id);
     console.log(this.listOrder);
     this.orderService.checkOrder(this.orderComplete,id).subscribe(data=>{
-      console.log(data);
       this.loadOrderList();
     },error=>{
       console.log(error);
     })
   }
   onCheckPending(id: string) {
-    console.log(id);
-    console.log(this.listOrder);
     this.orderService.checkOrder(this.orderWait,id).subscribe(data=>{
-      console.log(data);
       this.loadOrderList();
     },error=>{
       console.log(error);

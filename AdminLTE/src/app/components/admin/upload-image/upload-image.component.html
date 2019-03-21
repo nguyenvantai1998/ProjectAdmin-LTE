@@ -1,13 +1,20 @@
-<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
-  <div id="drop">
-    Drop Here
-
-    <a>Browse</a>
-    <input type="file" name="upl" multiple />
-  </div>
-
-  <ul>
-    <!-- The file uploads will be shown here -->
-  </ul>
-
-</form>
+<div class="main">
+  <div class="container-fluid">
+    <button type="button" class="btn btn-info col-md-2 pull-right" routerLink="/admin"><i class="fas fa-undo-alt"></i>
+      Back admin</button>
+    <div class="signup-content">
+      <form id="signup-form" class="signup-form" #frmAddProduct="ngForm" (ngSubmit)="onSubmit()">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-group">
+            <label for="">Images</label>
+            <img [src]="SourceImage.source" name="txtImages" [(ngModel)]="selectedFile.source" #images="ngModel" width="200px;">
+            <input type="file" class="form-input" accept="png, jpg, jpge" (change)="handleFileInput($event)" required>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="form-group text-right">
+            <button type="submit" class="form-submit btn btn-success">ADD</button>
+          </div>
+        </div>
+      </form>
+    </div>

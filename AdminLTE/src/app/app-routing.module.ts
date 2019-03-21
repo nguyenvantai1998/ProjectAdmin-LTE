@@ -17,6 +17,8 @@ import { EditCategoryComponent } from './components/admin/edit-category/edit-cat
 import { ListOrderComponent } from './components/admin/list-order/list-order.component';
 import { DetailOrderComponent } from './components/admin/detail-order/detail-order.component';
 import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
+import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.component';
+import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
 
 const routes: Routes = [
   {
@@ -74,6 +76,14 @@ const routes: Routes = [
           component: DetailOrderComponent
         },
         { 
+          path: 'buyer', 
+          component: ListBuyerComponent
+        },
+        { 
+          path: 'buyer/:id', 
+          component: BuyerDetailComponent
+        },
+        { 
           path: 'upload', 
           component: UploadImageComponent
         },
@@ -120,5 +130,6 @@ export const routingModule = [
   Page404Component,
   ListOrderComponent,
   DetailOrderComponent,
-  UploadImageComponent
+  UploadImageComponent,
+  BuyerDetailComponent
 ]

@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-info col-md-2 pull-right  mb-2" routerLink="/admin/buyer">
+          <i class="fas fa-undo-alt"></i>
+          Back
+        </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card w-auto">
+        <h5 class="card-header bg-primary">{{buyerDetail._id}}</h5>
+        <div class="card-body">
+          <div class="col-md">
+
+            <!-- list Order Detail -->
+            <table class="table table-hover text-center">
+              <thead>
+                <tr>
+                  <th>ID Order</th>
+                  <th>Product</th>
+                  <th>Status</th>
+                  <th>description</th>
+                  <th>charge_id</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of buyerDetail.orders">
+                  <td>{{item._id}}</td>
+                  <td>
+                    <p *ngFor="let items of item.products;">{{items.title}} - sku:{{items.sku}}</p>
+                  </td>
+                  <td>{{item.status}}</td>
+                  <td>{{item.description}}</td>
+                  <td>{{item.charge_id}}</td>
+                  <td>{{item.total_amount|currency}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   templateUrl: './detail-order.component.html',
   styleUrls: ['./detail-order.component.css']
 })
-export class DetailOrderComponent implements OnInit {
+export class DetailOrderComponent implements OnInit, OnDestroy {
   public DetailOrder: Order = {};
   public subscription: Subscription;
   public subscriptionParams: Subscription;
@@ -21,7 +21,6 @@ export class DetailOrderComponent implements OnInit {
       let id = data['id'];
       this.subscription = this.orderService.getIdOrderDetail(id).subscribe(data=>{
         this.DetailOrder = data;
-        console.log(this.DetailOrder);
       })
       })
   }
