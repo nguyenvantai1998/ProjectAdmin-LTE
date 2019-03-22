@@ -22,7 +22,7 @@ export class ListCategoryComponent implements OnInit, OnDestroy {
   }
 
   loadCategory() {
-    this.subscription = this.categoryService.getAllCategory().subscribe(data => {
+    this.subscription = this.categoryService.getActiveCategory().subscribe(data => {
       this.category = data;
     })
   }
