@@ -4,6 +4,7 @@
     *ngFor="let item of showProduct"
     [routerLink]="['/detail', item.id]"
   >
+    <span class="salePersen">-50%</span>
     <img src="{{item.images}}" class="img-responsive" alt="Image">
     <p class="nameProduct">{{item.title}}</p>
     <p class="price">{{item.price | currency:' ':'symbol':'2.3-6'}}đ</p>

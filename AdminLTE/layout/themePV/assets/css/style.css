@@ -1,3 +1,7 @@
+/* ************** theme 1 ****************** */
+/* Design: Nguyễn Văn Tài */
+/* **************************************** */
+
 /* ---------------------------------------Fonts-------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i');
 /* --------------------------------------------------------------------------------------------- */
@@ -254,6 +258,17 @@
 .rowTwo-right .rowProduct-box{
 	padding:0 0.2%;
 }
+.rowProduct-box .salePersen{
+	border: 1px solid red;
+	color:red;
+	border-radius:50%;
+	width:10px;
+	height:10px;
+	padding:0.5em;
+	position: relative;
+	z-index: 10;
+	top:1em;
+}
 .rowTwo-right .slick-prev,
 .rowTwo-right .slick-next{
 	z-index: 1;
@@ -359,6 +374,11 @@
 .rowThree-active h3,
 .rowThree-active p{
 	color:white;
+}
+#contentTab-list2,
+#contentTab-list3,
+#contentTab-list4{
+	display:none;
 }
 /* row four */
 .rowFour{

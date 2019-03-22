@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/products/product.service';
+import 'lodash';
 
 declare var $;
+declare var _:any;
+declare var require: any;
+var find = require('lodash.find');
 
 @Component({
   selector: 'app-list-product-two',
@@ -28,8 +32,9 @@ export class ListProductTwoComponent implements OnInit {
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      console.log(data.docs)
-      this.showProduct = data.docs;
+      // console.log(data.docs)
+      // this.showProduct = data.docs;
+      this.showProduct = _.filter(data.docs, ['category', ['Mouse']]);
     })
   }
 

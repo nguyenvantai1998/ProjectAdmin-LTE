@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/products/product.service';
+import 'lodash';
 
 declare var $;
+declare var _:any;
+declare var require: any;
+var find = require('lodash.find');
 
 @Component({
   selector: 'app-list-product-one',
@@ -26,7 +30,10 @@ export class ListProductOneComponent implements OnInit {
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      this.showProduct = data.docs;
+      // this.showProduct = data.docs;
+      // console.log(this.showProduct)
+      // console.log(_.filter(this.showProduct, ['category', ['Laptop']]));
+      this.showProduct = _.filter(data.docs, ['category', ['Screen']]);
     })
   }
 

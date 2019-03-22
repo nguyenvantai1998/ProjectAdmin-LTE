@@ -1,22 +1,27 @@
 <div class="responsive2 rowFourProduct-responsive">
-    <div class="rowProduct-box" *ngFor="let item of showProduct" [routerLink]="['/detail', item.id]">
-      <img src="{{item.images}}" class="img-responsive" alt="Image">
-      <p class="nameProduct">{{item.title}}</p>
-      <p class="price">{{item.price}}đ</p>
-      <p class="priceOnline">99.999.000đ</p>
-      <p class="start">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
-      </p>
-      <p class="gifts">
-        <i class="fas fa-gifts"></i>
-      </p>
-      <div class="meter">
-        <i class="fas fa-carrot"></i>
-        <span>Còn lại: {{item.quantity < 2 ? 'Sắp hết' : item.quantity }}</span>
-      </div>
+  <div 
+    class="rowProduct-box" 
+    *ngFor="let item of showProduct" 
+    [routerLink]="['/detail', item.id]"
+  >
+    <span class="salePersen">-50%</span>
+    <img src="{{item.images}}" class="img-responsive" alt="Image">
+    <p class="nameProduct">{{item.title}}</p>
+    <p class="price">{{item.price}}đ</p>
+    <p class="priceOnline">99.999.000đ</p>
+    <p class="start">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </p>
+    <p class="gifts">
+      <i class="fas fa-gifts"></i>
+    </p>
+    <div class="meter">
+      <i class="fas fa-carrot"></i>
+      <span>Còn lại: {{item.quantity < 2 ? 'Sắp hết' : item.quantity }}</span>
     </div>
+  </div>
 </div>

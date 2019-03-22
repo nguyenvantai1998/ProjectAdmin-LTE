@@ -1,0 +1,486 @@
+/*************** theme 2 *******************/
+/* ************************************** */
+
+@media screen and (max-width: 2000px) {
+	#themeOne{
+		display: block;
+	}
+	#themeTwo{
+		display: none;
+	}
+}
+@media screen and (max-width: 1441px) {
+	#themeOne{
+		display: none;
+	}
+	#themeTwo{
+		display: block;
+	}
+	#themeTwo .slick-next{
+		display: none !important;
+	}
+	/* header top */
+	#themeTwo-header{
+		position: fixed;
+		z-index: 10;
+		width: 100%;
+	}
+	.tw-headerTop{
+		background: white;
+		text-align:center;
+		padding:0.3% 0;
+		border-bottom:1px solid red;
+	}
+	.tw-headerTop div{
+		padding:0;
+		padding: 0.1% 0 0;
+		font-size:1.5em;
+	}
+	.tw-headerTop img{
+		max-width:30px;
+		max-height:30px;
+	}
+
+	/* nav */
+	.themeTwo-navPrimary-bg{
+		position: fixed;
+		top:0;
+		left:0;
+		z-index:11;
+		width: 100%;
+		bottom:0;
+		background-color:rgba(0,0,0,0.2);
+		display: none;
+	}
+	.themeTwo-navPrimary{
+		position: fixed;
+		background:white;
+		z-index: 20;
+		left:0;
+		top:0;
+		bottom:0;
+		width: 22%;
+		display: none;
+	}
+	.themeTwo-navPrimary-listContent{
+		position: fixed;
+		right: 0;
+		left:0;
+		bottom: 0;
+		top: 0;
+		background: white;
+		z-index: 25;
+		display: none;
+	}
+	.navPrimary-top-tw {
+		background:#ECECEC;
+		padding-top:0.5em;
+		padding-bottom:0.5em;
+	}
+	.navPrimary-top-tw .fa-user-circle{
+		font-size:2.5em;
+	}
+	.navPrimary-top-tw button{
+		border:none;
+		width: 100%;
+		border-radius:50px;
+	}
+	.navPrimary-row1-tw ul{
+		list-style-type: none;
+	}
+	.navPrimary-row1-tw li{
+		line-height:2.7em;
+		cursor: pointer;
+	}
+	.navPrimary-row1-tw li:nth-child(2):hover,
+	.navPrimary-row1-tw li:nth-child(3):hover,
+	.navPrimary-row1-tw li:nth-child(4):hover,
+	.navPrimary-row1-tw li:nth-child(5):hover{
+		background: #ECECEC;
+	}
+	.navPrimary-row1-tw .icon-nav-tw{
+		font-size:1.5em;
+		color: rgba(0,0,0,.54);
+		padding:0;
+	}
+	.navPrimary-row1-tw span:nth-child(2){
+		font-weight: 500;
+		padding: 0;
+		font-size:0.9em;
+	}
+	.navPrimary-ul2-tw,
+	.navPrimary-ul3-tw{
+		border-top:1px #ECECEC solid;
+	}
+	.navPrimary-ul2-tw li:hover,
+	.navPrimary-ul3-tw li:hover{
+		background: #ECECEC;
+	}
+	.navPrimary-ul3-tw li:nth-child(1) span:nth-child(2),
+	.navPrimary-ul3-tw li:nth-child(2) span:nth-child(2),
+	.navPrimary-ul3-tw li:nth-child(3) span:nth-child(2){
+		color:red;
+	}
+	.navPrimary-ul3-tw li:nth-child(1) span:nth-child(2)::after,
+	.navPrimary-ul3-tw li:nth-child(2) span:nth-child(2)::after{
+		content: ' (Miễn phí) ';
+		color:black;
+		font-size:0.7em;
+	}
+	.navPrimary-ul3-tw li:nth-child(3) span:nth-child(2)::after{
+		content: ' (1000đ/phút) ';
+		color:black;
+		font-size:0.7em;
+	}
+	.search-navPrimary-listContent-tw{
+		background: #F5F5F5;
+		padding:0.5% 0;
+	}
+	.search-navPrimary-listContent-tw .col-md-1{
+		cursor: pointer;
+	}
+	.search-navPrimary-listContent-tw .fa-arrow-left{
+		font-size:2em;
+		text-align:center;
+	}
+	.search-navPrimary-listContent-tw .col-md-11{
+		display: flex;
+	}
+	.search-navPrimary-listContent-tw .form-control{
+		border:none;
+		box-shadow:none;
+		outline:none;
+		background:none;
+	}
+	.search-navPrimary-listContent-tw button{
+		border:none;
+		box-shadow:none;
+		outline:none;
+		background:none;
+	}
+	.list-navPrimary-listContent-tw .container-fluid{
+		padding-top:0.7em;
+		padding-bottom:0.7em;
+		font-size:1.1em;
+		border-top:1px #ECECEC solid;
+	}
+	.list-navPrimary-listContent-tw .sub-listNavPrimary-list{
+		list-style-type: none;
+		display: none;
+	}
+	.sub-listNavPrimary-list li{
+		line-height: 2.9em;
+		background: #f2f2f2;
+		border-bottom:1px solid white;
+		padding-left:5%;
+		color: #444;
+		font-size: 13px;
+		font-weight: 500;
+	}
+
+
+	/* banner slider */
+	#themeTwo-slider img{
+		width:100%;
+		height:100%;
+	}
+
+	/* main */
+	.tw-rowOne{
+		background:#C5C3C8;
+		margin-top:0.5em;
+		padding:0.3% 0;
+	}
+	.tw-rowOne a{
+		color: rgb(215, 30, 48);
+		margin-right:15em;
+	}
+	/* row two */
+	.tw-rowTwo {
+		margin-top:0.5em;
+	}
+	.tw-rowTwo > div{
+		background:white;
+		padding-top:0.7%;
+		padding-bottom:0.7%;
+		display: flex;
+	}
+	.tw-rowTwo > div > div{
+		flex:1;
+	}
+	.tw-rowTwo h3{
+		text-align:center;
+		background:#0C5A9E;
+		color:white;
+		padding:5%;
+		max-width:50px;
+		height:50px;
+		margin:0 auto;
+		border-radius:50px;
+		font-size:2em;
+	}
+	.tw-rowTwo p{
+		text-align:center;
+		font-weight:600;
+		margin-top:0.3%;
+	}
+
+	/* row banner */
+	.tw-rowBanner{
+		background:white;
+	}
+	.tw-rowBanner div{
+		padding: 0.5%;
+	}
+	.tw-rowBanner div:nth-child(1){
+		padding-right:0;
+	}
+	.tw-rowBanner img{
+		width:100%;
+		height:100%;
+	}
+
+	/* row banner big */
+	.tw-rowBanner-big{
+		margin-top:1.5em;
+		min-height:130px;
+		background: url('../images/tv_mobile.png');
+		background-size: 100% 300%;
+		padding:0;
+	}
+
+	/* row three */
+	.tw-rowThree{
+		background:white;
+	}
+	.tw-rowThree .rowProduct-box{
+		padding:2%;
+	}
+
+	/* row banner 2 */
+	.rowBanner2{
+		min-height:60px;
+		background: url('../images/tv_mobile.png');
+		background-size: 100% 100%;
+	}
+	.rowBanner2 .view-all-short-term{
+		background-image: url(https://phongvu.vn/images/mobile_shortterm_btn.png);
+		background-repeat: no-repeat;
+		width: 199px;
+    	height: 38px;
+    	margin: 0 auto;
+    	bottom: -1.5em;
+    	position: relative;
+	}
+	.rowBanner2 a{
+		color: #8c0d3c;
+		margin-left:3em;
+		bottom: 0;
+    	text-transform: uppercase;
+	}
+
+	/* row four */
+	.tw-rowFour .tw-rowFour-title{
+		border-bottom: 1px solid gray;
+		padding: 1% 1%;
+	}
+	.tw-rowFour-title h3{
+		color: #d10a00;
+		font-weight:600;
+		text-transform: uppercase;
+		font-size:1.2em;
+	}
+	.tw-rowFour-product{
+		background:white;
+		padding-bottom:1em;
+	}
+	.tw-rowFour-product .rowProduct-box{
+		padding:0 0.5%;
+	}
+
+	/* row title */
+	.titleAll-tw .titleAll-top{
+		text-align:center;
+		background:#EFEFEF;
+		padding: 0.8em 0;
+		border-bottom:1px solid gray;
+		box-shadow:1px 1px 2px gray;
+		font-weight:600;
+		letter-spacing:0.1em;
+	}
+	.titleAll-tw .titleAll-content{
+		text-align:center;
+	}
+	.titleAll-tw h2{
+		font-size:1.2em;
+		color: #d10a00;
+		text-transform: uppercase;
+		margin-top:1.5em;
+	}
+	.titleAll-tw h2::after{
+		content: ' Tại phong vũ';
+		color:black;
+	}
+	.titleAll-tw p{
+		font-size: 12px;
+    	color: grey;
+    	margin-bottom:1.5em;
+	}
+
+	/* row five */
+	.tw-rowFive{
+		background:white;
+	}
+	.tw-rowFive a:hover{
+		color:black;
+	}
+	.tw-rowFive a:focus{
+		color:black;
+	}
+	.tab-listProduct-tw .rowProduct-box{
+		padding:0 1%;
+	}
+
+	/* row six */
+	.rowSix-tw{
+		background:white;
+	}
+	.rowSix-tw h2{
+		font-size:1.2em;
+		text-transform: uppercase;
+		margin: 1em 0 0 0.5em;
+	}
+	.rowSix-tw .rowProduct-box{
+		padding:0 1em;
+	}
+
+	/* theme two footer */
+	#themeTwo-footer{
+		border-top:1px solid red;
+		background:white;
+	}
+	.rowHeader-footer-tw .col-md-6{
+		text-align:right;
+		color: #777;
+		font-size:1em;
+		text-transform: uppercase;
+		margin-top:1em;
+		margin-bottom:1em;
+	}
+
+	/* row header 2 */
+	.rowHeader2-footer-tw{
+		border-top:1px #ECECEC solid;
+		padding-top:0.5em;
+		padding-bottom:0.5em;
+	}
+	.rowHeader2-footer-tw span{
+		font-size: 15px;
+    	color: #d42333;
+    	font-weight: 700;
+    	text-transform: uppercase;
+    	margin-left:0.5em;
+	}
+	.rowHeader2-footer-tw span::after{
+		content: ' ( 1000đ/phút ) ';
+		color: #2d3877;
+		font-weight:500;
+		font-size:10px;
+	}
+	.rowHeader2-footer-tw .col-md-2{
+		display: flex;
+	}
+	.rowHeader2-footer-tw .col-md-2 div{
+		flex:1;
+		font-size:1.5em;
+	}
+	.rowHeader2-footer-tw .col-md-2 .fa-facebook-square{
+		color:#485992;
+	}
+	.rowHeader2-footer-tw .col-md-2 .fa-youtube-square{
+		color:#CF2200;
+	}
+	.rowHeader2-footer-tw .col-md-2 .fa-users{
+		color:#212121;
+	}
+
+	/* row header 3 */
+	.rowHeader3-footer-tw{
+		border-top:1px #ECECEC solid;
+		padding-top:1em;
+		padding-bottom:0.7em;
+	}
+	.rowHeader3-footer-tw h3{
+		font-weight:600;
+	}
+	.rowHeader3-footer-tw button{
+		border:none;
+		box-shadow:none;
+		width:100%;
+		padding:0;
+		background:none;
+		outline: none;
+	}
+	.rowHeader3-footer-tw button:focus,
+	.rowHeader3-footer-tw button:hover{
+		border:none;
+		box-shadow:none;
+		width:100%;
+		padding:0;
+		background:none;
+		outline: none;
+	}
+	.rowHeader3-footer-tw-content{
+		list-style-type: none;
+		margin-top:1.3em;
+		line-height:1.8em;
+	}
+	.rowHeader3-footer-tw-content img{
+		width: 100%;
+	}
+	#rowHeader3-content1,
+	#rowHeader3-content2,
+	#rowHeader3-content3,
+	#rowHeader3-content4{
+		display: none;
+	}
+	.rowHeader3-footer-tw .col-md-3{
+		text-align:center;
+		font-size:2.5em;
+		margin-top:1em;
+	}
+
+	/* row footer end */
+	.rowEnd-footer-tw{
+		border-top:1px #ECECEC solid;
+		padding-top:1em;
+		padding-bottom:0.7em;
+		padding-left:2em;
+		font-family: Roboto,sans-serif;
+    	line-height: 1.5;
+	}
+	.rowEnd-footer-tw h2{
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #666;
+	}
+	.rowEnd-footer-tw > p{
+		font-size: 12px;
+    	color: #666;
+	}
+	.rowEnd-footer-tw span > p{
+		font-weight: 700;
+		font-size: 12px;
+    	color: #666;
+	}
+	.rowEnd-footer-tw .vpmb p::after{
+		content: ' Tầng 6, Số 1 Phố Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội ';
+		font-weight:100;
+	}
+	.rowEnd-footer-tw .vpmn p::after{
+		content: ' Tầng 7, tòa nhà số 198 Nguyễn Thị Minh Khai, Phường 6, Quận 3, TP. Hồ Chí Minh ';
+		font-weight:100;
+	}
+
+
+}

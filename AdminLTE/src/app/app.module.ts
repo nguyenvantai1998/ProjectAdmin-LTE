@@ -34,6 +34,8 @@ import { DetailOrderComponent } from './components/admin/detail-order/detail-ord
 import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
 import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.component';
 import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
+import { BannerRightComponent } from './components/main/banner-right/banner-right.component';
+import { MarqueeComponent } from './components/main/marquee/marquee.component';
 
 
 
@@ -59,6 +61,8 @@ import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-deta
     UploadImageComponent,
     ListBuyerComponent,
     BuyerDetailComponent,
+    BannerRightComponent,
+    MarqueeComponent
   ],
   imports: [
     BrowserModule,

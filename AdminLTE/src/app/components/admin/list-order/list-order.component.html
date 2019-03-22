@@ -14,10 +14,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of listOrder.docs">
+        <tr *ngFor="let item of listOrder.docs | paginate:{ itemsPerPage:10, currentPage: p}">
           <td>{{item._id}}</td>
-          <td><button type="button" class="btn btn-success" (click)="onCheckComplete(item._id)" [disabled]="onSuccess(item.status)">SUCCESS</button>
-              <button type="button" class="btn btn-danger" (click)="onCheckPending(item._id)"[disabled]="!onSuccess(item.status)">PENDING</button></td>
+          <td><button type="button" class="btn btn-success" (click)="onCheckComplete(item._id)"
+              [disabled]="onSuccess(item.status)">SUCCESS</button>
+            <button type="button" class="btn btn-danger" (click)="onCheckPending(item._id)"
+              [disabled]="!onSuccess(item.status)">PENDING</button></td>
           <td>{{item.description}}</td>
           <td>
             <p>{{item.buyer.name}}</p>
@@ -29,8 +31,20 @@
           <td>{{item.total_amount|currency}}</td>
           <td>
             <!-- <button type="button" class="btn btn-success" (click)="onCheck(item._id) "><div class="glyphicon glyphicon-ok"></div></button><br/> -->
-            <button type="button" class="btn btn-primary" [routerLink]="['/admin/order/view/',item.id]"><div class="glyphicon glyphicon-search"></div></button></td>
+            <button type="button" class="btn btn-primary" [routerLink]="['/admin/order/view/',item.id]">
+              <div class="glyphicon glyphicon-search"></div>
+            </button></td>
         </tr>
       </tbody>
     </table><!-- list product -->
+
+    <div class="row">
+      <pagination-controls 
+        (pageChange)="p = $event" 
+        maxSize="7" 
+        previousLabel="Previous" 
+        nextLabel="Next"
+      >
+      </pagination-controls>
+    </div>
   </div>

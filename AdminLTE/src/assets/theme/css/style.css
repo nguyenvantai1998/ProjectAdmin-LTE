@@ -272,10 +272,16 @@ body{
 .rowTwo-right img{
 	max-height:180px;
 	min-height:180px;
+	max-width: 100%;
+	min-width:100%;
 }
 .rowTwo-right .rowProduct-box{
-	padding:0 0.5%;
+	padding:0 1%;
 }
+/* .rowTwo-right .slick-prev{
+	background: url('./../images/img_439143.png');
+	background-size: cover
+} */
 .rowTwo-right .slick-prev,
 .rowTwo-right .slick-next{
 	z-index: 1;
@@ -814,12 +820,30 @@ h4{
 /* -------------------------------------- end footer ---------------------------- */
 
 /* --------------------------------------- product ------------------------------ */
+.rowProduct-box {
+	cursor: pointer;
+	outline: none;
+}
+.rowProduct-box:focus{
+	outline: none;
+	border-color: none;
+}
 .rowProduct-box .nameProduct{
 	color: #333;
     margin-top: 10px;
     word-break: break-word;
     font-family: Roboto,sans-serif;
     font-size:14px;
+}
+.rowProduct-box .salePersen{
+	border: 1px solid red;
+	color:red;
+	border-radius:50%;
+	padding:0.5em;
+	position: relative;
+	z-index: 10;
+	top:1em;
+	font-size:11px;
 }
 .rowProduct-box .price, 
 .rowProduct-box .priceOnline{
@@ -850,7 +874,7 @@ h4{
 .rowProduct-box .meter{
 	background-image: linear-gradient(-90deg, red, yellow);
 	border-radius:10px;
-	padding:1px 1%;
+	padding:0 2%;
 }
 .rowProduct-box .meter i{
 	border: 1px solid white;
@@ -867,3 +891,29 @@ h4{
 	font-size:10px;
 }
 /* --------------------------------------- product ------------------------------ */
+
+/* --------------------------------------- cart -------------------------------- */
+.showCheckNull img{
+	margin: 0 auto;
+}
+.showCheckNull-content{
+	margin-bottom:1em;
+	margin-top:1em;
+}
+.showCheckNull-content h2{
+	font-weight: 600;
+	margin-bottom: 1em;
+	font-size:2em;
+}
+.showCheckNull-content button{
+	background:#D10A00;
+	color: white;
+	text-transform: uppercase;
+	padding: 1em 3em;
+	font-weight: 600;
+	transition: all 1s;
+}
+.showCheckNull-content button:hover{
+	background:black;
+	color:white;
+}
