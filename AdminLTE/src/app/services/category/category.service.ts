@@ -7,10 +7,13 @@ import { map, catchError } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 
-const urlgetAllCategory = `${environment.apiPV}/api/v1/categories/list?`;
+const urlGetActiveCategory = `${environment.apiPV}/api/v1/categories/list?`;
+const urlGetDeactiveCategory = `${environment.apiPV}/api/v1/categories/list?is_active=0&limit=100`;
 const urlAddCaterogy = `${environment.apiPV}/api/v1/categories/create`;
 const urlDetailCategory = `${environment.apiPV}/api/v1/categories/details`;
 const urlEditCategory = `${environment.apiPV}/api/v1/categories/update`;
+const urlDeactiveCategory = `${environment.apiPV}/api/v1/categories/deactive`;
+const urlActiveCategory = `${environment.apiPV}/api/v1/categories/active`;
 
 
 @Injectable({
@@ -33,9 +36,14 @@ export class CategoryService {
     return header.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
   }
 
-  //all category
-  getAllCategory(): Observable<any> {
-    return this.httpClient.get(urlgetAllCategory);
+  //active category
+  getActiveCategory(): Observable<any> {
+    return this.httpClient.get(urlGetActiveCategory);
+  }
+
+  //deactive category
+  getDeactiveCategory(): Observable<any> {
+    return this.httpClient.get(urlGetDeactiveCategory);
   }
 
   //get detail one category by id
@@ -56,13 +64,13 @@ export class CategoryService {
   }
 
   //deactive
-  deactiveCategoryService(category : Category): Observable<Category> {
-    return <Observable<Category>>this.httpClient.put(`${urlDetailCategory}/${category['_id']}`, { headers: this.headers })
+  deactiveCategoryService(category: Category): Observable<Category> {
+    return <Observable<Category>>this.httpClient.put(`${urlDeactiveCategory}/${category['_id']}`, category, { headers: this.headers })
   }
 
   //active
-  activeCategoryService(category : Category): Observable<Category[]> {
-    return this.httpClient.put<Category[]>(`${urlDetailCategory}/${category['_id']}`, { headers: this.headers })
+  activeCategoryService(category: Category): Observable<Category[]> {
+    return this.httpClient.put<Category[]>(`${urlActiveCategory}/${category['_id']}`, category, { headers: this.headers })
   }
 
   private errorHandler(error: HttpErrorResponse): Observable<any> {
@@ -76,9 +84,9 @@ export class CategoryService {
       });
     } else if (error.status === 401 && error.statusText === 'UNAUTHORIZED') {
       localStorage.removeItem('userToken');
-    }  else if (error.status === 404) {
+    } else if (error.status === 404) {
       console.log('page-not-found')
-    }else {
+    } else {
       Swal.fire({
         type: 'error',
         title: 'Oops...',
