@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
-import { Buyer } from 'src/app/models/Buyer.model';
 import { CheckoutService } from 'src/app/services/checkout/checkout.service';
+import { Buyer } from 'src/app/models/Buyer.model';
 @Component({
   selector: 'app-list-buyer',
   templateUrl: './list-buyer.component.html',

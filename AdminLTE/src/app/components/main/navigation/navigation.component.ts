@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  public category: {};
+  public subCategory: {};
+
+  constructor(
+    private categoryService: CategoryService
+  ) { }
 
   ngOnInit() {
+    this.showCategory();
+  }
+
+  showCategory(){
+    this.categoryService.getAllCategory().subscribe(data=>{
+      console.log(data)
+      this.category = data;
+    })
   }
 
 }

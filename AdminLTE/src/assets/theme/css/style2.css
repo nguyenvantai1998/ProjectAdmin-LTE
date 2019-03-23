@@ -11,10 +11,10 @@
 }
 @media screen and (max-width: 1441px) {
 	#themeOne{
-		display: none;
+		display: block;
 	}
 	#themeTwo{
-		display: block;
+		display: none;
 	}
 	#themeTwo .slick-next{
 		display: none !important;

@@ -1,9 +1,11 @@
 <div 
   class="rowFive"
 >
-    <!-- rowProductBox-active -->
 <div *ngFor="let item of showProduct | slice:0:5" [routerLink]="['/detail', item.id]">
-    <div class="rowProduct-box">
+    <div 
+      class="rowProduct-box"
+      [ngClass]="{'rowProductBox-active': item.category=='Mouse'}"
+    >
       <img src="{{item.images}}" class="img-responsive" alt="Image">
       <p class="nameProduct">{{item.title}}</p>
       <p class="price">{{item.price}}đ</p>

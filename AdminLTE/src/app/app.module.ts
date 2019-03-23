@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 //Module
 import { AppRoutingModule, routingModule } from './app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Form
@@ -73,6 +74,7 @@ import { MarqueeComponent } from './components/main/marquee/marquee.component';
     ReactiveFormsModule,
     TagInputModule,
     BrowserAnimationsModule,
+    AngularFileUploaderModule,
 
   ],
   providers: [

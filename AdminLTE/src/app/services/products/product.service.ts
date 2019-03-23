@@ -13,7 +13,7 @@ const urlDetail = `${environment.apiPV}/api/v1/products/details`;
 const urlEdit = `${environment.apiPV}/api/v1/products/update`;
 const urlDeactive = `${environment.apiPV}/api/v1/products/deactive`;
 const urlActive = `${environment.apiPV}/api/v1/products/active`;
-
+const urlImage = `${environment.apiPV}/api/v1/products`;
 @Injectable({
   providedIn: 'root'
 })
@@ -21,9 +21,11 @@ export class ProductService {
 
   public headers: HttpHeaders;
   public headers2: HttpHeaders;
+  public headers3: HttpHeaders;
   constructor(private httpClient: HttpClient) {
     this.headers = this.setHeaders();
     this.headers2 = this.setHeaders2();
+    this.headers3 = this.setHeaders3();
   }
 
   setHeaders(): HttpHeaders {
@@ -41,6 +43,14 @@ setHeaders2(): HttpHeaders {
       return header2.set('Content-Type', 'application/x-www-form-urlencoded');
     }
     return header2.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
+  }
+  setHeaders3(): HttpHeaders {
+    const header3 = new HttpHeaders();
+    const token: string = localStorage.getItem('userToken');
+    if (!token) {
+      return header3.set('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    return header3.set('Content-Type', 'application/x-www-form-urlencoded').set('Authorization', `Bearer ${token}`);
   }
   //all product
   getAllProduct(): Observable<any> {
@@ -83,14 +93,11 @@ setHeaders2(): HttpHeaders {
   }
 
  //upload 
- Upload(body): Observable<any> {
+ Upload(fileToUpload): Observable<any> {
   const urlUpload = `${environment.apiPV}/api/v1/upload/image`;
-  // console.log(order['status']);
-  return this.httpClient.post<any>(urlUpload,body, { headers: this.headers })
-  .pipe(
-    map(data=>data),
-    catchError(error => error)
-
-  );
+  const _formData = new FormData();
+  _formData.append('source', fileToUpload, fileToUpload.name); 
+  console.log(_formData);  
+  return this.httpClient.post<any>(urlUpload,_formData, { headers: this.headers3 })
 } 
 }
