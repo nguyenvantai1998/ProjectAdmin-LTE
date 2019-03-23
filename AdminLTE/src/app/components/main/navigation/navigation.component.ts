@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
   }
 
   showCategory(){
-    this.categoryService.getAllCategory().subscribe(data=>{
+    this.categoryService.getActiveCategory().subscribe(data=>{
       console.log(data)
       this.category = data;
     })
