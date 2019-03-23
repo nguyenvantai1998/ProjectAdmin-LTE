@@ -63,6 +63,18 @@
 <!-- /.row -->
 
 <!-- list product -->
+<form class="form-inline" *ngIf="isShow">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputPassword2" class="sr-only">URL</label>
+      <input type="text" class="form-control" placeholder="URL Image" name="UrlImage" [(ngModel)]="dataImage">
+      <!-- <tag-input [(ngModel)]="dataImage" name="txtImages" [identifyBy]="'name'"
+                    [displayBy]="'name'" [editable]='true'>
+                    <tag-input-dropdown>
+                    </tag-input-dropdown>
+                  </tag-input> -->
+    </div>
+    <button type="submit" (click)="addImage()" class="btn btn-primary mb-2">Add Image</button>
+  </form>
 <table class="table table-hover text-center">
   <thead>
     <tr>
@@ -82,7 +94,13 @@
     <tr *ngFor="let item of product.docs">
       <td>{{ item.id }}</td>
       <td>{{ item.title }}</td>
-      <td><img src="{{ item.images }}" width="100px" height="100px"></td>
+      <td>
+        <div class="thumbnail" *ngFor="let items of item.images" (click)="deleteImage(item.id,items)">
+            <img src="{{ items }}">
+        </div>
+        <button class="btn"><div class="glyphicon glyphicon-plus-sign" (click)="ShowHide(item.id)"></div></button>
+        
+      </td>
       <td>{{ item.price }}</td>
       <td>{{ item.quantity }}</td>
       <td>{{ item.status }}</td>

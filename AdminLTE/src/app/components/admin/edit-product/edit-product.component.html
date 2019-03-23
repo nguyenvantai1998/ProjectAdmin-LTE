@@ -43,8 +43,13 @@
             <div class="form-group">
               <label>Images</label>
               <img [src]="product.images">
-              <input type="file" class="form-input" accept="/*"
+              <input type="text" name="txtImages" [(ngModel)]="product.images" class="form-input" accept="/*"
                 (change)="handleFileInput($event)">
+                <!-- <tag-input name="txtImages" [(ngModel)]="product.images"[identifyBy]="'name'"
+                    [displayBy]="'name'" [editable]='true'>
+                    <tag-input-dropdown>
+                    </tag-input-dropdown>
+                  </tag-input> -->
             </div>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6">
