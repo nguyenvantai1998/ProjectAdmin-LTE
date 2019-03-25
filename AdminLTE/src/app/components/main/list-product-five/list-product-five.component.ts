@@ -25,7 +25,7 @@ export class ListProductFiveComponent implements OnInit {
 
     setTimeout(() => {
       this.showSlider();
-    }, 2000);
+    }, 2900);
   }
 
   showListProduct(){

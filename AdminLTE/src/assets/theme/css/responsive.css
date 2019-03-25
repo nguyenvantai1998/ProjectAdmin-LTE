@@ -4,6 +4,17 @@
 		min-width:505%;
 	}
 }
+@media screen and (max-width: 1281px){
+	.rowThree .col-sm-4{
+		padding-top: 0.7em;
+	}
+	.rowThree .fa-business-time {
+		font-size: 1.2em;
+	}
+	.rowThree span {
+		font-size: 1em;
+	}
+}
 @media screen and (max-width: 1199px) {
 	.headerTop img{
 		max-width:150px;
