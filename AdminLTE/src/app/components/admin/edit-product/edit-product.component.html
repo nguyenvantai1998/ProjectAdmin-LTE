@@ -40,17 +40,6 @@
                 <option value="Laptop">Laptop</option>
               </select>
             </div>
-            <div class="form-group">
-              <label>Images</label>
-              <img [src]="product.images">
-              <input type="text" name="txtImages" [(ngModel)]="product.images" class="form-input" accept="/*"
-                (change)="handleFileInput($event)">
-                <!-- <tag-input name="txtImages" [(ngModel)]="product.images"[identifyBy]="'name'"
-                    [displayBy]="'name'" [editable]='true'>
-                    <tag-input-dropdown>
-                    </tag-input-dropdown>
-                  </tag-input> -->
-            </div>
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
@@ -64,9 +53,22 @@
                 #quantity="ngModel" required />
             </div>
             <div class="form-group">
-              <label>Discount</label>
-              <input type="number" class="form-input" name="txtDiscount" [(ngModel)]="product.discount"
-                #discount="ngModel" />
+              <label for="">Discount</label>
+                <select id="my-input" class="custom-select"name="txtDiscount" [(ngModel)]="product.discount" #discount="ngModel">
+                  <option value="0" selected>0%</option>
+                  <option value="5" selected>5%</option>
+                  <option value="10">10%</option>
+                  <option value="15">15%</option>
+                  <option value="20">20%</option>
+                  <option value="25">25%</option>
+                  <option value="30">30%</option>
+                  <option value="35">35%</option>
+                  <option value="40">40%</option>
+                  <option value="45">45%</option>
+                  <option value="50">50%</option>
+                  <option value="55">55%</option>
+                  <option value="60">60%</option>
+                </select>
             </div>
             <div class="form-group">
               <label>UpdatedAt</label>

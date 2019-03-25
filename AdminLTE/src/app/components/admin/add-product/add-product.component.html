@@ -17,16 +17,6 @@
               </span>
             </div>
             <div class="form-group">
-              <label for="">Images</label>
-              <img [src]="product.images" name="txtImages" [(ngModel)]="product.images" #images="ngModel">
-              <input type="file" class="form-input"  accept="png, jpg, jpge"
-                (change)="handleFileInput($event)">
-              <!-- <span class="label label-danger"
-                *ngIf="(frmAddProduct.submitted && title.pristine) || (title.touched && title.error?.required)">
-                Image is required!!
-              </span> -->
-            </div>
-            <div class="form-group">
               <label for="">Category</label>
               <select id="my-input" class="custom-select" name="txtCategory" [(ngModel)]="product.category"
                 #category="ngModel">
@@ -78,8 +68,21 @@
             </div>
             <div class="form-group">
               <label for="">Discount</label>
-              <input type="number" class="form-input" name="txtDiscount" [(ngModel)]="product.discount"
-                #discount="ngModel" />
+                <select id="my-input" class="custom-select"name="txtDiscount" [(ngModel)]="product.discount" #discount="ngModel">
+                  <option value="0" selected>0%</option>
+                  <option value="5" selected>5%</option>
+                  <option value="10">10%</option>
+                  <option value="15">15%</option>
+                  <option value="20">20%</option>
+                  <option value="25">25%</option>
+                  <option value="30">30%</option>
+                  <option value="35">35%</option>
+                  <option value="40">40%</option>
+                  <option value="45">45%</option>
+                  <option value="50">50%</option>
+                  <option value="55">55%</option>
+                  <option value="60">60%</option>
+                </select>
             </div>
             <div class="form-group">
               <label for="">CreatedAt</label>

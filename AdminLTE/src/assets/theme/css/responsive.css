@@ -5,6 +5,17 @@
 	}
 }
 @media screen and (max-width: 1281px){
+	.headerTop img{
+		max-width:140px;
+		max-height:140px;
+	}
+	.headerTopRight-item span{
+		font-size:0.9em;
+	}
+	.navPrimaryOne .content-nav{
+		left:13em;
+		min-width:505%;
+	}
 	.rowThree .col-sm-4{
 		padding-top: 0.7em;
 	}

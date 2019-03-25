@@ -1,14 +1,13 @@
-/* Fix and Format css all theme */
+/*Fix and Format css all theme*/
 
-/* --------------------------------------  Theme --------------------------------------- */
+/*--------------------------------------  Theme ---------------------------------------*/
 .rowFour .rowProduct-box{
     margin-top:1em;
+    padding:0 1em;
 }
 .rowFour img{
-    min-width:245px;
-    max-width: 245px;
-    min-height:245px;
-    max-height: 245px;
+    min-height:210px;
+    max-height: 210px;
 }
 /*-------------------------------------------  Login  ----------------------------------------- */
 .w3l-login-form h2{
@@ -29,7 +28,3 @@
     cursor: pointer;
     outline: none;
 }
-/* Footer */
-/* .main-footer{
-    margin-top:10px;
-} */
