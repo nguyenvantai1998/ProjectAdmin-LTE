@@ -33,9 +33,9 @@ $(document).ready(function () {
   })
 
   // nav detail
-  $('#showNavList').click(function(){
-    alert('sss')
-  })
+  // $('#showNavList').click(function(){
+  //   alert('sss')
+  // })
 
   //--------------------------- general ---------------------------//
   //Remove link file
@@ -51,57 +51,11 @@ $(document).ready(function () {
     }
   }
 
-  
-  // --------------------------- Theme Two --------------------------------//
-  // navPrimary
-  $('#showNavPrimary-tw').click(function(){
-    $('.themeTwo-navPrimary-bg').show();
-    $('.themeTwo-navPrimary').show();
-  })
-  $('.themeTwo-navPrimary-bg').click(function(){
-    $('.themeTwo-navPrimary-bg').hide();
-    $('.themeTwo-navPrimary').hide();
-  })
-
-  //show list content nav
-  $('#showListContent-nav-tw').click(function(){
-    $('.themeTwo-navPrimary-listContent').show();
-  })
-  $('#hideListContent-nav-tw').click(function(){
-    $('.themeTwo-navPrimary-listContent').hide();
-    $('.themeTwo-navPrimary-bg').show();
-    $('.themeTwo-navPrimary').show();
-  })
-
-  // sub nav
-  // $('#show-sub-listNavPrimary-list').addClass(function(index){
-  //   return "show-sub-listNavPrimary-list_" + index;
-  // });
-  
-  // slider banner theme two
-  var swiper = new Swiper('.swiper-container', {
-    pagination: {
-      el: '.swiper-pagination',
-    },
+  $("#slider3").responsiveSlides({
+    manualControls: '#slider3-pager',
+    maxwidth: 540
   });
-
-  // footer theme two
-  $('#btn-showContent1').click(function(){
-    $('#rowHeader3-content1').slideDown();
-    $('#rowHeader3-content2,#rowHeader3-content3,#rowHeader3-content4').slideUp();
-  })
-  $('#btn-showContent2').click(function(){
-    $('#rowHeader3-content2').slideDown();
-    $('#rowHeader3-content1,#rowHeader3-content3, #rowHeader3-content4').slideUp();
-  })
-  $('#btn-showContent3').click(function(){
-    $('#rowHeader3-content3').slideDown();
-    $('#rowHeader3-content1,#rowHeader3-content2,#rowHeader3-content4').slideUp();
-  })
-  $('#btn-showContent4').click(function(){
-    $('#rowHeader3-content4').slideDown();
-    $('#rowHeader3-content1,#rowHeader3-content2,#rowHeader3-content3').slideUp();
-  })
+  
 })
 
 

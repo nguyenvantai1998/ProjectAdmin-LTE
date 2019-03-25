@@ -1,58 +1,21 @@
 /* Fix and Format css all theme */
 
 /* --------------------------------------  Theme --------------------------------------- */
-.list-one a,
-.list-two a,
-.list-there a{
-    color:gray;
-    text-decoration: none;
-    font-size:12px;
-}
-.con-bot-one{
-    display: flex;
-}
-.con-bot-one .icon-email{
-    display: block;
-}
-.con-bot-one img{
-    width:50px;
-    height:50px;
+.rowFour .rowProduct-box{
     margin-top:1em;
 }
-.con-bot-one .form-control{
-    border:1px solid gray;
+.rowFour img{
+    min-width:245px;
+    max-width: 245px;
+    min-height:245px;
+    max-height: 245px;
 }
-.con-bot-one .form-control:focus{
-    outline:none;
-    box-shadow: none;
-}
-.con-bot-one button{
-    margin-top:1.5em;
-    border:1px solid #D10000;
-    background:#D10000;
-    border-radius:0;
-    text-transform: uppercase;
-    color:white;
-    outline: none;
-}
-.con-bot-one button:focus{
-    outline: none;
-    box-shadow: none;
-    border:1px solid #D10000;
-    background:#D10000;
-    border-radius:0;
-    text-transform: uppercase;
-    color:white;
-}
-
 /*-------------------------------------------  Login  ----------------------------------------- */
 .w3l-login-form h2{
     color:white;
     font-weight: 600;
     font-size:3em;
 }
-
-
 /* ------------------------------------------ admin ---------------------------------- */
 .text-dark{
     padding:0;
@@ -67,6 +30,6 @@
     outline: none;
 }
 /* Footer */
-.main-footer{
+/* .main-footer{
     margin-top:10px;
-}
+} */

@@ -19,10 +19,11 @@
       *ngFor="let item of showProduct | slice:0:4"
       [routerLink]="['/detail', item.id]"
     >
+      <span class="salePersen">-{{ item.discount }}%</span>
       <img src="{{item.images}}" class="img-responsive" alt="Image">
-      <p class="nameProduct">Smart Tivi LG 4K 49 inch 49UK6340PTF (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)</p>
-      <p class="price">99.999.000đ</p>
-      <p class="priceOnline">99.999.000đ</p>
+      <p class="nameProduct">{{ item.title | customProduct: 0 : 20 }}</p>
+      <p class="price">{{ item.price | currency:' ':'symbol':'2.3-6' }}đ</p>
+      <p class="priceOnline">{{ item.price * ((100-item.discount)/100) | currency:' ':'symbol':'2.3-6' }}đ</p>
       <p class="start">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>

@@ -74,7 +74,8 @@ export class DetailComponent implements OnInit, OnDestroy {
       }
       // console.log(item)
     }
-    $(window)[0].$(location).get(0).reload();
+    // $(window)[0].$(location).get(0).reload();
+    setTimeout(function() { window.location=window.location;},0);
   }
 
 

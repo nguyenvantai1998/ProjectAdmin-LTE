@@ -1,6 +1,6 @@
 <!-- row four -->
 <div class="rowFour">
-    <div class="owl-carousel owl-theme" *ngIf="showProduct!=0; else showTB">
+    <div class="owl-carousel owl-theme">
       <div 
         class="item" 
         *ngFor="let item of showProduct"
@@ -28,9 +28,4 @@
         </div>
       </div>
     </div>
-
-    <ng-template #showTB>
-      <h1 class="text-center">Chưa tìm thấy sản phẩm nào</h1>
-    </ng-template>
-    
   </div><!-- /row four -->

@@ -3,7 +3,7 @@ import { ProductService } from 'src/app/services/products/product.service';
 import 'lodash';
 
 declare var $;
-declare var _:any;
+declare var _: any;
 declare var require: any;
 var find = require('lodash.find');
 
@@ -30,47 +30,30 @@ export class ListProductTwoComponent implements OnInit {
     }, 2000);
   }
 
-  showListProduct(){
-    this.productService.getAllProduct().subscribe(data=>{
-      // console.log(data.docs)
-      // this.showProduct = data.docs;
+  showListProduct() {
+    this.productService.getAllProduct().subscribe(data => {
       this.showProduct = _.filter(data.docs, ['category', ['Mouse']]);
     })
   }
 
-  showSlider(){
-    $('.responsive2').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 5,
-      slidesToScroll: 5,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            infinite: true,
-            dots: true
-          }
+  showSlider() {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      margin: 10,
+      nav: true,
+      loop: true,
+      responsive: {
+        0: {
+          items: 1
         },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
+        600: {
+          items: 3
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
+        1000: {
+          items: 5
         }
-      ]
-    });
+      }
+    })
   }
 
 }

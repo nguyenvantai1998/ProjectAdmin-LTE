@@ -7,6 +7,7 @@ declare var $;
 declare var _: any;
 declare var require: any;
 var uniqWith = require('lodash.unzip');
+// var uniqBy = require('lodash.uniqby');
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +21,6 @@ export class CartComponent implements OnInit {
   public listAddToCart: Products[] = [];
   private total: number = 0;
   public checkCartNull: boolean = false;
-  public _id: string;
 
   constructor(
   ) { }
@@ -44,6 +44,8 @@ export class CartComponent implements OnInit {
       this.quantity += item.quantity;
       this.checkCartNull = true;
       this.listAddToCart = _.uniqWith(this.items, _.isEqual);
+      console.log(this.items)
+      console.log(this.listAddToCart)
     }
   }
 
@@ -105,6 +107,10 @@ export class CartComponent implements OnInit {
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     this.loadCart();
-    $(window)[0].$(location).get(0).reload();
+    // $(window)[0].$(location).get(0).reload();
+    setTimeout(function() { window.location=window.location;},0);
   }
+
+
+
 }

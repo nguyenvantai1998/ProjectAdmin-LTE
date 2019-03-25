@@ -30,10 +30,8 @@ export class ListProductOneComponent implements OnInit {
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      // this.showProduct = data.docs;
-      // console.log(this.showProduct)
-      // console.log(_.filter(this.showProduct, ['category', ['Laptop']]));
       this.showProduct = _.filter(data.docs, ['category', ['Screen']]);
+      console.log(data.docs)
     })
   }
 

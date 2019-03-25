@@ -1,6 +1,6 @@
 <!-- headerDetail -->
 <div id="headerDetail">
-    <app-header></app-header>
+  <app-header></app-header>
 </div><!-- /headerDetail -->
 
 <!-- main -->
@@ -9,7 +9,7 @@
     <div class="rowTitleLink-detail">
       <a routerLink="/index">Trang chủ</a> / <a>chi tiết sản phẩm</a>
     </div>
-    
+
     <!-- row product detail -->
     <div class="container-fluid rowProductDetail" *ngIf="showProduct">
       <div class="col-md-4 rowProductDetail-left">
@@ -24,10 +24,10 @@
             - Hệ điều hành: Android 
             - Kết nối mạng: LAN; WiFi 
             - Cổng xuất hình: 4 x HDMI
-          </p>	
-        </div>
+          </p>
+        </div>	
       </div>
-      
+
       <div class="col-md-8 rowProductDetail-right">
         <div class="rowDetail-1">
           <h2>{{showProduct.title}}</h2>
@@ -56,7 +56,7 @@
               <div>{{showProduct.status}}</div>
             </div>
           </div>
-          
+
           <div class="col-md-3">
             <div class="meter">
               <i class="fas fa-carrot"></i>
@@ -90,7 +90,8 @@
                   <span>-5%</span>
                 </td>
                 <td>
-                  Giảm thêm 10% tối đa 200K khi nhập mã VNPAY10 hoặc 5% tối đa 500K khi nhập mã VNPAYQR5 <a href="">Xem chi tiết tại đây</a>
+                  Giảm thêm 10% tối đa 200K khi nhập mã VNPAY10 hoặc 5% tối đa 500K khi nhập mã VNPAYQR5 <a href="">Xem
+                    chi tiết tại đây</a>
                 </td>
               </tr>
               <tr>
@@ -108,11 +109,7 @@
 
         <div class="rowDetail-4">
           <button type="button" class="btn btn-danger btn-muaNgay">Mua ngay</button>
-          <button 
-            type="button" 
-            class="btn btn-default btn-addToCart" 
-            (click)="addToCart(showProduct._id)"
-          >
+          <button type="button" class="btn btn-default btn-addToCart" (click)="addToCart(showProduct._id)">
             <i class="fas fa-shopping-cart"></i>
             Thêm vào giỏ hàng
           </button>
@@ -136,7 +133,7 @@
                 <a href="#danhgia" aria-controls="tab" role="tab" data-toggle="tab">Đánh giá & Bình luận</a>
               </li>
             </ul>
-          
+
             <!-- Tab panes -->
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="khuyenmai">
@@ -145,7 +142,11 @@
               </div>
               <div role="tabpanel" class="tab-pane" id="thuonghieu">
                 <h5>Giới thiệu về Sony</h5>
-                <p>Sony được thành lập từ những năm 1946 tại Nhật Bản. Sony là một trong những thương hiệu toàn cầu nổi tiếng nhất về điện tử tiêu dùng nhờ vào những sáng tạo đột phá mang tính cách mạng và chất lượng sản phẩm. Các sản phẩm của Sony nổi bật như: Tivi, laptop ,tai nghe, loa,.. kết hợp giữa chất lượng sản phẩm-công nghệ hàng đầu, kiểu dáng thiết kế độc đáo luôn chiếm trọn lòng tin của người dùng. Xem các sản phẩm khác của Sony</p>
+                <p>Sony được thành lập từ những năm 1946 tại Nhật Bản. Sony là một trong những thương hiệu toàn cầu nổi
+                  tiếng nhất về điện tử tiêu dùng nhờ vào những sáng tạo đột phá mang tính cách mạng và chất lượng sản
+                  phẩm. Các sản phẩm của Sony nổi bật như: Tivi, laptop ,tai nghe, loa,.. kết hợp giữa chất lượng sản
+                  phẩm-công nghệ hàng đầu, kiểu dáng thiết kế độc đáo luôn chiếm trọn lòng tin của người dùng. Xem các
+                  sản phẩm khác của Sony</p>
               </div>
             </div>
           </div>

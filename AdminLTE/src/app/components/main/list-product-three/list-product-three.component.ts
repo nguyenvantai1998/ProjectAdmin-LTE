@@ -25,10 +25,7 @@ export class ListProductThreeComponent implements OnInit {
 
   showListProduct(){
     this.productService.getAllProduct().subscribe(data=>{
-      // this.showProduct = data.docs;
-      
       this.showProduct = _.filter(data.docs, ['status', 'Selling']);
-      console.log(this.showProduct)
     })
   }
 
