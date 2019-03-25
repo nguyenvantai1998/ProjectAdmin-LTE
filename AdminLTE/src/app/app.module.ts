@@ -7,6 +7,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
 //Form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -80,7 +81,8 @@ import { MarqueeComponent } from './components/main/marquee/marquee.component';
     ReactiveFormsModule,
     TagInputModule,
     BrowserAnimationsModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    NgxSpinnerModule
   ],
   providers: [
     AuthGuard,
