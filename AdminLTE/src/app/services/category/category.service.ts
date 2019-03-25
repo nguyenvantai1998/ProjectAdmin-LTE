@@ -15,6 +15,10 @@ const urlEditCategory = `${environment.apiPV}/api/v1/categories/update`;
 const urlDeactiveCategory = `${environment.apiPV}/api/v1/categories/deactive`;
 const urlActiveCategory = `${environment.apiPV}/api/v1/categories/active`;
 
+//sub category
+const urlAddSubCategory = `${environment.apiPV}/api/v1/categories/create`
+const urlEditSubCategory = `${environment.apiPV}/api/v1/categories/update`
+const urlDeleteSubCategory = `${environment.apiPV}/api/v1/categories/delete`
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +75,24 @@ export class CategoryService {
   //active
   activeCategoryService(category: Category): Observable<Category[]> {
     return this.httpClient.put<Category[]>(`${urlActiveCategory}/${category['_id']}`, category, { headers: this.headers })
+  }
+
+  //add subcategory
+  addSubCategory(name: {}, id: string): Observable<Category[]> {
+    return this.httpClient.post(`${urlAddSubCategory}/${id}/sub_category`, name, { headers: this.headers })
+      .pipe(map(rer => rer), catchError(error => this.errorHandler(error)));
+  }
+
+  //edit subcategory
+  editSubCategory(idCate: string, idSub: string, name:{}): Observable<Category[]> {
+    return this.httpClient.put(`${urlEditSubCategory}/${idCate}/sub_category/${idSub}`, name, { headers: this.headers })
+      .pipe(map(rer => rer), catchError(error => this.errorHandler(error)));
+  }
+
+  //delete subcategory
+  deleteSubCategory(idCate: string, idSub: string): Observable<Category> {
+    return this.httpClient.delete(`${urlDeleteSubCategory}/${idCate}/sub_category/${idSub}`, { headers: this.headers })
+      .pipe(map(rer => rer), catchError(error => this.errorHandler(error)));
   }
 
   private errorHandler(error: HttpErrorResponse): Observable<any> {

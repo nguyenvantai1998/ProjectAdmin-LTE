@@ -42,7 +42,8 @@ import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.com
 import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
 import { BannerRightComponent } from './components/main/banner-right/banner-right.component';
 import { MarqueeComponent } from './components/main/marquee/marquee.component';
-
+import { AddSubcategoryComponent } from './components/admin/add-subcategory/add-subcategory.component';
+import { EditSubcategoryComponent } from './components/admin/edit-subcategory/edit-subcategory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,9 @@ import { MarqueeComponent } from './components/main/marquee/marquee.component';
     ListBuyerComponent,
     BuyerDetailComponent,
     BannerRightComponent,
-    MarqueeComponent
+    MarqueeComponent,
+    AddSubcategoryComponent,
+    EditSubcategoryComponent
   ],
   imports: [
     BrowserModule,

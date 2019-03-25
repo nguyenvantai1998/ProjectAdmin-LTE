@@ -1,0 +1,15 @@
+<div class="col-md">
+  <div class="main">
+    <h2 class="text-center">Add Sub_Category</h2>
+    <form #frmAddSub="ngForm" (ngSubmit)="onSubmit(subcategory.value)">
+      <div class="form-group">
+        <label>SubCategory</label>
+        <input class="form-control" type="text" name="txtSubcategory" [(ngModel)]="sub_category"
+          #subcategory="ngModel">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="form-submit btn-block">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

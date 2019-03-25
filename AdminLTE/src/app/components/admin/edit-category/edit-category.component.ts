@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category/category.service';
-import { ActivatedRoute, Router,  } from '@angular/router';
+import { ActivatedRoute, Router, } from '@angular/router';
 import Swal from 'sweetalert2';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-category',
@@ -12,33 +11,23 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class EditCategoryComponent implements OnInit {
 
   public category = {};
-  public frmEditCategory: FormGroup;
+  public idSub: string;
 
   constructor(
     private categoryService: CategoryService,
     private activedRouter: ActivatedRoute,
-    private router: Router,
-    private formBuilder: FormBuilder
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.loadCaterogy();
-    this.createForm();
-  }
-
-  createForm() {
-    this.frmEditCategory = this.formBuilder.group({
-      namecategory: ['', [Validators.required]],
-      subcategory: ['', [Validators.required]]
-    })
   }
 
   loadCaterogy() {
     this.activedRouter.params.subscribe(data => {
-      let id = data['id'];console.log(data);
+      let id = data['id'];
       this.categoryService.getIdCategoryDetail(id).subscribe(category => {
         this.category = category;
-        console.log(this.category)
       })
     })
   }
@@ -49,8 +38,8 @@ export class EditCategoryComponent implements OnInit {
     })
   }
 
-  onSubmitEdit() {
-    if (this.frmEditCategory.valid) {
+  onSubmit(frmEditCategory) {
+    if (frmEditCategory.valid) {
       this.onEditCategory();
     }
     else {
@@ -59,7 +48,6 @@ export class EditCategoryComponent implements OnInit {
         title: "Can't edit category",
         text: 'The fields required cannot be empty!!',
       })
-
     }
   }
 }

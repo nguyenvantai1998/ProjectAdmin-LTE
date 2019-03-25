@@ -1,32 +1,20 @@
 <div class="col-md">
   <div class="main">
-    <div class="container-fluid">
-      <div class="signup-content">
-        <form id="signup-form" class="signup-form" [formGroup]="frmAddCategory" (ngSubmit)="onSubmitAdd()">
-          <h2 class="form-title">Add Category</h2>
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="form-group">
-                <label for="">Name Category</label>
-                <input type="text" class="form-control" formControlName="namecategory" [(ngModel)]="category.name" />
-              </div>
-              <div class="form-group">
-                <label>SubCategory</label>
-                <tag-input [(ngModel)]="category.sub_category" formControlName="subcategory" [identifyBy]="'name'"
-                  [displayBy]="'name'">
-                  <!-- <tag-input-dropdown>
-                  </tag-input-dropdown> -->
-                </tag-input>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="form-group">
-                <button type="submit" class="form-submit btn-block">Add</button>
-              </div>
-            </div>
-          </div>
-        </form>
+    <h2 class="text-center">Add Category</h2>
+    <form #frmAddCategory="ngForm" (ngSubmit)="onSubmit(frmAddCategory)">
+      <div class="form-group">
+        <label for="">Name Category</label>
+        <input type="text" class="form-control" name="txtName" [(ngModel)]="category.name" #categoryname="ngModel" />
       </div>
-    </div>
+      <div class="form-group">
+        <label>SubCategory</label>
+        <tag-input name="txtSubcategory" [(ngModel)]="category.sub_category" #subcategory="ngModel"
+          [identifyBy]="'name'" [displayBy]="'name'">
+        </tag-input>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="form-submit btn-block">Add</button>
+      </div>
+    </form>
   </div>
 </div>

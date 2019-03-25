@@ -73,7 +73,7 @@
           <th>Name</th>
           <th>Active</th>
           <th>Sub_Category</th>
-          <th>Action</th>
+          <th colspan="2">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -82,6 +82,9 @@
           <td>{{ item.name }}</td>
           <td>{{ item.is_active }}</td>
           <td><p *ngFor="let items of item.sub_category;">{{ items.name }}</p></td>
+          <td>
+            <button type="button" class="btn btn-primary" [routerLink]="['/admin/category/subcategory/add',item._id]">Add Sub_Category</button>
+          </td>
           <td>
             <button type="button" class="btn btn-warning" [routerLink]="['/admin/category/edit',item._id]">Edit</button>
             <button type="button" class="btn btn-danger" (click)="onDeactive(item._id)">Deactive</button>

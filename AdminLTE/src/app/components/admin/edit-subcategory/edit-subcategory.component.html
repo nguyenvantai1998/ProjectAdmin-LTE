@@ -1,0 +1,24 @@
+<div class="col-md">
+  <div class="main">
+    <h2 class="text-center">Edit Sub_Category</h2>
+    <form #frmEditSubCategory="ngForm" (ngSubmit)="onSubmit(subcategory.value)">
+      <div class="form-group">
+        <label>SubCategory</label>
+        <tag-input name="txtSubcategory" [(ngModel)]="categoryLoad.sub_category" [identifyBy]="'name'"
+          [displayBy]="'name'" [editable]="false" [removable]="true" [maxItems]="categoryLoad.sub_category.length"
+          (onRemove)="onDeleteSub($event)" (onSelect)="onSelected($event)">
+        </tag-input>
+      </div>
+      <div class="form-group">
+        <button type="button" class="form-submit btn-block"
+          [routerLink]="['/admin/category/edit', categoryLoad._id]">Edit Sub_Category</button>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="txtSub" #subcategory="ngModel" [(ngModel)]="category.name">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="form-submit btn-block">Edit</button>
+      </div>
+    </form>
+  </div>
+</div>

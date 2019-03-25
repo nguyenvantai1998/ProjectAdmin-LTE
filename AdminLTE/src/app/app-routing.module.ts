@@ -19,6 +19,8 @@ import { DetailOrderComponent } from './components/admin/detail-order/detail-ord
 import { UploadImageComponent } from './components/admin/upload-image/upload-image.component';
 import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.component';
 import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
+import { AddSubcategoryComponent } from './components/admin/add-subcategory/add-subcategory.component';
+import { EditSubcategoryComponent } from './components/admin/edit-subcategory/edit-subcategory.component';
 
 const routes: Routes = [
   {
@@ -66,6 +68,14 @@ const routes: Routes = [
         { 
           path: 'category/edit/:id',
           component: EditCategoryComponent
+        },
+        { 
+          path: 'category/subcategory/add/:id',
+          component: AddSubcategoryComponent
+        },
+        { 
+          path: 'category/subcategory/edit/:id',
+          component: EditSubcategoryComponent
         },
         { 
           path: 'order',
@@ -131,5 +141,7 @@ export const routingModule = [
   ListOrderComponent,
   DetailOrderComponent,
   UploadImageComponent,
-  BuyerDetailComponent
+  BuyerDetailComponent,
+  AddSubcategoryComponent,
+  EditSubcategoryComponent
 ]
