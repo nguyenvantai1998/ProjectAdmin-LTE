@@ -5,7 +5,7 @@
       [routerLink]="['/detail', item.id]"
     >
       <span class="salePersen">-{{ item.discount }}%</span>
-      <img src="{{item.images}}" class="img-responsive" alt="Image">
+      <img src="{{item.images[0]}}" class="img-responsive" alt="Image">
       <p class="nameProduct">{{ item.title | customProduct: 0 : 20 }}</p>
       <p class="price">{{ item.price | currency:' ':'symbol':'2.3-6' }}đ</p>
       <p class="priceOnline">{{ item.price * ((100-item.discount)/100) | currency:' ':'symbol':'2.3-6' }}đ</p>
