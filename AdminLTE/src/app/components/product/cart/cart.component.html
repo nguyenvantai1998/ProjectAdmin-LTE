@@ -8,6 +8,11 @@
     <div class="rowTitleLink-detail">
       <a routerLink="/index">Trang chủ</a> // <a> Chi tiết sản phẩm </a> // <a>Check cart</a>
     </div>
+    
+    <!-- <div class="alert alert-danger" *ngIf="showCheckQty">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Error!</strong> Quá giới hạng số lượng sản phẩm hiện có ...
+    </div> -->
 
     <!-- check add to cart -->
     <div class="checkAddToCart" *ngIf="checkCartNull; else showCheckNull">
@@ -30,15 +35,14 @@
               <button 
                 type="button" 
                 class="btn btn-danger"
-                (click)="remove(item.productCart.id)"
-              >X
+                (click)="remove(item.productCart._id)"
+              ><i class="fas fa-trash-alt"></i>
               </button>
-              
             </td>
             <td>{{ item.productCart._id }}</td>
             <td>{{ item.productCart.title }}</td>
             <td>
-              <img src="{{ item.productCart.images }}" width="50">
+              <img src="{{ item.productCart.images[0] }}" width="50">
             </td>
             <td>{{ item.productCart.price | currency:' ':'symbol':'2.3-6'  }}</td>
             <td>
@@ -52,12 +56,13 @@
               <button 
                 type="button" 
                 class="btn btn-default"
-                (click)="delProduct(item.productCart.id)"
+                (click)="subProduct(item.productCart._id)"
               ><i class="fas fa-minus"></i>
               </button>
             </td>
             <td>{{ item.productCart.price * item.quantity | currency:' ':'symbol':'2.3-6' }}</td>
           </tr>
+
           <tr>
             <td colspan="6" align="right">Total</td>
             <td>{{total | currency:' ':'symbol':'2.3-6' }} Đồng</td>
@@ -65,6 +70,14 @@
         </tbody>
       </table>
     </div>
+    <button 
+      type="button" 
+      class="btn btn-info pull-right"
+      style="margin-bottom:2em"
+      routerLink="/checkout"
+    >Thanh Toán
+    </button><br>
+
     <ng-template #showCheckNull>
       <div class="container showCheckNull">
         <img src="./../../../../assets/theme/images/giohangtrong.png" class="img-responsive" alt="Image">

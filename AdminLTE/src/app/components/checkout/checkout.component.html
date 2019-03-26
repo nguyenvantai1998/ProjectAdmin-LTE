@@ -4,8 +4,8 @@
 </div><!-- /headerDetail -->
 
 <div id="checkOut">
-  <div class="container-fuild">
-    <div class="col-md-9">
+  <div class="container">
+    <div class="col-md-12">
       <h2 class="text-center">Checkout</h2>
       <div class="container">
         <form
@@ -192,6 +192,32 @@
             </div>
 
             <div class="col-md-6">
+              <h3>Cart 
+                <span class="price pull-right" style="color:rgb(187, 49, 49);text-align:right">
+                  <i class="fa fa-shopping-cart"></i> <b>{{totalQtyProduct}}</b>
+                </span>
+              </h3>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr style="background:rgb(187, 49, 49);color:white;font-weight: 700">
+                    <th>Name Product</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of listAddToCart">
+                    <td>{{ item.productCart.title }}</td>
+                    <td>{{ item.productCart.price | currency:' ':'symbol':'2.3-6' }}</td>
+                  </tr>
+                  <tr>
+                      <td align="right">Total</td>
+                      <td style="background:rgb(187, 49, 49);color:white;font-weight: 700">{{total | currency:' ':'symbol':'2.3-6' }} Đồng</td>
+                    </tr>
+                </tbody>
+              </table>
+              
+
+
               <h3>Payment</h3>
               <label for="fname">Accepted Cards</label>
               <div class="icon-container">
@@ -362,34 +388,42 @@
       </div>
     </div>
 
-    <div class="col-md-2 pull-right">
+    <!-- <div class="col-md-3 pull-right" style="background:white;">
           <h4>Cart <span class="price" style="color:black;text-align:right"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-          <p class="row">
-            <span class="col-md-6"><a href="#">Product 1</a></span> 
-            <span class="price col-md-6">$15</span>
-          </p>
-          <p class="row">
-            <span class="col-md-6"><a href="#">Product 2</a></span> 
-            <span class="price col-md-6">$15</span>
-          </p>
-          <p class="row">
-            <span class="col-md-6"><a href="#">Product 3</a></span> 
-            <span class="price col-md-6">$15</span>
-          </p>
-          <p class="row">
-            <span class="col-md-6"><a href="#">Product 4</a></span> 
+          <p class="row" *ngFor="let item of listAddToCart">
+            <span class="col-md-6">
+              <a href="">{{ item.productCart.title }}</a></span> 
             <span class="price col-md-6">$15</span>
           </p>
           <hr>
           <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+
+          
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name Product</th>
+                <th>Price Product</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listAddToCart">
+                <td>{{ item.productCart.title}}</td>
+                <td>{{ item.productCart.price}}</td>
+              </tr>
+              <tr>
+                  <td colspan="1" align="right">Total</td>
+                  <td>{{total}} Đồng</td>
+                </tr>
+            </tbody>
+          </table>
+          
         
-    </div>
+    </div> -->
   </div>
 </div>
 
 
-<div class="clearfix">
-
-</div>
+<div class="clearfix"></div>
 
 <app-footer></app-footer>

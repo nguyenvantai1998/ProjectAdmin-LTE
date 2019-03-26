@@ -1,4 +1,4 @@
-#checkOut .col-md-9 .container{
+#checkOut .col-md-12 .container{
     background-color: white;
     border: 1px solid lightgrey;
     border-radius: 3px;
@@ -13,7 +13,7 @@
     margin-top:1em;
     margin-right:1em;
 }
-#checkOut .col-md-9 label {
+#checkOut .col-md-12 label {
     margin-bottom: 10px;
     display: block;
 }
@@ -24,12 +24,12 @@
     text-transform: uppercase;
     text-shadow: 1px 1px 2px black;
 }
-#checkOut .col-md-9 h3{
+#checkOut .col-md-12 h3{
     font-size:1.2em;
     font-weight: 600;
     margin-bottom:1em;
 }
-#checkOut .col-md-9 input[type=text] {
+#checkOut .col-md-12 input[type=text] {
     width: 100%;
     /* margin-bottom: 20px; */
     padding: 12px;
@@ -48,5 +48,5 @@
     font-size: 17px;
 }
 #checkOut .btn:hover {
-    background-color: #45a049;
+    background-color: #45a0412;
 }

@@ -44,6 +44,10 @@ import { BannerRightComponent } from './components/main/banner-right/banner-righ
 import { MarqueeComponent } from './components/main/marquee/marquee.component';
 import { AddSubcategoryComponent } from './components/admin/add-subcategory/add-subcategory.component';
 import { EditSubcategoryComponent } from './components/admin/edit-subcategory/edit-subcategory.component';
+// action
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducers/cart.reducers';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +89,10 @@ import { EditSubcategoryComponent } from './components/admin/edit-subcategory/ed
     TagInputModule,
     BrowserAnimationsModule,
     AngularFileUploaderModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    StoreModule.forRoot({
+      item: reducer
+    })
   ],
   providers: [
     AuthGuard,
