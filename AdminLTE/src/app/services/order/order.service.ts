@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import { Order } from 'src/app/models/order.model';
 // url
-const urlgetListOrder = `${environment.apiPV}/api/v1/orders/list?limit=100`;
+const urlgetListOrder = `${environment.apiPV}/api/v1/orders/list?page=1&limit=100`;
 const urlDetailOrder = `${environment.apiPV}/api/v1/orders/details`;
 @Injectable({
   providedIn: 'root'

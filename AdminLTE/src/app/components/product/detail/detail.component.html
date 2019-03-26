@@ -1,3 +1,10 @@
+<ngx-spinner
+  bdColor="black"
+  size="medium"
+  color="#fff"
+  type="ball-triangle-path">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
 <!-- headerDetail -->
 <div id="headerDetail">
   <app-header></app-header>
@@ -13,10 +20,23 @@
     <!-- row product detail -->
     <div class="container-fluid rowProductDetail" *ngIf="showProduct">
       <div class="col-md-4 rowProductDetail-left">
-        <img src="{{showProduct.images}}" class="img-responsive" alt="Image">
+        <div class="row rowTabImgDetail">
+          <div *ngFor="let item of showProduct.images">
+            <img src="{{item}}" class="img-responsive tabImgDetail" alt="Image">
+          </div>
+        </div>
+        <div class="row rowButtonTabImgDetail">
+          <button 
+            type="button" 
+            class="btn btn-default col-md-2 buttonTabImgDetail"
+            *ngFor="let item of showProduct.images | slice:0:5"
+          >
+            <img src="{{item}}" class="img-responsive" alt="Image">
+          </button>
+        </div>
 
         <div class="descriptionDetailProduct">
-          <h3>Mô tả</h3>
+          <h3>Mô tả: {{showProduct.description}}</h3>
           <h4>Tên sản phẩm: {{showProduct.title}}</h4>
           <p>
             - Kích thước: 49" 

@@ -28,3 +28,11 @@
     cursor: pointer;
     outline: none;
 }
+button{
+    box-shadow:none !important;
+    outline: none !important;
+}
+button:focus{
+    box-shadow:none !important;
+    outline: none !important;
+}

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '@environments/environment.prod';
-import { map, catchError } from 'rxjs/operators';
-import Swal from 'sweetalert2';
-import { Buyer } from 'src/app/models/Buyer.model';
+import { Buyers } from 'src/app/models/buyers.model';
 // url
 const urlListBuyer= `${environment.apiPV}/api/v1/payments/buyers`;
 const urlBuyerDetail = `${environment.apiPV}/api/v1/payments/buyers`;
@@ -24,8 +22,8 @@ export class CheckoutService {
     }
     return header.set('Content-Type', 'application/json').set('Authorization', `Bearer ${token}`);
   }
-  getListBuyer(): Observable<Buyer>{
-    return this.httpClient.get<Buyer>(urlListBuyer, { headers: this.headers });
+  getListBuyer(): Observable<Buyers>{
+    return this.httpClient.get<Buyers>(urlListBuyer, { headers: this.headers });
   }
   buyerDetail(id: string): Observable<any>{
     return this.httpClient.get<any>(`${urlBuyerDetail}/${id}`, { headers: this.headers });

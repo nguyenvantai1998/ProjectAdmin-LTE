@@ -54,6 +54,9 @@ body{
 .headerTopRight-item span:nth-child(2){
 	flex:2;
 }
+.checkAddToCart{
+	background:white;
+}
 .headerTopRight-item .cart{
 	font-size:3em;
 	color:white;

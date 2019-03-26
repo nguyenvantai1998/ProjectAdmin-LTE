@@ -2,14 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { CheckoutService } from 'src/app/services/checkout/checkout.service';
-import { Buyer } from 'src/app/models/Buyer.model';
+import { Buyers } from 'src/app/models/buyers.model';
 @Component({
   selector: 'app-list-buyer',
   templateUrl: './list-buyer.component.html',
   styleUrls: ['./list-buyer.component.css']
 })
 export class ListBuyerComponent implements OnInit , OnDestroy {
-  public listBuyer: Buyer= {};
+  public listBuyer: Buyers= {};
   public subscription: Subscription;
   ;
   constructor(

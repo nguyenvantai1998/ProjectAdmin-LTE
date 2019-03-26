@@ -21,7 +21,7 @@ import { ListBuyerComponent } from './components/admin/list-buyer/list-buyer.com
 import { BuyerDetailComponent } from './components/admin/buyer-detail/buyer-detail.component';
 import { AddSubcategoryComponent } from './components/admin/add-subcategory/add-subcategory.component';
 import { EditSubcategoryComponent } from './components/admin/edit-subcategory/edit-subcategory.component';
-
+import { CheckoutComponent } from './components/checkout/checkout.component';
 const routes: Routes = [
   {
     path: '',
@@ -111,6 +111,10 @@ const routes: Routes = [
     path: 'cart',
     component: CartComponent
   },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
+  },
   { 
     path: '404', 
     component: Page404Component
@@ -143,5 +147,6 @@ export const routingModule = [
   UploadImageComponent,
   BuyerDetailComponent,
   AddSubcategoryComponent,
-  EditSubcategoryComponent
+  EditSubcategoryComponent,
+  CheckoutComponent
 ]
