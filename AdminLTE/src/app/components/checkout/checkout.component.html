@@ -26,7 +26,7 @@
                 required="required"
                 pattern="^[a-zA-Z]*$"
                 minlength="3"
-                (ngModel)="checkout.name"
+                [(ngModel)]="checkout.name"
                 #firstname="ngModel"
               >
               <div class="showError">
@@ -58,7 +58,7 @@
                 name="txtEmail"
                 required="required"
                 pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-                (ngModel)="checkout.email"
+                [(ngModel)]="checkout.email"
                 #email="ngModel"
               >
               <div class="showError">
@@ -85,7 +85,7 @@
                 name="txtAddress"
                 required="required"
                 minlength="3"
-                (ngModel)="checkout.address"
+                [(ngModel)]="checkout.address"
                 #address="ngModel"
               >
               <div class="showError">
@@ -111,7 +111,7 @@
                 name="txtCity"
                 required="required"
                 minlength="3"
-                (ngModel)="checkout.phone"
+                [(ngModel)]="checkout.phone"
                 #city="ngModel"
               >
               <div class="showError">
@@ -141,7 +141,7 @@
                     name="txtZip"
                     required="required"
                     pattern="[0-9]*"
-                    (ngModel)="checkout.postcode"
+                    [(ngModel)]="checkout.postcode"
                     #postcode="ngModel"
                   >
                 </div>
@@ -208,7 +208,7 @@
                 id="description"
                 name="txtDescription" 
                 placeholder="Note..."
-                (ngModel)="checkout.description"
+                [(ngModel)]="checkout.description"
                 #description="ngModel"
               >
 

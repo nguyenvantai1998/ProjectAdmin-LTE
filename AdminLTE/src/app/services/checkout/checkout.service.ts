@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from '@environments/environment.prod';
 import { Buyers } from 'src/app/models/buyers.model';
 // url
-const urlListBuyer= `${environment.apiPV}/api/v1/payments/buyers`;
+const urlListBuyer= `${environment.apiPV}/api/v1/payments/buyers?page=1&limit=100`;
 const urlBuyerDetail = `${environment.apiPV}/api/v1/payments/buyers`;
 const urlCheckout = `${environment.apiPV}/api/v1/payments/checkout`;
 @Injectable({
