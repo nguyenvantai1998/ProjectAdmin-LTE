@@ -80,10 +80,13 @@ export class CartComponent implements OnInit {
     let index: number = -1;
     for (var i = 0; i < cart.length; i++) {
       let item: ItemCart = JSON.parse(cart[i]);
-      if (item.productCart['_id'] == id) {
+      if(item.quantity > 1){
+        if (item.productCart['_id'] == id) {
         index = i;
         break;
+       }
       }
+      
     }
 
     if (index != -1) {

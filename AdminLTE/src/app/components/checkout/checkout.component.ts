@@ -48,6 +48,7 @@ export class CheckoutComponent implements OnInit {
       this.totalQtyProduct += item.quantity;
       this.quantity += item.quantity;
       this.listAddToCart = _.uniqWith(this.items, _.isEqual);
+      
     }
   }
 
