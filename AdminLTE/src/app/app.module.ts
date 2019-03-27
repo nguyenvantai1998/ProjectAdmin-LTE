@@ -8,7 +8,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgxStripeModule } from 'ngx-stripe'
+import { NgxStripeModule } from 'ngx-stripe';
 //Form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -94,7 +94,7 @@ import { reducer } from './store/reducers/cart.reducers';
     StoreModule.forRoot({
       item: reducer
     }),
-    NgxStripeModule.forRoot('***your-stripe-publishable key***')
+    NgxStripeModule.forRoot('pk_test_BHUOafmeJtUMRjSTplsjt9Z9')
   ],
   providers: [
     AuthGuard,

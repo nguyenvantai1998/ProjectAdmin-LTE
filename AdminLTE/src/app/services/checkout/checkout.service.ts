@@ -6,6 +6,7 @@ import { Buyers } from 'src/app/models/buyers.model';
 // url
 const urlListBuyer= `${environment.apiPV}/api/v1/payments/buyers`;
 const urlBuyerDetail = `${environment.apiPV}/api/v1/payments/buyers`;
+const urlCheckout = `${environment.apiPV}/api/v1/payments/checkout`;
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +28,8 @@ export class CheckoutService {
   }
   buyerDetail(id: string): Observable<any>{
     return this.httpClient.get<any>(`${urlBuyerDetail}/${id}`, { headers: this.headers });
+  }
+  checkOut(body): Observable<any>{
+    return this.httpClient.post<any>(urlCheckout, body ,{ headers: this.headers });
   }
 }

@@ -22,30 +22,30 @@
                 type="text" 
                 id="fname" 
                 placeholder="John M. Doe"
-                name="txtFristName"
+                name="txtfirstname"
                 required="required"
                 pattern="^[a-zA-Z]*$"
                 minlength="3"
-                [(ngModel)]="checkout.fristname"
-                #fristname="ngModel"
+                (ngModel)="checkout.name"
+                #firstname="ngModel"
               >
               <div class="showError">
                 <span 
                   class="label label-danger" 
-                  *ngIf="(frmCheckOut.submitted && fristname.pristine) || fristname.dirty && fristname.errors?.required"
+                  *ngIf="(frmCheckOut.submitted && firstname.pristine) || firstname.dirty && firstname.errors?.required"
                 ><i class="fas fa-times"></i> Please enter Frist Name
                 </span>
                 <span 
                   class="label label-danger" 
-                  *ngIf="fristname.dirty && fristname.errors?.minlength"
-                ><i class="fas fa-times"></i> Frist Name at least 3 characters
+                  *ngIf="firstname.dirty && firstname.errors?.minlength"
+                ><i class="fas fa-times"></i> First Name at least 3 characters
                 </span>
                 <span 
                   class="label label-danger" 
-                  *ngIf="fristname.dirty && fristname.errors?.pattern"
+                  *ngIf="firstname.dirty && firstname.errors?.pattern"
                 ><i class="fas fa-times"></i> First Name wrong format
                 </span>
-                <span class="label label-success" *ngIf="!fristname.errors">
+                <span class="label label-success" *ngIf="!firstname.errors">
                     <i class="fas fa-check"></i> Frist Name Invalid
                 </span>
               </div>
@@ -58,7 +58,7 @@
                 name="txtEmail"
                 required="required"
                 pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-                [(ngModel)]="checkout.email"
+                (ngModel)="checkout.email"
                 #email="ngModel"
               >
               <div class="showError">
@@ -85,7 +85,7 @@
                 name="txtAddress"
                 required="required"
                 minlength="3"
-                [(ngModel)]="checkout.address"
+                (ngModel)="checkout.address"
                 #address="ngModel"
               >
               <div class="showError">
@@ -104,14 +104,14 @@
                 </span>
               </div>
 
-              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <label for="city"><i class="fa fa-institution"></i> Phone</label>
               <input 
                 type="text" 
-                placeholder="New York"
+                placeholder="012345678"
                 name="txtCity"
                 required="required"
                 minlength="3"
-                [(ngModel)]="checkout.city"
+                (ngModel)="checkout.phone"
                 #city="ngModel"
               >
               <div class="showError">
@@ -131,37 +131,9 @@
               </div>
 
               <div class="container-fuild">
-                <div class="col-50">
-                  <label for="state">State</label>
-                  <input 
-                    type="text" 
-                    id="state" 
-                    placeholder="NY"
-                    name="txtState"
-                    required="required"
-                    minlength="3"
-                    [(ngModel)]="checkout.state"
-                    #state="ngModel"
-                  >
-                </div>
-                <div class="showError">
-                  <span 
-                    class="label label-danger" 
-                    *ngIf="(frmCheckOut.submitted && state.pristine) || state.dirty && state.errors?.required"
-                  ><i class="fas fa-times"></i> Please enter State
-                  </span>
-                  <span 
-                    class="label label-danger" 
-                    *ngIf="state.dirty && state.errors?.minlength"
-                  ><i class="fas fa-times"></i> State at least 3 characters
-                  </span>
-                  <span class="label label-success" *ngIf="!state.errors">
-                      <i class="fas fa-check"></i> State Invalid
-                  </span>
-                </div>
                 
                 <div class="col-50">
-                  <label for="zip">Zip</label>
+                  <label for="zip">Postcode</label>
                   <input 
                     type="text" 
                     id="zip" 
@@ -169,23 +141,23 @@
                     name="txtZip"
                     required="required"
                     pattern="[0-9]*"
-                    [(ngModel)]="checkout.zip"
-                    #zip="ngModel"
+                    (ngModel)="checkout.postcode"
+                    #postcode="ngModel"
                   >
                 </div>
                 <div class="showError">
                   <span 
                     class="label label-danger" 
-                    *ngIf="(frmCheckOut.submitted && zip.pristine) || zip.dirty && zip.errors?.required"
-                  ><i class="fas fa-times"></i> Please enter Zip
+                    *ngIf="(frmCheckOut.submitted && postcode.pristine) || postcode.dirty && postcode.errors?.required"
+                  ><i class="fas fa-times"></i> Please enter Postcode
                   </span>
                   <span 
                     class="label label-danger" 
-                    *ngIf="zip.dirty && zip.errors?.pattern"
-                  ><i class="fas fa-times"></i> Zip wrong format 1221254545
+                    *ngIf="postcode.dirty && postcode.errors?.pattern"
+                  ><i class="fas fa-times"></i> Postcode wrong format 1221254545
                   </span>
-                  <span class="label label-success" *ngIf="!zip.errors">
-                      <i class="fas fa-check"></i> Zip Invalid
+                  <span class="label label-success" *ngIf="!postcode.errors">
+                      <i class="fas fa-check"></i> Postcode Invalid
                   </span>
                 </div>
               </div>
@@ -227,152 +199,19 @@
                 <i class="fab fa-cc-discover" style="color:orange;font-size:3em;"></i>
               </div>
 
-              <label for="cname">Name on Card</label>
-              <input 
-                type="text" 
-                id="cname" 
-                name="txtCardname" 
-                placeholder="John More Doe"
-                required="required"
-                minlength="3"
-                pattern="^[a-zA-Z]*$"
-                [(ngModel)]="checkout.cardname"
-                #cardname="ngModel"
-              >
-              <div class="showError">
-                <span 
-                  class="label label-danger" 
-                  *ngIf="(frmCheckOut.submitted && cardname.pristine) || cardname.dirty && cardname.errors?.required"
-                ><i class="fas fa-times"></i> Please enter Card Name
-                </span>
-                <span 
-                  class="label label-danger" 
-                  *ngIf="cardname.dirty && cardname.errors?.pattern"
-                ><i class="fas fa-times"></i> Card Name wrong format
-                </span>
-                <span class="label label-success" *ngIf="!cardname.errors">
-                    <i class="fas fa-check"></i> Card Name Invalid
-                </span>
-              </div>
-
               <label for="ccnum">Credit card number</label>
-              <input 
-                type="text"
-                id="ccnum" 
-                placeholder="1111-2222-3333-4444"
-                name="txtCardnumber"
-                required="required"
-                pattern="[0-9]*"
-                [(ngModel)]="checkout.cardnumber"
-                #cardnumber="ngModel"
-              >
-              <div class="showError">
-                <span 
-                  class="label label-danger" 
-                  *ngIf="(frmCheckOut.submitted && cardnumber.pristine) || cardnumber.dirty && cardnumber.errors?.required"
-                ><i class="fas fa-times"></i> Please enter Card Number
-                </span>
-                <span 
-                  class="label label-danger" 
-                  *ngIf="cardnumber.dirty && cardnumber.errors?.pattern"
-                ><i class="fas fa-times"></i> Card Number wrong format
-                </span>
-                <span class="label label-success" *ngIf="!cardnumber.errors">
-                    <i class="fas fa-check"></i> Card Number Invalid
-                </span>
-              </div>
+              <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
 
-              <label for="expmonth">Exp Month</label>
+              <label for="description">Description</label>
               <input 
                 type="text" 
-                id="expmonth"
-                name="txtExpmonth" 
-                placeholder="September"
-                required="required"
-                minlength="3"
-                pattern="^[a-zA-Z]*$"
-                [(ngModel)]="checkout.september"
-                #september="ngModel"
+                id="description"
+                name="txtDescription" 
+                placeholder="Note..."
+                (ngModel)="checkout.description"
+                #description="ngModel"
               >
-              <div class="showError">
-                <span 
-                  class="label label-danger" 
-                  *ngIf="(frmCheckOut.submitted && september.pristine) || september.dirty && september.errors?.required"
-                ><i class="fas fa-times"></i> Please enter september
-                </span>
-                <span 
-                  class="label label-danger" 
-                  *ngIf="september.dirty && september.errors?.minlength"
-                ><i class="fas fa-times"></i>September at least 3 characters
-                </span>
-                <span 
-                  class="label label-danger" 
-                  *ngIf="september.dirty && september.errors?.pattern"
-                ><i class="fas fa-times"></i>September wrong format
-                </span>
-                <span class="label label-success" *ngIf="!september.errors">
-                    <i class="fas fa-check"></i> September Invalid
-                </span>
-              </div>
 
-              <div class="row">
-                <div class="col-md-5">
-                  <label for="expyear">Exp Year</label>
-                  <input 
-                    type="text" 
-                    id="expyear" 
-                    name="txtExpyear" 
-                    placeholder="2018"
-                    required="required"
-                    pattern="[0-9]*" 
-                    [(ngModel)]="checkout.expyear"
-                    #expyear="ngModel"
-                  >
-                  <div class="showError">
-                    <span 
-                      class="label label-danger" 
-                      *ngIf="(frmCheckOut.submitted && expyear.pristine) || expyear.dirty && expyear.errors?.required"
-                    ><i class="fas fa-times"></i> Please enter Expyear
-                    </span>
-                    <span 
-                      class="label label-danger" 
-                      *ngIf="expyear.dirty && expyear.errors?.pattern"
-                    ><i class="fas fa-times"></i>Expyear wrong format
-                    </span>
-                    <span class="label label-success" *ngIf="!expyear.errors">
-                        <i class="fas fa-check"></i> Expyear Invalid
-                    </span>
-                  </div>
-                </div>
-                <div class="col-md-5">
-                  <label for="cvv">CVV</label>
-                  <input 
-                    type="text" 
-                    id="cvv" 
-                    name="txtCvv" 
-                    placeholder="352"
-                    required="required"
-                    pattern="[0-9]*" 
-                    [(ngModel)]="checkout.cvv"
-                    #cvv="ngModel"
-                  >
-                  <div class="showError">
-                    <span 
-                      class="label label-danger" 
-                      *ngIf="(frmCheckOut.submitted && cvv.pristine) || cvv.dirty && cvv.errors?.required"
-                    ><i class="fas fa-times"></i> Please enter Cvv
-                    </span>
-                    <span 
-                      class="label label-danger" 
-                      *ngIf="cvv.dirty && cvv.errors?.pattern"
-                    ><i class="fas fa-times"></i>Cvv wrong format
-                    </span>
-                    <span class="label label-success" *ngIf="!cvv.errors">
-                        <i class="fas fa-check"></i> Cvv Invalid
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -388,42 +227,10 @@
       </div>
     </div>
 
-    <!-- <div class="col-md-3 pull-right" style="background:white;">
-          <h4>Cart <span class="price" style="color:black;text-align:right"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-          <p class="row" *ngFor="let item of listAddToCart">
-            <span class="col-md-6">
-              <a href="">{{ item.productCart.title }}</a></span> 
-            <span class="price col-md-6">$15</span>
-          </p>
-          <hr>
-          <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-
-          
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Name Product</th>
-                <th>Price Product</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of listAddToCart">
-                <td>{{ item.productCart.title}}</td>
-                <td>{{ item.productCart.price}}</td>
-              </tr>
-              <tr>
-                  <td colspan="1" align="right">Total</td>
-                  <td>{{total}} Đồng</td>
-                </tr>
-            </tbody>
-          </table>
-          
-        
-    </div> -->
   </div>
 </div>
 
 
 <div class="clearfix"></div>
 
-<app-footer></app-footer>
+<app-footer></app-footer> 

@@ -28,7 +28,7 @@
           <td>
             <p *ngFor="let items of item.products"> {{items}}</p>
           </td>
-          <td>{{item.total_amount|currency}}</td>
+          <td>{{item.total_amount|currency:' ':'symbol':'2.3-6' }}</td>
           <td>
             <!-- <button type="button" class="btn btn-success" (click)="onCheck(item._id) "><div class="glyphicon glyphicon-ok"></div></button><br/> -->
             <button type="button" class="btn btn-primary" [routerLink]="['/admin/order/view/',item.id]">
