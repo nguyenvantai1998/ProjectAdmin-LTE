@@ -77,11 +77,11 @@
             
             <tr class="item " *ngFor="let items of DetailOrder.products">
                 <td>
-                    {{items.title}} {{items.sku}} -- Quantity: {{item.quantity}}
+                    {{items.title}} {{items.sku}} -- Quantity: {{items.quantity}}
                 </td>
                 
                 <td>
-                    {{items.price|currency:' ':'symbol':'2.3-6' }}
+                    {{items.quantity * items.price|currency:' ':'symbol':'2.3-6' }}
                 </td>
             </tr>
             
